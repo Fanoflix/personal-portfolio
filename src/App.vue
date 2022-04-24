@@ -12,23 +12,23 @@
   </RouterView>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterView } from "vue-router";
-import { useThemeStore } from "./stores/theme.ts";
+import { useThemeStore } from "@/stores/theme";
 import { onBeforeMount, ref } from "vue";
 import FNavbar from "./components/navbar/FNavbar.vue";
 import FSidebar from "./components/sidebar/FSidebar.vue";
 
-let body = document.querySelector("body");
+let body: HTMLElement | null = document.querySelector("body");
 const themeStore = useThemeStore();
 const { setIsDark } = themeStore; // same thing as the above line
 const sidebar = ref(null);
 const isSideBarVisible = ref(false);
 
 onBeforeMount(() => {
-  let storedIsDark = JSON.parse(localStorage.getItem("isDark"));
+  let storedIsDark = JSON.parse(localStorage.getItem("isDark") || "false");
   if (storedIsDark) {
-    body.classList.add("dark");
+    body?.classList.add("dark");
     setIsDark(storedIsDark);
   }
 });

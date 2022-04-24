@@ -53,9 +53,9 @@ import FContainer from "../components/container/FContainer.vue";
 import FRadio from "../components/radio/FRadio.vue";
 import FInput from "../components/input/FInput.vue";
 import FButton from "../components/button/FButton.vue";
-import processRequest from "../utils/processRequest.ts";
+import processRequest from "../utils/processRequest";
 
-import { useAxios } from "@/composables/useAxios.ts";
+import { useAxios } from "@/composables/useAxios";
 import { onMounted, ref, reactive, nextTick } from "vue";
 
 const url = "http://localhost:5000";

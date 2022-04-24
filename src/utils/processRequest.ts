@@ -5,7 +5,11 @@ const BASE_URL = "http://localhost:5000/";
 
 // function getHeaders() {}
 
-const processRequest = (uri: string, method: string, data: unknown) => {
+const processRequest = (
+  uri: string,
+  method: string,
+  data: unknown | undefined
+) => {
   const url = BASE_URL + uri;
   if (method.toLowerCase() === "post") {
     return axios.post(url, { data });

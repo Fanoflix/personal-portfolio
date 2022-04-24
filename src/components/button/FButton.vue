@@ -151,10 +151,10 @@ button {
 
 // ____> SIZES <sm, md, lg>
 .sm {
-  min-width: 80px;
+  min-width: 68px;
   height: 38px;
 
-  padding: 0px 15px;
+  padding: 0px 12px;
   font-size: 13px;
   font-weight: 500;
 }

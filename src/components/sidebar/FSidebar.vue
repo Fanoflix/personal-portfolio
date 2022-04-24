@@ -1,8 +1,8 @@
 <template>
   <section ref="sidebar" class="side-bar" :class="sidebarClasses">
-    <FLink type="secondary" to="/buttonShowcase"> Buttons </FLink>
+    <FLink size="sm" type="secondary" to="/buttonShowcase"> Buttons </FLink>
 
-    <FLink type="secondary" to="/inputShowcase"> Inputs </FLink>
+    <FLink size="sm" type="secondary" to="/inputShowcase"> Inputs </FLink>
   </section>
 </template>
 

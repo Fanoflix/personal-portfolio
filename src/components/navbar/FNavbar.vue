@@ -6,13 +6,13 @@
       type="secondary"
       rounded
       outlined
-      @click.prevent="openSideBar"
+      @click.prevent="toggleSideBar"
     />
 
     <div class="nav-item links">
-      <FLink type="primary" to="/"> Home </FLink>
+      <FLink rounded size="sm" type="primary" to="/"> Home </FLink>
 
-      <FLink type="secondary" to="/quiz"> Quiz </FLink>
+      <FLink rounded size="sm" type="secondary" to="/survey"> Survey </FLink>
     </div>
 
     <FButton
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import FLink from "../link/FLink.vue";
 import FButton from "../button/FButton.vue";
-import { useThemeStore } from "@/stores/theme.ts";
+import { useThemeStore } from "@/stores/theme";
 import { computed } from "vue";
 import { storeToRefs } from "pinia";
 
@@ -50,7 +50,7 @@ const props = defineProps({
 
 const emits = defineEmits(["toggleSidebar"]);
 
-function openSideBar() {
+function toggleSideBar() {
   emits("toggleSidebar");
 }
 
@@ -74,6 +74,7 @@ const navbarClasses = computed(() => {
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: $nav-height;
 
   &.filled {
@@ -97,6 +98,7 @@ const navbarClasses = computed(() => {
 
     .links {
       margin: $global-aesthetic-margin;
+      align-self: flex-end;
     }
 
     a {
@@ -104,12 +106,12 @@ const navbarClasses = computed(() => {
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid transparent;
-      transition: background-color $element-trans-time ease-in;
-      height: $nav-height;
+      // transition: background-color $element-trans-time ease-in;
       min-width: $nav-item-width;
       &.router-link-active {
         border-bottom: 1px solid $black;
         background-color: $secondary-light;
+        background-color: $white-soft2;
         color: $black;
       }
     }
