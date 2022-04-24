@@ -19,9 +19,9 @@ import { onBeforeMount, ref } from "vue";
 import FNavbar from "./components/navbar/FNavbar.vue";
 import FSidebar from "./components/sidebar/FSidebar.vue";
 
-let body: HTMLElement | null = document.querySelector("body");
+const body: HTMLElement | null = document.querySelector("body");
 const themeStore = useThemeStore();
-const { setIsDark } = themeStore; // same thing as the above line
+const { setIsDark } = themeStore;
 const sidebar = ref(null);
 const isSideBarVisible = ref(false);
 
@@ -40,9 +40,9 @@ function toggleSidebar() {
 // changing Body's background color according to isDark in store theme.js
 themeStore.$subscribe((_, state) => {
   if (state.isDark) {
-    body.classList.add("dark");
+    body?.classList.add("dark");
   } else {
-    body.classList.remove("dark");
+    body?.classList.remove("dark");
   }
 });
 </script>

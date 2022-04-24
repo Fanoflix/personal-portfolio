@@ -9,7 +9,7 @@
       class="question"
       padding="1"
       rounded
-      v-for="(question, idx) in data.survey.questions"
+      v-for="(question, idx) in data?.survey.questions"
       :key="question.id"
       :heading="`${idx + 1}. ${question.title}`"
     >
@@ -59,12 +59,14 @@ import { useAxios } from "@/composables/useAxios";
 import { onMounted, ref, reactive, nextTick } from "vue";
 
 const url = "http://localhost:5000";
+
 const { data, isLoading, error, isFinished } = useAxios(`${url}/survey/1`);
 
 function submit() {
-  processRequest("response", "post", data.value).then((res) => {
-    console.log(res.data);
-  });
+  console.log(data.value);
+  // processRequest("response", "post", data.value)?.then((res) => {
+  //   console.log(res.data);
+  // });
 }
 </script>
 

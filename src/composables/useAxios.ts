@@ -3,7 +3,7 @@ import type { Ref } from "vue";
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
 export const useAxios = (url: string, config: AxiosRequestConfig = {}) => {
-  const data = ref(null);
+  const data: Ref<any | null | undefined> = ref(null);
   const response: Ref<AxiosResponse | null> = ref(null);
   const isLoading = ref(false);
   const isFinished = ref(false);
