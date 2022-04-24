@@ -1,125 +1,102 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
-</script>
-
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <FNavbar @toggleSidebar="toggleSidebar" filled />
+  <FSidebar ref="sidebar" :isVisible="isSideBarVisible" filled />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <!-- Make this a component later-->
+  <RouterView v-slot="{ Component }">
+    <div class="current-view">
+      <Transition name="fade" mode="out-in">
+        <component :is="Component"> </component>
+      </Transition>
     </div>
-  </header>
-
-  <RouterView />
+  </RouterView>
 </template>
 
-<style>
-@import "@/assets/base.css";
+<script setup>
+import { RouterView } from "vue-router";
+import { useThemeStore } from "./stores/theme.ts";
+import { onBeforeMount, ref } from "vue";
+import FNavbar from "./components/navbar/FNavbar.vue";
+import FSidebar from "./components/sidebar/FSidebar.vue";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+let body = document.querySelector("body");
+const themeStore = useThemeStore();
+const { setIsDark } = themeStore; // same thing as the above line
+const sidebar = ref(null);
+const isSideBarVisible = ref(false);
 
-  font-weight: normal;
-}
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+onBeforeMount(() => {
+  let storedIsDark = JSON.parse(localStorage.getItem("isDark"));
+  if (storedIsDark) {
+    body.classList.add("dark");
+    setIsDark(storedIsDark);
   }
+});
+
+function toggleSidebar() {
+  isSideBarVisible.value = !isSideBarVisible.value;
 }
 
-nav {
+// changing Body's background color according to isDark in store theme.js
+themeStore.$subscribe((_, state) => {
+  if (state.isDark) {
+    body.classList.add("dark");
+  } else {
+    body.classList.remove("dark");
+  }
+});
+</script>
+
+<style lang="scss">
+@import "@/assets/variables.scss";
+@import "@/assets/base-styling.scss";
+@include base-styling;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+  min-height: 5vh;
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
+  .left {
     display: flex;
-    place-items: center;
+
+    button {
+      margin-right: 6px;
+    }
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
+  .right {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    button {
+      margin-left: 6px;
+    }
   }
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.current-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+  padding: 15px;
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+  min-height: calc(98vh - ($nav-height + (3 * $global-aesthetic-margin)));
+  margin: 0px $global-aesthetic-margin;
+  margin-top: (2 * $global-aesthetic-margin);
+  margin-bottom: (2 * $global-aesthetic-margin);
+  border-radius: 5px;
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: transform 0.075s linear, opacity 0.1s ease-out;
 }
 </style>

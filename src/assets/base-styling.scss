@@ -1,0 +1,140 @@
+@import "@/assets/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@mixin base-styling {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    // ! TESTING, REMOVE IF SHI* GOES SOUTH
+    transition: filter $text-and-bg-trans-time, color $text-and-bg-trans-time,
+      background-color $text-and-bg-trans-time;
+  }
+
+  // Custom Scrollbar
+  * {
+    /* width */
+    &::-webkit-scrollbar {
+      margin: 3px;
+      width: $scroll-width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $scroll-track-color;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $scroll-handle-color;
+      border-radius: $scroll-border-radius;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $scroll-handle-hover-color;
+    }
+
+    &.dark {
+      // Custom Scrollbar
+      /* width */
+      &::-webkit-scrollbar {
+        width: $scroll-width;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: $scroll-track-color-dark;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $scroll-handle-color-dark;
+        border-radius: $scroll-border-radius;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: $scroll-handle-hover-color-dark;
+      }
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: $color-background;
+    color: $text;
+    overflow-x: hidden;
+    // * turn this back on in case of destruction \/
+    // transition: filter $text-and-bg-trans-time, color $text-and-bg-trans-time,
+    //   background-color $text-and-bg-trans-time;
+
+    line-height: 1.6;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    #app {
+      margin: 0 auto;
+      // padding: $global-padding;
+
+      font-weight: normal;
+    }
+
+    ::placeholder {
+      color: $placeholder-text-light;
+    }
+
+    .dark::placeholder {
+      user-select: none;
+      color: $placeholder-text-dark;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Poppins", sans-serif;
+      color: $heading;
+    }
+
+    div,
+    p {
+      font-family: "Roboto", sans-serif;
+      color: $text;
+    }
+
+    &.dark {
+      background: $color-background-dark;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: $heading-dark;
+      }
+
+      div,
+      p {
+        color: $text-dark;
+      }
+    }
+
+    // Globally applied classes
+    .no-select {
+      user-select: none;
+    }
+
+    .selectable {
+      cursor: pointer;
+    }
+  }
+}
