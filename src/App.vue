@@ -1,6 +1,6 @@
 <template>
-  <FNavbar @toggleSidebar="toggleSidebar" filled />
-  <FSidebar ref="sidebar" :isVisible="isSideBarVisible" filled />
+  <FNavbar @toggleSidebar="toggleSidebar" />
+  <!-- <FSidebar ref="sidebar" :isVisible="isSideBarVisible" filled /> -->
 
   <!-- Make this a component later-->
   <RouterView v-slot="{ Component }">
@@ -17,12 +17,12 @@ import { RouterView } from "vue-router";
 import { useThemeStore } from "@/stores/theme";
 import { onBeforeMount, ref } from "vue";
 import FNavbar from "./components/navbar/FNavbar.vue";
-import FSidebar from "./components/sidebar/FSidebar.vue";
+// import FSidebar from "./components/sidebar/FSidebar.vue";
 
 const body: HTMLElement | null = document.querySelector("body");
 const themeStore = useThemeStore();
 const { setIsDark } = themeStore;
-const sidebar = ref(null);
+// const sidebar = ref(null);
 const isSideBarVisible = ref(false);
 
 onBeforeMount(() => {

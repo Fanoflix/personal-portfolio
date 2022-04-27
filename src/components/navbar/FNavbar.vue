@@ -1,27 +1,26 @@
 <template>
   <section :class="navbarClasses">
-    <FButton
-      size="sm"
-      label=">"
-      type="secondary"
-      rounded
-      outlined
-      @click.prevent="toggleSideBar"
-    />
+    <FLink rounded size="md" type="secondary" to="/survey">
+      Fill a survey
+    </FLink>
 
-    <div class="nav-item links">
-      <FLink rounded size="sm" type="primary" to="/"> Home </FLink>
+    <a
+      title="Github"
+      class="nav-item icon pointer"
+      href="https://github.com/Fanoflix"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="@/assets/icons/github.svg" alt="" />
+    </a>
 
-      <FLink rounded size="sm" type="secondary" to="/survey"> Survey </FLink>
-    </div>
-
-    <FButton
-      size="sm"
-      label="Theme"
-      type="secondary"
+    <a
+      title="Toggle Theme"
+      class="nav-item icon pointer"
       @click.prevent="changeTheme"
-      rounded
-    />
+    >
+      <img :src="themeSource" alt="" />
+    </a>
   </section>
 </template>
 
@@ -48,17 +47,24 @@ const props = defineProps({
   },
 });
 
-const emits = defineEmits(["toggleSidebar"]);
+// const emits = defineEmits(["toggleSidebar"]);
 
-function toggleSideBar() {
-  emits("toggleSidebar");
-}
+// function toggleSideBar() {
+//   emits("toggleSidebar");
+// }
 
 const navbarClasses = computed(() => {
   return [
     "navbar",
     { filled: props.filled, rounded: props.rounded, dark: isDark.value },
   ];
+});
+
+const themeSource = computed(() => {
+  console.log(import.meta.url);
+  if (isDark.value)
+    return new URL("../../assets/icons/sun.svg", import.meta.url).href;
+  else return new URL("../../assets/icons/moon.svg", import.meta.url).href;
 });
 </script>
 
@@ -70,10 +76,11 @@ const navbarClasses = computed(() => {
   top: 0;
   margin: 0;
   padding: $global-padding;
-  min-width: 300px;
+  min-width: 280px;
+  padding: 0 $nav-lr-padding;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: $nav-height;
 
@@ -84,46 +91,53 @@ const navbarClasses = computed(() => {
 
   &:not(.filled) {
     background-color: $color-background;
-    border-bottom: 1px solid $white-soft;
+    // border-bottom: 1px solid $white-soft;
   }
 
   &.rounded {
     border-radius: $global-border-radius;
   }
 
-  .nav-item {
+  .icon {
+    height: 18px;
+    width: 18px;
+    margin: $global-aesthetic-margin - 3px;
+
+    :hover {
+      filter: brightness(0.3);
+    }
+  }
+
+  .nav-item:not(.icon) {
     display: flex;
     align-items: center;
+    width: $nav-item-width;
+    margin: $global-aesthetic-margin - 3px;
     justify-content: center;
 
-    .links {
-      margin: $global-aesthetic-margin;
-      align-self: flex-end;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid transparent;
-      // transition: background-color $element-trans-time ease-in;
-      min-width: $nav-item-width;
-      &.router-link-active {
-        border-bottom: 1px solid $black;
-        background-color: $secondary-light;
-        background-color: $white-soft2;
-        color: $black;
-      }
-    }
+    // a {
+    //   &.router-link-active {
+    //     border-bottom: 1px solid $black;
+    //     background-color: $secondary-light;
+    //     background-color: $white-soft2;
+    //     color: $black;
+    //   }
+    // }
   }
 }
 
 .dark.navbar {
-  a {
-    &.router-link-active {
-      border-bottom: 1px solid $primary;
-      background-color: $secondary-dark;
-      color: $primary;
+  // a {
+  //   &.router-link-active {
+  //     border-bottom: 1px solid $primary;
+  //     background-color: $secondary-dark;
+  //     color: $primary;
+  //   }
+  // }
+
+  .icon {
+    :hover {
+      filter: brightness(2);
     }
   }
   &.filled {
@@ -133,7 +147,7 @@ const navbarClasses = computed(() => {
 
   &:not(.filled) {
     background-color: $color-background-dark;
-    border-bottom: 1px solid $black-soft;
+    // border-bottom: 1px solid $black-soft;
   }
 }
 </style>

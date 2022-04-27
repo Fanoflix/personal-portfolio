@@ -54,6 +54,9 @@ const linkClasses = computed(() => {
 <style scoped lang="scss">
 @import "@/assets/variables.scss";
 .flink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 500;
   font-size: 14px;
   padding: 0px 10px;
@@ -64,41 +67,32 @@ const linkClasses = computed(() => {
 
   // ____> SIZES <sm, md, lg>
   &.sm {
-    min-width: 68px;
-    height: 38px;
+    // min-width: 68px;
+    // height: 38px;
 
     padding: 0px 12px;
     font-size: 13px;
     font-weight: 500;
   }
   &.md {
-    min-width: 100px;
-    height: 48px;
+    // min-width: 100px;
+    // height: 48px;
 
     padding: 0px 16px;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 600;
   }
 
   &.lg {
-    min-width: 120px;
-    height: 58px;
+    // min-width: 120px;
+    // height: 58px;
 
     padding: 0px 22px;
-    font-size: 16px;
+    font-size: 17px;
   }
 
-  &.rounded:not(.borderless) {
+  &.rounded {
     border-radius: $global-border-radius;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-
-  &.rounded.borderless {
-    border-radius: $global-border-radius;
-  }
-
-  &.borderless {
-    border: 0px !important;
   }
 
   &.primary {

@@ -4,7 +4,7 @@ $global-border-size: 1px;
 $global-border-radius: 4px;
 $global-aesthetic-margin: 10px;
 
-$global-center-content-width: 520px;
+$global-center-content-width: 610px;
 
 // Global transition variables
 $text-and-bg-trans-time: 0.25s;
@@ -34,7 +34,7 @@ $black: #000000;
 $black-soft: #2b2b2b;
 $black-soft2: #3a3a3a;
 $black-mute: #7b7b7b;
-$background-black: #181818;
+$background-black: #050505;
 
 $placeholder-text-light: #a0a0a0;
 $placeholder-text-dark: #797979;
@@ -75,7 +75,7 @@ $color-border-dark: $color-border-dark-1;
 $color-border-hover-dark: $color-border-dark-2;
 
 $heading-dark: $white;
-$text-dark: $white-soft2;
+$text-dark: #828282;
 $text-mute-dark: $white-mute;
 $label-dark: #4f4f4f;
 
@@ -84,9 +84,10 @@ $label-dark: #4f4f4f;
 /*
   Navigation Panel + Side panel/bar combined styling
 */
-$nav-height: 55px;
+$nav-height: 85px;
 $nav-width: 220px;
 $nav-item-width: 80px;
+$nav-lr-padding: 30px;
 
 $panel-bg-color-light: rgb(227, 227, 227);
 $panel-bg-color-dark: rgb(40, 40, 40);
