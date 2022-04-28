@@ -1,1 +1,1 @@
-<template>Not Found</template>
+<template><div>Not Found</div></template>

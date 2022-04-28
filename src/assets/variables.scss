@@ -7,7 +7,7 @@ $global-aesthetic-margin: 10px;
 $global-center-content-width: 610px;
 
 // Global transition variables
-$text-and-bg-trans-time: 0.25s;
+$text-and-bg-trans-time: 0.15s;
 $element-trans-time: 0.125s;
 
 // ____> Color Palette
@@ -61,7 +61,7 @@ $color-border: $color-border-light-1;
 $color-border-hover: $color-border-light-2;
 
 $heading: $black;
-$text: $black-soft;
+$text: #646464;
 $text-mute: $black-mute;
 $label-light: #9b9b9b;
 
@@ -75,7 +75,7 @@ $color-border-dark: $color-border-dark-1;
 $color-border-hover-dark: $color-border-dark-2;
 
 $heading-dark: $white;
-$text-dark: #828282;
+$text-dark: #919191;
 $text-mute-dark: $white-mute;
 $label-dark: #4f4f4f;
 
@@ -87,7 +87,7 @@ $label-dark: #4f4f4f;
 $nav-height: 85px;
 $nav-width: 220px;
 $nav-item-width: 80px;
-$nav-lr-padding: 30px;
+$nav-x-padding: 40px;
 
 $panel-bg-color-light: rgb(227, 227, 227);
 $panel-bg-color-dark: rgb(40, 40, 40);

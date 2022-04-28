@@ -1,16 +1,12 @@
 <template>
   <section ref="sidebar" class="side-bar" :class="sidebarClasses">
-    <FLink size="sm" type="secondary" to="/buttonShowcase"> Buttons </FLink>
+    <FLink size="md" type="secondary" to="/"> Home </FLink>
 
-    <FLink size="sm" type="secondary" to="/inputShowcase"> Inputs </FLink>
+    <FLink size="md" type="secondary" to="/contact"> Contact </FLink>
   </section>
 </template>
 
 <script setup>
-/*
-  TODO Make Sidebar retractable
-*/
-
 // Imports
 import FLink from "../link/FLink.vue";
 import { storeToRefs } from "pinia";
@@ -60,22 +56,22 @@ const sidebarClasses = computed(() => {
 @import "@/assets/variables.scss";
 .side-bar {
   z-index: $z-top;
-  position: fixed;
-  top: $nav-height;
-  left: 0;
-  bottom: 0;
-  padding: 10px $global-padding;
-
-  transition: transform $element-trans-time;
-  -webkit-transform: translateX(-115%);
-  transform: translateX(-115%);
-
-  min-width: $nav-width;
-  max-width: $nav-width + 20px;
-
   display: flex;
   flex-flow: wrap column;
+  text-align: left;
 
+  margin-right: 80px;
+  margin-top: 84px;
+
+  a {
+    margin-bottom: 20px;
+    transition: text-shadow $text-and-bg-trans-time ease-in;
+
+    &.router-link-active {
+      color: black;
+      text-decoration: underline #9b9b9b solid 1px;
+    }
+  }
   &.visible {
     -webkit-transform: none;
     transform: none;
@@ -88,7 +84,6 @@ const sidebarClasses = computed(() => {
 
   &:not(.filled) {
     background-color: $color-background;
-    border-right: 1px solid $white-soft;
   }
 
   &.rounded {
@@ -97,6 +92,13 @@ const sidebarClasses = computed(() => {
 }
 
 .dark.side-bar {
+  a {
+    &.router-link-active {
+      color: white;
+      text-shadow: 0px 0px 25px white, 0px 0px 15px rgb(182, 182, 182);
+      text-decoration: none;
+    }
+  }
   &.filled {
     background-color: $panel-bg-color-dark;
     border: none;
@@ -104,7 +106,6 @@ const sidebarClasses = computed(() => {
 
   &:not(.filled) {
     background-color: $color-background-dark;
-    border-right: 1px solid $black-soft;
   }
 }
 </style>

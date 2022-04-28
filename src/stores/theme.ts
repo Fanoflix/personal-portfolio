@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 export const useThemeStore = defineStore({
   id: "theme",
   state: () => ({
-    isDark: false,
+    isDark: true,
   }),
   getters: {
     // ! This is not Vuex, you dont need to create a getter for each property. use storeToRefs instead. Only create getters which use one of the states to create a different value, and dont prefix the name of the getters with "get..", there is no need. So the example below is preserved to serve as a reminder (its bad)

@@ -1,25 +1,32 @@
 <template>
   <section :class="navbarClasses">
-    <FLink rounded size="md" type="secondary" to="/survey">
-      Fill a survey
+    <FLink
+      title="Fill a survey to answer some questions in the mind of Fresh graduates regarding some industry practices"
+      rounded
+      class="nav-item"
+      size="md"
+      type="secondary"
+      to="/survey"
+    >
+      Surveys
     </FLink>
 
     <a
       title="Github"
-      class="nav-item icon pointer"
+      class="nav-item no-select icon pointer"
       href="https://github.com/Fanoflix"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="@/assets/icons/github.svg" alt="" />
+      <img src="@/assets/icons/github.svg" alt="Github.com" />
     </a>
 
     <a
       title="Toggle Theme"
-      class="nav-item icon pointer"
-      @click.prevent="changeTheme"
+      class="nav-item no-select icon pointer theme-icon"
+      @click.prevent="toggleTheme"
     >
-      <img :src="themeSource" alt="" />
+      <img :src="themeSource" alt="Toggle theme" />
     </a>
   </section>
 </template>
@@ -53,6 +60,13 @@ const props = defineProps({
 //   emits("toggleSidebar");
 // }
 
+const toggleTheme = (e) => {
+  let targetEle = e.target;
+  targetEle.style.transition = "transform 0.75s ease-out";
+  if (isDark.value) targetEle.style.transform = "rotateZ(360deg)";
+  else targetEle.style.transform = "rotateZ(0deg)";
+  changeTheme();
+};
 const navbarClasses = computed(() => {
   return [
     "navbar",
@@ -77,7 +91,7 @@ const themeSource = computed(() => {
   margin: 0;
   padding: $global-padding;
   min-width: 280px;
-  padding: 0 $nav-lr-padding;
+  padding: 0 $nav-x-padding;
 
   display: flex;
   justify-content: flex-end;
@@ -101,10 +115,14 @@ const themeSource = computed(() => {
   .icon {
     height: 18px;
     width: 18px;
-    margin: $global-aesthetic-margin - 3px;
+    margin: $global-aesthetic-margin;
 
     :hover {
       filter: brightness(0.3);
+    }
+
+    &.theme-icon {
+      transform: rotate(-360deg);
     }
   }
 
@@ -114,27 +132,10 @@ const themeSource = computed(() => {
     width: $nav-item-width;
     margin: $global-aesthetic-margin - 3px;
     justify-content: center;
-
-    // a {
-    //   &.router-link-active {
-    //     border-bottom: 1px solid $black;
-    //     background-color: $secondary-light;
-    //     background-color: $white-soft2;
-    //     color: $black;
-    //   }
-    // }
   }
 }
 
 .dark.navbar {
-  // a {
-  //   &.router-link-active {
-  //     border-bottom: 1px solid $primary;
-  //     background-color: $secondary-dark;
-  //     color: $primary;
-  //   }
-  // }
-
   .icon {
     :hover {
       filter: brightness(2);
@@ -147,7 +148,6 @@ const themeSource = computed(() => {
 
   &:not(.filled) {
     background-color: $color-background-dark;
-    // border-bottom: 1px solid $black-soft;
   }
 }
 </style>

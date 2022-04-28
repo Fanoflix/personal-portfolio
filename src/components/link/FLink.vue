@@ -56,11 +56,15 @@ const linkClasses = computed(() => {
 .flink {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  text-align: right;
+
   font-weight: 500;
   font-size: 14px;
   padding: 0px 10px;
   cursor: pointer;
+  user-select: none;
+
   transition: color $element-trans-time;
   color: $black-mute;
   text-decoration: none;
@@ -80,7 +84,7 @@ const linkClasses = computed(() => {
 
     padding: 0px 16px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   &.lg {

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Muhammad Ammar</h1>
+    <h1 class="name">Muhammad Ammar</h1>
+    <br />
+    <p>Hey, I am Ammar, Software Engineer, currently working at 10Pearls</p>
     <br />
     <p>
       I focus on writing efficient, readable, and well-structured code. My
@@ -30,6 +32,16 @@ import { ref } from "vue";
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 div {
-  width: $global-center-content-width;
+  // width: $global-center-content-width;
+}
+
+.name {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+p {
+  line-height: 1.8;
 }
 </style>

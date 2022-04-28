@@ -1,15 +1,18 @@
 <template>
   <FNavbar @toggleSidebar="toggleSidebar" />
-  <!-- <FSidebar ref="sidebar" :isVisible="isSideBarVisible" filled /> -->
 
-  <!-- Make this a component later-->
-  <RouterView v-slot="{ Component }">
-    <div class="current-view">
-      <Transition name="fade" mode="out-in">
-        <component :is="Component"> </component>
-      </Transition>
-    </div>
-  </RouterView>
+  <div class="main-display">
+    <FSidebar ref="sidebar" :isVisible="true" />
+
+    <!-- Make this a component later-->
+    <RouterView v-slot="{ Component }">
+      <div class="current-view">
+        <Transition name="fade" mode="out-in">
+          <component :is="Component"> </component>
+        </Transition>
+      </div>
+    </RouterView>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +20,7 @@ import { RouterView } from "vue-router";
 import { useThemeStore } from "@/stores/theme";
 import { onBeforeMount, ref } from "vue";
 import FNavbar from "./components/navbar/FNavbar.vue";
-// import FSidebar from "./components/sidebar/FSidebar.vue";
+import FSidebar from "./components/sidebar/FSidebar.vue";
 
 const body: HTMLElement | null = document.querySelector("body");
 const themeStore = useThemeStore();
@@ -26,11 +29,11 @@ const { setIsDark } = themeStore;
 const isSideBarVisible = ref(false);
 
 onBeforeMount(() => {
-  let storedIsDark = JSON.parse(localStorage.getItem("isDark") || "false");
+  let storedIsDark = JSON.parse(localStorage.getItem("isDark") || "true");
   if (storedIsDark) {
     body?.classList.add("dark");
-    setIsDark(storedIsDark);
   }
+  setIsDark(storedIsDark);
 });
 
 function toggleSidebar() {
@@ -74,19 +77,18 @@ themeStore.$subscribe((_, state) => {
   }
 }
 
-.current-view {
+.main-display {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  // justify-content: center;
+  flex-flow: wrap row;
+  justify-content: center;
+  margin: $global-aesthetic-margin + 10px auto;
 
-  padding: 15px;
-
-  min-height: calc(98vh - ($nav-height + (3 * $global-aesthetic-margin)));
-  margin: 0px $global-aesthetic-margin;
-  margin-top: (2 * $global-aesthetic-margin);
-  margin-bottom: (2 * $global-aesthetic-margin);
-  border-radius: 5px;
+  .current-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $global-center-content-width;
+  }
 }
 
 .fade-enter-from,
