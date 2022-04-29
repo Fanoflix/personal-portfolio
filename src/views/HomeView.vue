@@ -1,24 +1,36 @@
 <template>
   <div>
-    <h1 class="name">Muhammad Ammar</h1>
-    <br />
-    <p>Hey, I am Ammar, Software Engineer, currently working at 10Pearls</p>
-    <br />
+    <h1>Muhammad Ammar</h1>
+
     <p>
-      I focus on writing efficient, readable, and well-structured code. My
-      passion lies in creating minimalstic, fluid and smooth user experiences
-      where the user is front and center. I have the skill set for a complete
-      development lifecycle having worked in a professional agile driven
-      environment, from conceptualization, drawing wireframes, drawing designs
-      to development. Creating new standards and bridging gaps in the field of
-      Software Engineering is one of my goals in life.
+      Hello, I am Ammar, a Software Engineer. Currently working at
+      <FInlineLink href="https://10pearls.com/">10Pearls</FInlineLink>.
     </p>
-    <br />
+
     <p>
-      I currently spend most of my free time: 1) Researching Google's Core Web
-      Vitals (CWV). 2) Creating low-cost animations for low-end devices keeping
-      the 'next billion users' in mind. 3) As a fun side quest, I sometimes list
-      down any points of friction I am able to find in a website.
+      My passion lies in writing efficient, readable, and well-structured code.
+      Creating new standards and bridging gaps in the field of Software
+      Engineering is one of my goals in life.
+    </p>
+
+    <p>
+      I currently spend most of my free time researching
+      <FInlineLink href="https://web.dev/vitals/"
+        >Google's Core Web Vitals</FInlineLink
+      >
+      and occasionally digging for points of friction in random websites.
+    </p>
+
+    <p>
+      Besides programming, I enjoy gaming and sketching. I love meeting new
+      people and discussing software engineering practices with just about
+      anyone.
+    </p>
+
+    <p>
+      If you are in Karachi I would love to have a chat about SWE and tech, or
+      we could just code together. Leave a
+      <FInlineLink to="/contact">message</FInlineLink>, let's talk.
     </p>
   </div>
 </template>
@@ -26,6 +38,7 @@
 <script setup lang="ts">
 import FContainer from "../components/container/FContainer.vue";
 import FButton from "../components/button/FButton.vue";
+import FInlineLink from "../components/inlinelink/FInlineLink.vue";
 import { ref } from "vue";
 </script>
 
@@ -35,13 +48,8 @@ div {
   // width: $global-center-content-width;
 }
 
-.name {
-  font-size: 35px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
 p {
   line-height: 1.8;
+  margin: 25px 0;
 }
 </style>

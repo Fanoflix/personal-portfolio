@@ -60,8 +60,8 @@ const sidebarClasses = computed(() => {
   flex-flow: wrap column;
   text-align: left;
 
-  margin-right: 80px;
-  margin-top: 84px;
+  padding-right: 80px;
+  padding-top: 76px;
 
   a {
     margin-bottom: 20px;
@@ -83,7 +83,7 @@ const sidebarClasses = computed(() => {
   }
 
   &:not(.filled) {
-    background-color: $color-background;
+    background-color: transparent;
   }
 
   &.rounded {
@@ -95,7 +95,8 @@ const sidebarClasses = computed(() => {
   a {
     &.router-link-active {
       color: white;
-      text-shadow: 0px 0px 25px white, 0px 0px 15px rgb(182, 182, 182);
+      text-shadow: 10px 0px 20px rgb(219, 219, 219),
+        -10px 0px 20px rgba(255, 255, 255, 0.6);
       text-decoration: none;
     }
   }
@@ -105,7 +106,7 @@ const sidebarClasses = computed(() => {
   }
 
   &:not(.filled) {
-    background-color: $color-background-dark;
+    background-color: transparent;
   }
 }
 </style>

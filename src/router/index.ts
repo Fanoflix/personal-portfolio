@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ContactPage from "../views/ContactPage.vue";
 import NotFound from "../views/NotFound.vue";
 import Survey from "../views/Survey.vue";
 
@@ -15,6 +16,11 @@ const router = createRouter({
       path: "/survey",
       name: "survey",
       component: Survey,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: ContactPage,
     },
     // {
     //   path: "/about",

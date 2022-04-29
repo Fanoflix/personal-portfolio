@@ -1,5 +1,5 @@
 <template>
-  <div class="control" :class="[rootClasses, { dark: isDark }]">
+  <div class="control" :class="[rootClasses, customClasses, { dark: isDark }]">
     <p class="input-label no-select">
       {{ label }} <span v-if="isRequired">*</span>
     </p>
@@ -9,7 +9,7 @@
       :type="validatedType"
       ref="input"
       class="input"
-      :class="[inputClasses, customClasses, passwordRevealIconClass]"
+      :class="[inputClasses, passwordRevealIconClass]"
       v-bind="attrs"
       :placeholder="placeholder"
       :value="computedValue"
@@ -21,7 +21,7 @@
       v-else
       ref="textarea"
       class="textarea"
-      :class="[inputClasses, customClasses]"
+      :class="[inputClasses]"
       v-bind="attrs"
       :placeholder="placeholder"
       :value="computedValue"
@@ -284,11 +284,11 @@ export default {
 .control {
   // base control styling
   transition: color $element-trans-time, background-color $element-trans-time;
-  display: flex;
+  // display: flex;
   flex-flow: nowrap column;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
 
   font-weight: 300;
 

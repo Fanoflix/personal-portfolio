@@ -1,9 +1,9 @@
 <template>
-  <router-link :to="to" :class="linkClasses">
+  <RouterLink :to="to" :class="linkClasses">
     <slot>
       <i class="empty">Link</i>
     </slot>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script setup>
@@ -21,7 +21,7 @@ const props = defineProps({
   to: {
     type: String,
     required: true,
-    default: "",
+    default: "/",
   },
   size: {
     type: String,

@@ -81,24 +81,28 @@ themeStore.$subscribe((_, state) => {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-  margin: $global-aesthetic-margin + 10px auto;
+  margin: $global-aesthetic-margin + 20px auto;
 
   .current-view {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: $global-center-content-width;
   }
 }
 
-.fade-enter-from,
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(10px);
+}
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(4px);
+  transform: translateX(20px) scaleX(0.95);
+  transform-origin: bottom left;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: transform 0.075s linear, opacity 0.1s ease-out;
+  overflow: hidden;
+  transition: transform 0.15s ease, opacity 0.1s ease;
 }
 </style>
