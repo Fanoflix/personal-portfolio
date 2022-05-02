@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>Muhammad Ammar</h1>
+    <div class="name-wrapper">
+      <h1>Muhammad Ammar</h1>
+      <MyLogo />
+    </div>
 
     <p>
       Hello, I am Ammar, a Software Engineer. Currently working at
@@ -39,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+import MyLogo from "@/components/mylogo/MyLogo.vue";
 import FContainer from "../components/container/FContainer.vue";
 import FButton from "../components/button/FButton.vue";
 import FInlineLink from "../components/inlinelink/FInlineLink.vue";
@@ -47,10 +51,12 @@ import { ref } from "vue";
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
-div {
-  // width: $global-center-content-width;
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 87%;
 }
-
 p {
   line-height: 1.8;
   margin: 25px 0;

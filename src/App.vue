@@ -93,6 +93,7 @@ themeStore.$subscribe((_, state) => {
 .fade-enter-from {
   opacity: 0;
   transform: translateX(-1px) skewY(1deg) rotateZ(-1deg);
+  transform-origin: bottom left;
 }
 .fade-leave-to {
   opacity: 0;
@@ -102,7 +103,6 @@ themeStore.$subscribe((_, state) => {
 
 .fade-enter-active,
 .fade-leave-active {
-  // overflow: hidden;
-  transition: transform 0.125s linear, opacity 0.1s linear;
+  transition: transform 125ms linear, opacity 100ms linear;
 }
 </style>

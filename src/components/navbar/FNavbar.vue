@@ -1,8 +1,6 @@
 <template>
   <section :class="navbarClasses">
-    <div class="left">
-      <MyLogo />
-    </div>
+    <div class="left"></div>
 
     <div class="right">
       <FLink
@@ -40,7 +38,6 @@
 <script setup lang="ts">
 import FLink from "../link/FLink.vue";
 import FButton from "../button/FButton.vue";
-import MyLogo from "@/components/mylogo/MyLogo.vue";
 import { useThemeStore } from "@/stores/theme";
 import { computed, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
@@ -60,14 +57,6 @@ const props = defineProps({
     default: false,
   },
 });
-
-onMounted(() => {
-  morphLogoForward();
-});
-
-// onUnmounted(() => {
-//   morphLogoForward();
-// });
 
 const toggleTheme = (e) => {
   let targetEle = e.target;
