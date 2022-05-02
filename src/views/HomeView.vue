@@ -15,9 +15,7 @@
 
     <p>
       I currently spend most of my free time researching
-      <FInlineLink href="https://web.dev/vitals/"
-        >Google's Core Web Vitals</FInlineLink
-      >
+      <FInlineLink href="https://web.dev/vitals/">Core Web Vitals</FInlineLink>
       and occasionally digging for points of friction in random websites.
     </p>
 
@@ -31,6 +29,11 @@
       If you are in Karachi I would love to have a chat about SWE and tech, or
       we could just code together. Leave a
       <FInlineLink to="/contact">message</FInlineLink>, let's talk.
+    </p>
+
+    <p>
+      If you have some time to spare, please consider checking out this survey
+      on <FInlineLink to="/survey">code review practices.</FInlineLink>
     </p>
   </div>
 </template>

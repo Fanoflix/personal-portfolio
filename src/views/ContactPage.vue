@@ -3,8 +3,10 @@
     <h1>Leave a message</h1>
     <br />
     <form>
-      <FInput customClasses="field" label="Name" size="sm" />
+      <FInput customClasses="field" label="Name" size="sm" ref="firstInput" />
+
       <FInput customClasses="field" label="Email" size="sm" />
+
       <FInput
         customClasses="field"
         type="textarea"
@@ -12,6 +14,7 @@
         label="Message"
         size="sm"
       />
+
       <FButton
         size="sm"
         customClasses="submit-btn"
@@ -27,6 +30,12 @@
 <script setup lang="ts">
 import FInput from "../components/input/FInput.vue";
 import FButton from "../components/button/FButton.vue";
+import { onMounted, ref } from "vue";
+
+const firstInput = ref(null);
+onMounted(() => {
+  firstInput.value?.input.focus();
+});
 </script>
 
 <style lang="scss">
@@ -34,7 +43,7 @@ import FButton from "../components/button/FButton.vue";
   .field,
   .submit-btn {
     margin: 15px 0;
-    width: 85%;
+    width: 80%;
   }
 
   .field:first-child {

@@ -2,7 +2,6 @@
   <RouterLink
     v-if="to"
     :to="to"
-    :href="href"
     class="inline-link"
     :class="[{ dark: isDark }]"
   >

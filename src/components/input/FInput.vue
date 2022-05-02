@@ -338,7 +338,7 @@ export default {
     }
 
     &:focus {
-      outline: 1px solid rgb(0, 0, 0);
+      border: 1px solid rgb(110, 110, 110);
     }
 
     // bordered, success, error
@@ -458,7 +458,7 @@ export default {
       color: $white;
 
       &:focus {
-        outline: 1px solid $white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
       }
 
       &.bordered {

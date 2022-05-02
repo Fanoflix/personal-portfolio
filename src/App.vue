@@ -92,17 +92,17 @@ themeStore.$subscribe((_, state) => {
 
 .fade-enter-from {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateX(-1px) skewY(1deg) rotateZ(-1deg);
 }
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(20px) scaleX(0.95);
+  transform: translateX(1px) skewY(-1deg) rotateZ(1deg);
   transform-origin: bottom left;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  overflow: hidden;
-  transition: transform 0.15s ease, opacity 0.1s ease;
+  // overflow: hidden;
+  transition: transform 0.125s linear, opacity 0.1s linear;
 }
 </style>

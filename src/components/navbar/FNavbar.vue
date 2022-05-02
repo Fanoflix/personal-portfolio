@@ -1,41 +1,48 @@
 <template>
   <section :class="navbarClasses">
-    <FLink
-      title="Fill a survey to answer some questions in the mind of Fresh graduates regarding some industry practices"
-      rounded
-      class="nav-item"
-      size="md"
-      type="secondary"
-      to="/survey"
-    >
-      Surveys
-    </FLink>
+    <div class="left">
+      <MyLogo />
+    </div>
 
-    <a
-      title="Github"
-      class="nav-item no-select icon pointer"
-      href="https://github.com/Fanoflix"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="@/assets/icons/github.svg" alt="Github.com" />
-    </a>
+    <div class="right">
+      <FLink
+        title="Fill a survey to answer some questions in the mind of Fresh graduates regarding some industry practices"
+        rounded
+        class="nav-item"
+        size="md"
+        type="secondary"
+        to="/survey"
+      >
+        Surveys
+      </FLink>
 
-    <a
-      title="Toggle Theme"
-      class="nav-item no-select icon pointer theme-icon"
-      @click.prevent="toggleTheme"
-    >
-      <img :src="themeSource" alt="Toggle theme" />
-    </a>
+      <a
+        title="Github"
+        class="nav-item no-select icon pointer"
+        href="https://github.com/Fanoflix"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="@/assets/icons/github.svg" alt="Github.com" />
+      </a>
+
+      <a
+        title="Toggle Theme"
+        class="nav-item no-select icon pointer theme-icon"
+        @click.prevent="toggleTheme"
+      >
+        <img :src="themeIconSource" alt="Toggle theme" />
+      </a>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import FLink from "../link/FLink.vue";
 import FButton from "../button/FButton.vue";
+import MyLogo from "@/components/mylogo/MyLogo.vue";
 import { useThemeStore } from "@/stores/theme";
-import { computed } from "vue";
+import { computed, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
 
 const themeStore = useThemeStore();
@@ -54,15 +61,17 @@ const props = defineProps({
   },
 });
 
-// const emits = defineEmits(["toggleSidebar"]);
+onMounted(() => {
+  morphLogoForward();
+});
 
-// function toggleSideBar() {
-//   emits("toggleSidebar");
-// }
+// onUnmounted(() => {
+//   morphLogoForward();
+// });
 
 const toggleTheme = (e) => {
   let targetEle = e.target;
-  targetEle.style.transition = "transform 0.75s ease-out";
+  targetEle.style.transition = "transform 0.3s ease-in-out";
   if (isDark.value) targetEle.style.transform = "rotateZ(360deg)";
   else targetEle.style.transform = "rotateZ(0deg)";
   changeTheme();
@@ -74,7 +83,7 @@ const navbarClasses = computed(() => {
   ];
 });
 
-const themeSource = computed(() => {
+const themeIconSource = computed(() => {
   console.log(import.meta.url);
   if (isDark.value)
     return new URL("../../assets/icons/sun.svg", import.meta.url).href;
@@ -94,7 +103,7 @@ const themeSource = computed(() => {
   padding: 0 $nav-x-padding;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: $nav-height;
 
@@ -105,11 +114,22 @@ const themeSource = computed(() => {
 
   &:not(.filled) {
     background-color: $color-background;
-    // border-bottom: 1px solid $white-soft;
   }
 
   &.rounded {
     border-radius: $global-border-radius;
+  }
+
+  .left,
+  .right {
+    display: flex;
+  }
+
+  .left {
+    #logo {
+      height: 50px;
+      width: 120px;
+    }
   }
 
   .icon {

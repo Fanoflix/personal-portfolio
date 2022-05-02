@@ -69,7 +69,7 @@ const sidebarClasses = computed(() => {
 
     &.router-link-active {
       color: black;
-      text-decoration: underline #9b9b9b solid 1px;
+      text-decoration: underline 1px solid black;
     }
   }
   &.visible {
