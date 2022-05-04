@@ -55,7 +55,7 @@ import { ref } from "vue";
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 87%;
+  width: 100%;
 }
 p {
   line-height: 1.8;

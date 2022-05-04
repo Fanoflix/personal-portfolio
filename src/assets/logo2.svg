@@ -2,13 +2,19 @@
   <defs>
     <style>
       .cls-1 {
+        fill: #999;
+      }
+
+      .cls-2 {
         fill: #fff;
       }
     </style>
   </defs>
-  <polygon id="left_top_spike" class="cls-1" points="13.2 110.8 41.1 51.1 0 113.5 27.9 140 28.1 128.1 13.2 110.8"/>
-  <polygon id="right_bot_spike" class="cls-1" points="82 185.3 108 162.9 104 158.7 82 185.3"/>
-  <polygon id="left_bot_spike" class="cls-1" points="75.7 185.3 55.6 159.4 51.7 162.5 75.7 185.3"/>
-  <path id="base" class="cls-1" d="M133.1,133.2l-13,14.2,6.9-18.3L80,2.4l-5.9,18s-7.9,16.7,3.5,6.3c4.7-4.4,2.3-5.2,1.8-9.6,11.6,14.3-3.2,21-3.2,21C67.6,41.9,62,46.3,50.7,78.6l-19.3,52h0l-.3,11.9,23.8,22.5,3.9-3.2L48.1,147.9l13.3-43.4,30.3-5.3L70,92.6,64.5,96,77.9,51.9l36.7,100.2-7.3,8.9,3.9,4.3,27.5-23.7Z" transform="translate(-3.2 -2.4)"/>
-  <polygon id="right_top_spike" class="cls-1" points="93.9 15.4 140.8 118.8 129.8 130.8 135.5 139.3 153.6 123.7 93.9 15.4"/>
+  <polygon id="ripple_right" class="cls-1" points="153.6 123.7 93.9 15.4 140.8 118.8 82 185.3"/>
+  <polygon id="ripple_left" data-name="ripple left" class="cls-1" points="13.2 110.8 41.1 51.1 0 113.5 75.7 185.3"/>
+  <polygon id="left_top_spike" data-name="left top spike" class="cls-2" points="13.2 110.8 41.1 51.1 0 113.5 27.9 140 28.1 128.1 13.2 110.8"/>
+  <polygon id="right_bot_spike" data-name="right bot spike" class="cls-2" points="82 185.3 108 162.9 104 158.7 82 185.3"/>
+  <polygon id="left_bot_spike" data-name="left bot spike" class="cls-2" points="75.7 185.3 55.6 159.4 51.7 162.5 75.7 185.3"/>
+  <path id="base" class="cls-2" d="M129.9,130.8l-13,14.2,6.9-18.3L76.8,0,70.9,18S63,34.7,74.4,24.3c4.7-4.4,2.3-5.2,1.8-9.6C87.8,29,73,35.7,73,35.7c-8.6,3.8-14.2,8.2-25.5,40.5l-19.3,52h0l-.3,11.9,23.8,22.5,3.9-3.2L44.9,145.5l13.3-43.4,30.3-5.3L66.8,90.2l-5.5,3.4L74.7,49.5l36.7,100.2-7.3,8.9,3.9,4.3,27.5-23.7Z"/>
+  <polygon id="right_top_spike" data-name="right top spike" class="cls-2" points="93.9 15.4 140.8 118.8 129.8 130.8 135.5 139.3 153.6 123.7 93.9 15.4"/>
 </svg>

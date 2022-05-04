@@ -1,6 +1,17 @@
 <template>
   <div id="logo" title="Play again">
-    <svg id="base" :class="{ dark: isDark }" viewBox="0 0 314.4 187.2">
+    <svg id="base" :class="{ dark: isDark }" viewBox="0 0 300 180">
+      <polygon
+        id="ripple_right"
+        class="cls-2"
+        points="153.6 123.7 93.9 15.4 140.8 118.8 82 185.3"
+      />
+      <polygon
+        id="ripple_left"
+        data-name="ripple left"
+        class="cls-2"
+        points="13.2 110.8 41.1 51.1 0 113.5 75.7 185.3"
+      />
       <polygon
         id="left_top_spike"
         class="cls-1"
@@ -54,9 +65,9 @@ const rightTopSpikeFinal =
 const rightBotSpikeInitial = "106.3 161.1 108 162.9 104 158.7 106.3 161.1";
 const rightBotSpikeFinal = "82 185.3 108 162.9 104 158.7 82 185.3";
 
-const easing = "easeInBack";
-const logoAnimDuration = 150;
-const logoLoop = true;
+const easing = "easeInOutBack";
+const logoAnimDuration = 350;
+const logoLoop = false;
 const delay = 250;
 
 const spikeLTopTimeline = anime.timeline({
@@ -86,32 +97,62 @@ onMounted(() => {
 function morphLogoForward() {
   base.add({
     targets: "#base",
-    translateX: [-15, 0],
+    translateY: [1, -7, 0],
     opacity: [0, 1],
-    scaleX: [0.4, 1],
-    scaleY: [0, 1],
+    scaleY: [0, 0, 0, 0, 0, 1.5, 1.9, 1.9, 1.5, 1.5, 1],
 
-    duration: 200,
+    duration: 300,
     easing: "easeOutExpo",
+    delay: 50,
   });
 
-  spikeRTopTimeLine.add({
-    targets: "#right_top_spike",
-    points: [rightTopSpikeInitial, rightTopSpikeFinal],
-    duration: logoAnimDuration,
-    loop: logoLoop,
-  });
+  // Top + Ripple
+  const rippleDuration = 850;
+  const rippleEasing = "easeInOutExpo";
+  const rippleDistance = 80;
+  const rippleOffsetDelay = -280;
+
+  spikeRTopTimeLine
+    .add({
+      targets: "#right_top_spike",
+      points: [rightTopSpikeInitial, rightTopSpikeFinal],
+      duration: logoAnimDuration,
+      loop: logoLoop,
+    })
+    .add(
+      {
+        targets: "#ripple_left",
+        translateX: [0, -rippleDistance, 0],
+        opacity: [0, 1, 0, 0, 0],
+        duration: rippleDuration,
+        easing: rippleEasing,
+      },
+      rippleOffsetDelay
+    );
+
+  spikeLTopTimeline
+    .add({
+      targets: "#left_top_spike",
+      points: [leftTopSpikeInitial, leftTopSpikeFinal],
+      duration: logoAnimDuration,
+      loop: logoLoop,
+    })
+    .add(
+      {
+        targets: "#ripple_right",
+        translateX: [0, rippleDistance, 0],
+        opacity: [0, 1, 0, 0, 0],
+        duration: rippleDuration,
+        easing: rippleEasing,
+      },
+      rippleOffsetDelay
+    );
+
+  // Bot
 
   spikeRBotTimeLine.add({
     targets: "#right_bot_spike",
     points: [rightBotSpikeInitial, rightBotSpikeFinal],
-    duration: logoAnimDuration,
-    loop: logoLoop,
-  });
-
-  spikeLTopTimeline.add({
-    targets: "#left_top_spike",
-    points: [leftTopSpikeInitial, leftTopSpikeFinal],
     duration: logoAnimDuration,
     loop: logoLoop,
   });
@@ -128,14 +169,31 @@ function morphLogoForward() {
 <style scoped lang="scss">
 #logo {
   width: 100px;
+  z-index: 100;
+  overflow: visible;
+
+  margin: auto;
 }
+
+svg {
+  overflow: visible;
+}
+
 .cls-1 {
   fill: black;
 }
 
+.cls-2 {
+  fill: black;
+}
 .dark {
   .cls-1 {
     fill: #fff;
+    filter: drop-shadow(0px 0px 60px rgba(255, 255, 255, 0.7));
+  }
+
+  .cls-2 {
+    fill: white;
   }
 }
 </style>
