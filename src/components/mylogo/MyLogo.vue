@@ -72,14 +72,14 @@ const logoLoop = false;
 const delay = 150;
 
 const rippleDuration = 550;
-const rippleEasing = "easeInExpo";
+const rippleEasing = "easeOutExpo";
 const rippleDistance = 60;
-const rippleOffsetDelay = -350;
+const rippleOffsetDelay = 0;
 const rippleOpacity = [1, 0.3];
 
 const rippleBackDuration = rippleDuration / 2;
 const rippleBackEasing = "easeInOutBack";
-const rippleBackOffset = 350;
+const rippleBackOffset = 450;
 const rippleBackOpacity = [0.3, 1];
 
 const spikeLTopTimeline = anime.timeline({

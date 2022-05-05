@@ -1,6 +1,7 @@
 <template>
   <div
     class="tooltip-wrapper"
+    :class="{ dark: isDark }"
     @mouseover="showTooltip"
     @mouseleave="hideTooltip"
   >
@@ -46,16 +47,17 @@ function hideTooltip() {
 
   .tooltip {
     position: absolute;
-    top: 200%;
+    top: 50%;
     left: 50%;
-
+    transform: translate(-70%, 100%);
     display: flex;
 
+    line-height: 1.2;
     padding: $global-padding - 3px;
 
-    // transform: translate(-50%, -50%);
-    background-color: rgb(20, 20, 20);
-    border: 1px solid rgb(69, 69, 69);
+    background-color: rgb(206, 206, 206);
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
     z-index: 1;
 
     font-size: 12px;
@@ -63,14 +65,18 @@ function hideTooltip() {
 
   .tooltipFade-enter-active,
   .tooltipFade-leave-active {
-    // opacity: 1;
-    // transform: translateX(5px);
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
   }
 
   .tooltipFade-enter-from,
   .tooltipFade-leave-to {
     opacity: 0;
+  }
+}
+
+.tooltip-wrapper.dark {
+  .tooltip {
+    background-color: rgb(30, 30, 30);
   }
 }
 </style>
