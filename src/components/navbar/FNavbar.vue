@@ -4,9 +4,8 @@
 
     <div class="right">
       <FLink
-        title="Fill a survey to answer some questions in the mind of Fresh graduates regarding some industry practices"
+        class="nav-item no-select pointer"
         rounded
-        class="nav-item"
         size="md"
         type="secondary"
         to="/survey"
@@ -14,30 +13,64 @@
         Surveys
       </FLink>
 
-      <a
-        title="Github"
+      <FToolTip
         class="nav-item no-select icon pointer"
-        href="https://github.com/Fanoflix"
-        target="_blank"
-        rel="noopener noreferrer"
+        title="Github"
+        placement="bottom"
       >
-        <img src="@/assets/icons/github.svg" alt="Github.com" />
-      </a>
+        <a
+          href="https://github.com/Fanoflix"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="@/assets/icons/github.svg" alt="Github.com" />
+        </a>
+      </FToolTip>
 
-      <a
-        title="Toggle Theme"
-        class="nav-item no-select icon pointer theme-icon"
-        @click.prevent="toggleTheme"
+      <FToolTip
+        class="nav-item no-select icon pointer"
+        title="LinkedIn"
+        placement="bottom"
       >
-        <img :src="themeIconSource" alt="Toggle theme" />
-      </a>
+        <a
+          href="https://www.linkedin.com/in/muhammad-ammar-nasir-9b2193207/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="@/assets/icons/linkedin.svg" alt="linkedin.com" />
+        </a>
+      </FToolTip>
+
+      <FToolTip
+        class="nav-item no-select icon pointer"
+        title="Stackoverflow"
+        placement="bottom"
+      >
+        <a
+          href="https://stackoverflow.com/users/16470281/muhammad-ammar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="@/assets/icons/stackoverflow.svg" alt="stackoverflow.com" />
+        </a>
+      </FToolTip>
+
+      <FToolTip
+        class="nav-item no-select icon pointer theme-icon"
+        title="Toggle Theme"
+        placement="bottom"
+      >
+        <a @click.prevent="toggleTheme">
+          <img :src="themeIconSource" alt="Toggle theme" />
+        </a>
+      </FToolTip>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import FLink from "../link/FLink.vue";
-import FButton from "../button/FButton.vue";
+import FToolTip from "@/components/tooltip/FToolTip.vue";
 import { useThemeStore } from "@/stores/theme";
 import { computed, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
@@ -60,7 +93,7 @@ const props = defineProps({
 
 const toggleTheme = (e) => {
   let targetEle = e.target;
-  targetEle.style.transition = "transform 0.3s ease-in-out";
+  targetEle.style.transition = "transform 0.4s ease-in-out";
   if (isDark.value) targetEle.style.transform = "rotateZ(360deg)";
   else targetEle.style.transform = "rotateZ(0deg)";
   changeTheme();
@@ -122,12 +155,12 @@ const themeIconSource = computed(() => {
   }
 
   .icon {
-    height: 18px;
-    width: 18px;
+    height: 17px;
+    width: 17px;
     margin: $global-aesthetic-margin;
 
     :hover {
-      filter: brightness(0.3);
+      filter: brightness(0.2);
     }
 
     &.theme-icon {

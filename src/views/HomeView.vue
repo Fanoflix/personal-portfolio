@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-once>
     <div class="name-wrapper">
       <h1>Muhammad Ammar</h1>
       <MyLogo />
@@ -35,18 +35,23 @@
     </p>
 
     <p>
-      If you have some time to spare, please consider checking out this survey
-      on <FInlineLink to="/survey">code review practices.</FInlineLink>
+      If you have some time to spare, please consider checking out this
+      <FInlineLink to="/survey">survey on code review practices.</FInlineLink>
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
 import MyLogo from "@/components/mylogo/MyLogo.vue";
-import FContainer from "../components/container/FContainer.vue";
-import FButton from "../components/button/FButton.vue";
-import FInlineLink from "../components/inlinelink/FInlineLink.vue";
-import { ref } from "vue";
+import FInlineLink from "@/components/inlinelink/FInlineLink.vue";
+// import FContainer from "@/components/container/FContainer.vue";
+// import FButton from "@/components/button/FButton.vue";
+</script>
+
+<script lang="ts">
+export default {
+  name: "HomeView",
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,15 +1,15 @@
 <template>
-  <div id="logo" title="Play again">
+  <div id="logo">
     <svg id="base" :class="{ dark: isDark }" viewBox="0 0 300 180">
       <polygon
         id="ripple_right"
-        class="cls-2"
+        class="ripple"
         points="153.6 123.7 93.9 15.4 140.8 118.8 82 185.3"
       />
       <polygon
         id="ripple_left"
         data-name="ripple left"
-        class="cls-2"
+        class="ripple"
         points="13.2 110.8 41.1 51.1 0 113.5 75.7 185.3"
       />
       <polygon
@@ -28,6 +28,7 @@
         points="53.8 160.8 55.6 159.4 51.7 162.5 53.8 160.8"
       />
       <path
+        id="center_piece"
         class="cls-1"
         d="M133.1,133.2l-13,14.2,6.9-18.3L80,2.4l-5.9,18s-7.9,16.7,3.5,6.3c4.7-4.4,2.3-5.2,1.8-9.6,11.6,14.3-3.2,21-3.2,21C67.6,41.9,62,46.3,50.7,78.6l-19.3,52h0l-.3,11.9,23.8,22.5,3.9-3.2L48.1,147.9l13.3-43.4,30.3-5.3L70,92.6,64.5,96,77.9,51.9l36.7,100.2-7.3,8.9,3.9,4.3,27.5-23.7Z"
         transform="translate(-3.2 -2.4)"
@@ -65,10 +66,21 @@ const rightTopSpikeFinal =
 const rightBotSpikeInitial = "106.3 161.1 108 162.9 104 158.7 106.3 161.1";
 const rightBotSpikeFinal = "82 185.3 108 162.9 104 158.7 82 185.3";
 
-const easing = "easeInOutBack";
-const logoAnimDuration = 350;
+const easing = "easeOutInBack";
+const logoAnimDuration = 650;
 const logoLoop = false;
-const delay = 250;
+const delay = 150;
+
+const rippleDuration = 550;
+const rippleEasing = "easeInExpo";
+const rippleDistance = 60;
+const rippleOffsetDelay = -350;
+const rippleOpacity = [1, 0.3];
+
+const rippleBackDuration = rippleDuration / 2;
+const rippleBackEasing = "easeInOutBack";
+const rippleBackOffset = 350;
+const rippleBackOpacity = [0.3, 1];
 
 const spikeLTopTimeline = anime.timeline({
   easing: easing,
@@ -99,18 +111,14 @@ function morphLogoForward() {
     targets: "#base",
     translateY: [1, -7, 0],
     opacity: [0, 1],
-    scaleY: [0, 0, 0, 0, 0, 1.5, 1.9, 1.9, 1.5, 1.5, 1],
+    scaleY: [0, 3, 1],
 
-    duration: 300,
-    easing: "easeOutExpo",
+    duration: 250,
+    easing: "easeInSine",
     delay: 50,
   });
 
   // Top + Ripple
-  const rippleDuration = 850;
-  const rippleEasing = "easeInOutExpo";
-  const rippleDistance = 80;
-  const rippleOffsetDelay = -280;
 
   spikeRTopTimeLine
     .add({
@@ -122,12 +130,26 @@ function morphLogoForward() {
     .add(
       {
         targets: "#ripple_left",
-        translateX: [0, -rippleDistance, 0],
-        opacity: [0, 1, 0, 0, 0],
+        translateX: [0, -rippleDistance],
+        blur: [0, 25],
+
+        opacity: rippleOpacity,
         duration: rippleDuration,
         easing: rippleEasing,
       },
       rippleOffsetDelay
+    )
+    .add(
+      {
+        targets: "#ripple_left",
+        translateX: [-rippleDistance, 0],
+        blur: "25px",
+
+        opacity: rippleBackOpacity,
+        duration: rippleBackDuration,
+        easing: rippleBackEasing,
+      },
+      rippleBackOffset
     );
 
   spikeLTopTimeline
@@ -140,12 +162,24 @@ function morphLogoForward() {
     .add(
       {
         targets: "#ripple_right",
-        translateX: [0, rippleDistance, 0],
-        opacity: [0, 1, 0, 0, 0],
+        translateX: [0, rippleDistance],
+
+        opacity: rippleOpacity,
         duration: rippleDuration,
         easing: rippleEasing,
       },
       rippleOffsetDelay
+    )
+    .add(
+      {
+        targets: "#ripple_right",
+        translateX: [rippleDistance, 0],
+
+        opacity: rippleBackOpacity,
+        duration: rippleBackDuration,
+        easing: rippleBackEasing,
+      },
+      rippleBackOffset
     );
 
   // Bot
@@ -183,17 +217,20 @@ svg {
   fill: black;
 }
 
-.cls-2 {
-  fill: black;
+.ripple {
+  fill: rgb(107, 107, 107);
 }
 .dark {
   .cls-1 {
     fill: #fff;
-    filter: drop-shadow(0px 0px 60px rgba(255, 255, 255, 0.7));
   }
 
-  .cls-2 {
-    fill: white;
+  #center_piece {
+    filter: drop-shadow(0px 0px 35px rgba(255, 255, 255, 0.5));
+  }
+
+  .ripple {
+    fill: rgb(142, 142, 142);
   }
 }
 </style>

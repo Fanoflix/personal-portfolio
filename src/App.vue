@@ -8,7 +8,9 @@
     <RouterView v-slot="{ Component }">
       <div class="current-view">
         <Transition name="fade" mode="out-in">
-          <component :is="Component"> </component>
+          <KeepAlive exclude="HomeView">
+            <component :is="Component"> </component>
+          </KeepAlive>
         </Transition>
       </div>
     </RouterView>
