@@ -1,4 +1,4 @@
-// ____> Global attributes
+// !____> Global attributes
 $global-padding: 8px;
 $global-border-size: 1px;
 $global-border-radius: 4px;
@@ -6,11 +6,11 @@ $global-aesthetic-margin: 10px;
 
 $global-center-content-width: 510px;
 
-// Global transition variables
+// *Global transition variables
 $text-and-bg-trans-time: 0.15s;
 $element-trans-time: 0.125s;
 
-// ____> Color Palette
+//! ____> Color Palette
 $gray: #fafafa;
 $primary: #42b883;
 $primary-2: #003806;
@@ -25,14 +25,14 @@ $success-dark: #61c998;
 $error: #c0304f;
 
 $white: #ffffff;
-$white-soft: rgb(240, 240, 240);
+$white-soft: rgb(230, 230, 230);
 $white-soft2: #bbbbbb;
-$white-mute: #878787;
+$white-mute: #747474;
 $background-white: white;
 
 $black: #000000;
 $black-soft: rgb(18, 18, 18);
-$black-soft2: #3a3a3a;
+$black-soft2: #252525;
 $black-mute: #929292;
 $background-black: #050505;
 
@@ -47,14 +47,14 @@ $color-border-light-2: #545454;
 $color-border-dark-1: #505050;
 $color-border-dark-2: #858585;
 
-// ____> Semantic color variables for use in components
+// !____> Semantic color variables for use in components
 
 // light theme
 $color-background: $background-white;
 $color-background-soft: $white-soft;
 $color-background-mute: $white-mute;
 $card-bg-color-light: #f5f5f5;
-$card-bg-color-dark: #252525;
+$card-bg-color-dark: rgb(25, 25, 25);
 
 $color-border-important: $important;
 $color-border: $color-border-light-1;
@@ -79,10 +79,10 @@ $text-dark: #757575;
 $text-mute-dark: $white-mute;
 $label-dark: #6f6f6f;
 
-// _____> Components Specific
+// !_____> Components Specific
 
 /*
-  Navigation Panel + Side panel/bar combined styling
+  *Navigation Panel + Side panel/bar combined styling
 */
 $nav-height: 85px;
 $nav-width: 220px;
@@ -93,7 +93,7 @@ $panel-bg-color-light: rgb(227, 227, 227);
 $panel-bg-color-dark: rgb(40, 40, 40);
 
 /* 
-  Scrollbar
+  *Scrollbar
 */
 $scroll-width: 10px;
 $scroll-border-radius: 6px;
@@ -109,7 +109,7 @@ $scroll-handle-hover-color-dark: $white;
 $scroll-track-color-dark: $color-background-dark;
 
 /*
-  Inputs
+  *Inputs
 */
 $input-error-shadow: inset 0px 0px 25px -15px $error;
 
@@ -121,7 +121,7 @@ $input-success-border-dark: #6abe97;
 $input-success-shadow-dark: inset 0px 0px 35px -25px $success-dark;
 
 /*
-  Container
+  *Container
 */
 $container-default-padding: 12px;
 // light

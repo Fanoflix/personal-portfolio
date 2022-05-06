@@ -2,7 +2,7 @@
   <div v-once>
     <div class="name-wrapper">
       <h1>Muhammad Ammar</h1>
-      <MyLogo />
+      <MyLogo class="logo-wrapper" />
     </div>
 
     <p>
@@ -61,9 +61,13 @@ export default {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  .logo-wrapper {
+    height: 70px;
+  }
 }
 p {
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 25px 0;
 }
 </style>

@@ -171,7 +171,7 @@ export default {
 
 .dark.radio-control {
   &:hover:not(.checked) {
-    background-color: $black-soft;
+    background-color: $black-soft2;
   }
 
   input[type="radio"]::after {

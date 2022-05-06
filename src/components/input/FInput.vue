@@ -454,7 +454,7 @@ export default {
     }
     .input,
     .textarea {
-      background-color: $black-soft;
+      background-color: $black-soft2;
       color: $white;
 
       &:focus {

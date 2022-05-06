@@ -75,12 +75,12 @@ const rippleDuration = 550;
 const rippleEasing = "easeOutExpo";
 const rippleDistance = 60;
 const rippleOffsetDelay = 0;
-const rippleOpacity = [1, 0.3];
+const rippleOpacity = [1, 0.25];
 
 const rippleBackDuration = rippleDuration / 2;
 const rippleBackEasing = "easeInOutBack";
 const rippleBackOffset = 450;
-const rippleBackOpacity = [0.3, 1];
+const rippleBackOpacity = [0.25, 1];
 
 const spikeLTopTimeline = anime.timeline({
   easing: easing,
@@ -131,7 +131,6 @@ function morphLogoForward() {
       {
         targets: "#ripple_left",
         translateX: [0, -rippleDistance],
-        blur: [0, 25],
 
         opacity: rippleOpacity,
         duration: rippleDuration,
@@ -143,7 +142,6 @@ function morphLogoForward() {
       {
         targets: "#ripple_left",
         translateX: [-rippleDistance, 0],
-        blur: "25px",
 
         opacity: rippleBackOpacity,
         duration: rippleBackDuration,
@@ -183,7 +181,6 @@ function morphLogoForward() {
     );
 
   // Bot
-
   spikeRBotTimeLine.add({
     targets: "#right_bot_spike",
     points: [rightBotSpikeInitial, rightBotSpikeFinal],

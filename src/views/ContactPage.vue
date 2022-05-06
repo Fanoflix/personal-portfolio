@@ -30,10 +30,14 @@
 <script setup lang="ts">
 import FInput from "../components/input/FInput.vue";
 import FButton from "../components/button/FButton.vue";
-import { onMounted, ref } from "vue";
+import { onActivated, onMounted, ref } from "vue";
 
 const firstInput = ref(null);
 onMounted(() => {
+  firstInput.value?.input.focus();
+});
+
+onActivated(() => {
   firstInput.value?.input.focus();
 });
 </script>

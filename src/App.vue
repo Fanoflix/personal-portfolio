@@ -57,8 +57,6 @@ themeStore.$subscribe((_, state) => {
 @import "@/assets/base-styling.scss";
 @include base-styling;
 
-
-
 .nav {
   display: flex;
   justify-content: space-between;

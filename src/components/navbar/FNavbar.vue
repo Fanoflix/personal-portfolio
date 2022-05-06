@@ -5,7 +5,6 @@
     <div class="right">
       <FLink
         class="nav-item no-select pointer"
-        rounded
         size="md"
         type="secondary"
         to="/survey"
@@ -13,36 +12,30 @@
         Surveys
       </FLink>
 
-      <FToolTip
-        class="nav-item no-select icon pointer"
-        title="Github"
-        placement="bottom"
-      >
+      <FToolTip class="nav-item no-select" title="Github" placement="bottom">
         <a
           href="https://github.com/Fanoflix"
           target="_blank"
           rel="noopener noreferrer"
+          class="icon pointer"
         >
           <img src="@/assets/icons/github.svg" alt="Github.com" />
         </a>
       </FToolTip>
 
-      <FToolTip
-        class="nav-item no-select icon pointer"
-        title="LinkedIn"
-        placement="bottom"
-      >
+      <FToolTip class="nav-item no-select" title="LinkedIn" placement="bottom">
         <a
           href="https://www.linkedin.com/in/muhammad-ammar-nasir-9b2193207/"
           target="_blank"
           rel="noopener noreferrer"
+          class="icon pointer"
         >
           <img src="@/assets/icons/linkedin.svg" alt="linkedin.com" />
         </a>
       </FToolTip>
 
       <FToolTip
-        class="nav-item no-select icon pointer"
+        class="nav-item no-select"
         title="Stackoverflow"
         placement="bottom"
       >
@@ -50,17 +43,18 @@
           href="https://stackoverflow.com/users/16470281/muhammad-ammar"
           target="_blank"
           rel="noopener noreferrer"
+          class="icon pointer"
         >
           <img src="@/assets/icons/stackoverflow.svg" alt="stackoverflow.com" />
         </a>
       </FToolTip>
 
       <FToolTip
-        class="nav-item no-select icon pointer theme-icon"
-        title="Toggle Theme"
+        class="nav-item no-select theme-icon"
+        title="Theme"
         placement="bottom"
       >
-        <a @click.prevent="toggleTheme">
+        <a @click.prevent="toggleTheme" tabIndex="0" class="icon pointer">
           <img :src="themeIconSource" alt="Toggle theme" />
         </a>
       </FToolTip>
@@ -129,6 +123,41 @@ const themeIconSource = computed(() => {
   align-items: center;
   height: $nav-height;
 
+  .right,
+  .left {
+    display: flex;
+  }
+
+  .right {
+    .nav-item {
+      display: flex;
+      align-items: center;
+
+      margin: $global-aesthetic-margin + 2px;
+      justify-content: center;
+
+      .icon {
+        height: 17px;
+        width: 17px;
+
+        :hover {
+          filter: brightness(0.2);
+        }
+
+        &.theme-icon {
+          transform: rotate(-360deg);
+        }
+      }
+    }
+  }
+
+  .left {
+    #logo {
+      height: 50px;
+      width: 120px;
+    }
+  }
+
   &.filled {
     background-color: $panel-bg-color-light;
     border: none;
@@ -141,48 +170,21 @@ const themeIconSource = computed(() => {
   &.rounded {
     border-radius: $global-border-radius;
   }
-
-  .left,
-  .right {
-    display: flex;
-  }
-
-  .left {
-    #logo {
-      height: 50px;
-      width: 120px;
-    }
-  }
-
-  .icon {
-    height: 17px;
-    width: 17px;
-    margin: $global-aesthetic-margin;
-
-    :hover {
-      filter: brightness(0.2);
-    }
-
-    &.theme-icon {
-      transform: rotate(-360deg);
-    }
-  }
-
-  .nav-item:not(.icon) {
-    display: flex;
-    align-items: center;
-    width: $nav-item-width;
-    margin: $global-aesthetic-margin - 3px;
-    justify-content: center;
-  }
 }
 
 .dark.navbar {
-  .icon {
-    :hover {
-      filter: brightness(2);
+  .right {
+    .nav-item {
+      .icon {
+        :hover {
+          filter: brightness(2);
+        }
+      }
     }
   }
+  .left {
+  }
+
   &.filled {
     background-color: $panel-bg-color-dark;
     border: none;
