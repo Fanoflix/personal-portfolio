@@ -54,6 +54,8 @@ const sidebarClasses = computed(() => {
 
 <style scoped lang="scss">
 @import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
+
 .side-bar {
   z-index: $z-top;
   display: flex;
@@ -107,6 +109,15 @@ const sidebarClasses = computed(() => {
 
   &:not(.filled) {
     background-color: transparent;
+  }
+}
+
+@media screen and (max-width: $bp_phone) {
+  .side-bar {
+    padding: 0;
+    flex-flow: wrap row;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

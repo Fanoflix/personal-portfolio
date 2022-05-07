@@ -55,29 +55,30 @@ themeStore.$subscribe((_, state) => {
 <style lang="scss">
 @import "@/assets/variables.scss";
 @import "@/assets/base-styling.scss";
+@import "@/assets/screens.scss";
 @include base-styling;
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 5vh;
+// .nav {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   min-height: 5vh;
 
-  .left {
-    display: flex;
+//   .left {
+//     display: flex;
 
-    button {
-      margin-right: 6px;
-    }
-  }
+//     button {
+//       margin-right: 6px;
+//     }
+//   }
 
-  .right {
-    display: flex;
-    button {
-      margin-left: 6px;
-    }
-  }
-}
+//   .right {
+//     display: flex;
+//     button {
+//       margin-left: 6px;
+//     }
+//   }
+// }
 
 .main-display {
   display: flex;
@@ -88,7 +89,15 @@ themeStore.$subscribe((_, state) => {
   .current-view {
     display: flex;
     flex-direction: column;
-    width: $global-center-content-width;
+    width: $center-content-width;
+  }
+}
+
+@media screen and (max-width: $bp_phone) {
+  .main-display {
+    .current-view {
+      width: $phone-center-content-width;
+    }
   }
 }
 

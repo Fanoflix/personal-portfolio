@@ -1,6 +1,6 @@
 <template>
-  <div id="logo">
-    <svg id="base" :class="{ dark: isDark }" viewBox="0 0 300 180">
+  <div class="logo-svg">
+    <svg id="base" :class="{ dark: isDark }" viewBox="0 0 153 200">
       <polygon
         id="ripple_right"
         class="ripple"
@@ -46,7 +46,7 @@
 import anime from "animejs";
 import { useThemeStore } from "@/stores/theme";
 import { storeToRefs } from "pinia";
-import { onMounted, onUnmounted } from "vue";
+import { onMounted } from "vue";
 const themeStore = useThemeStore();
 const { isDark } = storeToRefs(themeStore);
 
@@ -198,16 +198,22 @@ function morphLogoForward() {
 </script>
 
 <style scoped lang="scss">
-#logo {
-  width: 100px;
+@import "@/assets/screens.scss";
+
+.logo-svg {
   z-index: 100;
   overflow: visible;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   margin: auto;
 }
 
 svg {
   overflow: visible;
+  width: 65px;
 }
 
 .cls-1 {
@@ -227,7 +233,16 @@ svg {
   }
 
   .ripple {
-    fill: rgb(142, 142, 142);
+    fill: rgb(135, 135, 135);
+  }
+}
+
+@media screen and (max-width: $bp-phone) {
+  .logo-svg {
+    margin: 25px auto 15px auto;
+    svg {
+      width: 45px;
+    }
   }
 }
 </style>

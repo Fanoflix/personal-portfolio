@@ -107,7 +107,7 @@ const tooltipClasses = computed(() => {
 
     p {
       font-size: 12px;
-      color: $white-mute;
+      color: $black-soft2;
       font-weight: 600;
     }
   }

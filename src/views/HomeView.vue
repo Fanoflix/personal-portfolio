@@ -1,8 +1,8 @@
 <template>
   <div v-once>
     <div class="name-wrapper">
-      <h1>Muhammad Ammar</h1>
-      <MyLogo class="logo-wrapper" />
+      <h1 id="name">Muhammad Ammar</h1>
+      <MyLogo id="logo" />
     </div>
 
     <p>
@@ -56,18 +56,36 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
+
 .name-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 
-  .logo-wrapper {
+  #logo {
     height: 70px;
   }
 }
 p {
   line-height: 1.7;
   margin: 25px 0;
+}
+
+@media screen and (max-width: $bp-phone) {
+  .name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    #logo {
+      order: 1;
+      height: 70px;
+    }
+    #name {
+      order: 2;
+    }
+  }
 }
 </style>

@@ -76,7 +76,7 @@ function submit() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: $global-center-content-width;
+  width: $center-content-width;
 
   pre {
     font-size: 10px;

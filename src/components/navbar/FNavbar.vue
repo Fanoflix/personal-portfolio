@@ -109,15 +109,17 @@ const themeIconSource = computed(() => {
 
 <style scoped lang="scss">
 @import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
+
 .navbar {
   z-index: $z-top;
   position: sticky;
   top: 0;
   margin: 0;
-  padding: $global-padding;
-  min-width: 280px;
   padding: 0 $nav-x-padding;
+  min-width: 280px;
 
+  z-index: $z-top + 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -164,7 +166,7 @@ const themeIconSource = computed(() => {
   }
 
   &:not(.filled) {
-    background-color: $color-background;
+    background-color: transparent;
   }
 
   &.rounded {
@@ -189,9 +191,21 @@ const themeIconSource = computed(() => {
     background-color: $panel-bg-color-dark;
     border: none;
   }
+}
 
-  &:not(.filled) {
-    background-color: $color-background-dark;
+@media screen and (max-width: $bp_laptop) {
+  .navbar {
+    height: $nav-phone-height;
+    backdrop-filter: blur(85px);
+    background: transparent;
   }
 }
+
+// @media screen and (max-width: $bp-phone) {
+//   .navbar {
+//     height: $nav-phone-height;
+//     backdrop-filter: blur(25px);
+//     background: transparent;
+//   }
+// }
 </style>

@@ -4,7 +4,8 @@ $global-border-size: 1px;
 $global-border-radius: 4px;
 $global-aesthetic-margin: 10px;
 
-$global-center-content-width: 510px;
+$center-content-width: 510px;
+$phone-center-content-width: 91%;
 
 // *Global transition variables
 $text-and-bg-trans-time: 0.15s;
@@ -88,6 +89,8 @@ $nav-height: 85px;
 $nav-width: 220px;
 $nav-item-width: 80px;
 $nav-x-padding: 40px;
+
+$nav-phone-height: 60px;
 
 $panel-bg-color-light: rgb(227, 227, 227);
 $panel-bg-color-dark: rgb(40, 40, 40);

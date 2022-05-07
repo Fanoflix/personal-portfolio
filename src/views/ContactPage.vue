@@ -43,6 +43,8 @@ onActivated(() => {
 </script>
 
 <style lang="scss">
+@import "@/assets/screens.scss";
+
 .contact {
   .field,
   .submit-btn {
@@ -54,8 +56,14 @@ onActivated(() => {
     margin: 0;
   }
 
-  .submit-btn {
-    // margin: 0 auto;
+}
+
+@media screen and (max-width: $bp-phone) {
+  .contact {
+    .field,
+    .submit-btn {
+      width: 100%;
+    }
   }
 }
 </style>

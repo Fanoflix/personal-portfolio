@@ -1,4 +1,5 @@
 @import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap");
 
 @mixin base-styling {
@@ -105,6 +106,12 @@
       font-family: "Poppins", sans-serif;
       color: $heading;
       font-weight: 600;
+    }
+
+    @media screen and (max-width: $bp_phone) {
+      h1 {
+        font-size: 25px;
+      }
     }
 
     div,
