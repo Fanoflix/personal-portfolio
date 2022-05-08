@@ -7,6 +7,15 @@
         class="nav-item no-select pointer"
         size="md"
         type="secondary"
+        to="/"
+      >
+        Home
+      </FLink>
+
+      <FLink
+        class="nav-item no-select pointer"
+        size="md"
+        type="secondary"
         to="/survey"
       >
         Surveys

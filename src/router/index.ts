@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import ContactPage from "../views/ContactPage.vue";
+import HomeView from "../views/Home/HomeView.vue";
+import HomeViewContact from "../views/Home/HomeViewContact.vue";
+import HomeViewAbout from "../views/Home/HomeViewAbout.vue";
 import NotFound from "../views/NotFound.vue";
 import Survey from "../views/Survey.vue";
 
@@ -11,16 +12,27 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      children: [
+        {
+          path: "about",
+          name: "about",
+          component: HomeViewAbout,
+        },
+        {
+          path: "contact",
+          name: "contact",
+          component: HomeViewContact,
+        },
+        {
+          path: "",
+          component: HomeViewAbout,
+        },
+      ],
     },
     {
       path: "/survey",
       name: "survey",
       component: Survey,
-    },
-    {
-      path: "/contact",
-      name: "contact",
-      component: ContactPage,
     },
     // {
     //   path: "/about",

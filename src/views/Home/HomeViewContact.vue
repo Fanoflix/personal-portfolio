@@ -28,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import FInput from "../components/input/FInput.vue";
-import FButton from "../components/button/FButton.vue";
+import FInput from "@/components/input/FInput.vue";
+import FButton from "@/components/button/FButton.vue";
 import { onActivated, onMounted, ref } from "vue";
 
 const firstInput = ref(null);
@@ -40,6 +40,12 @@ onMounted(() => {
 onActivated(() => {
   firstInput.value?.input.focus();
 });
+</script>
+
+<script lang="ts">
+export default {
+  name: "HomeViewContact",
+};
 </script>
 
 <style lang="scss">
@@ -55,7 +61,6 @@ onActivated(() => {
   .field:first-child {
     margin: 0;
   }
-
 }
 
 @media screen and (max-width: $bp-phone) {

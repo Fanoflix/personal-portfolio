@@ -1,10 +1,5 @@
 <template>
   <section class="questionnaire" v-if="isFinished && !error">
-    <!-- v-if="error" fetching the survey, then show an error card -->
-    <!-- v-if="isLoading" then show a spinner -->
-    <!-- v-if="isFinished" -->
-
-    <!-- <pre>{{ data }}</pre> -->
     <FContainer
       class="question"
       padding="1"

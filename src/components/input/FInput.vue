@@ -371,7 +371,8 @@ export default {
   .input {
     &.sm {
       height: 34px;
-      font-size: 13px;
+      font-size: 14px;
+      font-weight: 400;
     }
 
     &.md {
@@ -454,7 +455,7 @@ export default {
     }
     .input,
     .textarea {
-      background-color: $black-soft2;
+      background-color: rgb(18, 18, 18);
       color: $white;
 
       &:focus {

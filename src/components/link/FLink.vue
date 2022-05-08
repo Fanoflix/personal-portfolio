@@ -74,7 +74,7 @@ const linkClasses = computed(() => {
     // min-width: 68px;
     // height: 38px;
 
-    padding: 0px 12px;
+    padding: 0px 2px;
     font-size: 13px;
     font-weight: 500;
   }
@@ -82,7 +82,7 @@ const linkClasses = computed(() => {
     // min-width: 100px;
     // height: 48px;
 
-    padding: 0px 12px;
+    padding: 0px 3px;
     font-size: 15px;
     font-weight: 500;
   }
@@ -91,7 +91,7 @@ const linkClasses = computed(() => {
     // min-width: 120px;
     // height: 58px;
 
-    padding: 0px 22px;
+    padding: 0px 5px;
     font-size: 17px;
   }
 

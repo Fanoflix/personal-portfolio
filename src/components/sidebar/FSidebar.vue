@@ -1,6 +1,6 @@
 <template>
   <section ref="sidebar" class="side-bar" :class="sidebarClasses">
-    <FLink size="md" type="secondary" to="/"> Home </FLink>
+    <FLink size="md" type="secondary" to="/about"> About </FLink>
 
     <FLink size="md" type="secondary" to="/contact"> Contact </FLink>
   </section>

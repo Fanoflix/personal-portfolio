@@ -213,7 +213,7 @@ function morphLogoForward() {
 
 svg {
   overflow: visible;
-  width: 65px;
+  width: 60px;
 }
 
 .cls-1 {
