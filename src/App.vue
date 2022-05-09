@@ -46,19 +46,22 @@ themeStore.$subscribe((_, state) => {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
+  align-items: center;
   margin: $global-aesthetic-margin + 20px auto;
+  width: $center-content-width;
 }
 
 @media screen and (max-width: $bp_tablet) {
   .current-view {
-    flex-flow: wrap column;
+    // justify-self: center;
+    width: $phone-center-content-width;
   }
 }
 
 .fade-enter-from {
   opacity: 0;
   transform: translateX(-1px) skewY(1deg) rotateZ(-1deg);
-  transform-origin: bottom left;
+  transform-origin: bottom right;
 }
 .fade-leave-to {
   opacity: 0;

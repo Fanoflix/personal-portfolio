@@ -4,7 +4,7 @@ $global-border-size: 1px;
 $global-border-radius: 4px;
 $global-aesthetic-margin: 10px;
 
-$center-content-width: 510px;
+$center-content-width: 620px;
 $phone-center-content-width: 91%;
 
 // *Global transition variables
@@ -55,7 +55,7 @@ $color-background: $background-white;
 $color-background-soft: $white-soft;
 $color-background-mute: $white-mute;
 $card-bg-color-light: #f5f5f5;
-$card-bg-color-dark: rgb(25, 25, 25);
+$card-bg-color-dark: rgb(16, 16, 16);
 
 $color-border-important: $important;
 $color-border: $color-border-light-1;
@@ -79,6 +79,7 @@ $heading-dark: $white;
 $text-dark: #757575;
 $text-mute-dark: $white-mute;
 $label-dark: #6f6f6f;
+$link-active-shadow: rgb(200, 200, 200);
 
 // !_____> Components Specific
 

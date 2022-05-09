@@ -19,8 +19,7 @@
         size="sm"
         customClasses="submit-btn"
         label="Send"
-        type="secondary"
-        outlined
+        type="primary"
         @click.prevent="submit"
       />
     </form>
@@ -50,8 +49,12 @@ export default {
 
 <style lang="scss">
 @import "@/assets/screens.scss";
+@import "@/assets/variables.scss";
 
 .contact {
+  display: flex;
+  flex-direction: column;
+
   .field,
   .submit-btn {
     margin: 15px 0;

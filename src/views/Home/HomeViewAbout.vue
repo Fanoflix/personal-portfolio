@@ -62,7 +62,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 
   #logo {
     height: 70px;

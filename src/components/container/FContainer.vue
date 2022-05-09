@@ -133,6 +133,7 @@ const cssProps = computed(() => {
 
 <style scoped lang="scss">
 @import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
 
 .f-container {
   // base styling for container
@@ -142,6 +143,10 @@ const cssProps = computed(() => {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+
+  p {
+    margin: 7px 0;
+  }
 
   // transparent
   &.transparent {
@@ -194,6 +199,15 @@ const cssProps = computed(() => {
 .dark {
   .f-container {
     background: $container-bg-color-dark;
+  }
+}
+
+@media screen and (max-width: $bp_tablet) {
+  .f-container {
+    .heading {
+      font-size: 15px;
+      font-weight: 500;
+    }
   }
 }
 </style>

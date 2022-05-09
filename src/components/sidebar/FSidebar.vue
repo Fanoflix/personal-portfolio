@@ -69,6 +69,8 @@ const sidebarClasses = computed(() => {
   padding-right: 80px;
   padding-top: 76px;
 
+  // width: 25%;
+
   a {
     margin-bottom: 20px;
     transition: text-shadow $text-and-bg-trans-time ease-in;

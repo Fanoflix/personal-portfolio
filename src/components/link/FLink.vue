@@ -121,8 +121,8 @@ const linkClasses = computed(() => {
 
   &.router-link-active {
     color: white;
-    text-shadow: 10px 0px 20px rgb(219, 219, 219),
-      -10px 0px 20px rgba(255, 255, 255, 0.6);
+    text-shadow: 0px 0px 15px $link-active-shadow,
+      0px 0px 25px $link-active-shadow;
     text-decoration: none;
   }
   &.primary {

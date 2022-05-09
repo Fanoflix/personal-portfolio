@@ -24,6 +24,7 @@ import FSidebar from "@/components/sidebar/FSidebar.vue";
 
 .home-view {
   display: flex;
+  width: 100%;
 
   .home-content {
     display: flex;
@@ -36,8 +37,9 @@ import FSidebar from "@/components/sidebar/FSidebar.vue";
   .home-view {
     flex-direction: column;
     align-items: center;
+
     .home-content {
-      width: $phone-center-content-width;
+      width: 100%;
     }
   }
 }

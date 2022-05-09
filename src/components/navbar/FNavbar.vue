@@ -126,7 +126,8 @@ const themeIconSource = computed(() => {
   top: 0;
   margin: 0;
   padding: 0 $nav-x-padding;
-  min-width: 280px;
+  // min-width: 280px;
+  width: 100%;
 
   z-index: $z-top + 100;
   display: flex;
@@ -205,16 +206,8 @@ const themeIconSource = computed(() => {
 @media screen and (max-width: $bp_tablet) {
   .navbar {
     height: $nav-phone-height;
-    backdrop-filter: blur(85px);
+    backdrop-filter: blur(55px);
     background: transparent;
   }
 }
-
-// @media screen and (max-width: $bp-phone) {
-//   .navbar {
-//     height: $nav-phone-height;
-//     backdrop-filter: blur(25px);
-//     background: transparent;
-//   }
-// }
 </style>
