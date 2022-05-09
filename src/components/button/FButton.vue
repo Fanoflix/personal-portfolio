@@ -123,10 +123,10 @@ button {
 
 // ____> TYPES <primary, secondary (dark/light), danger>
 .primary {
-  background: $primary;
+  background-color: $primary-2;
   font-weight: 500;
   &:not(.dark, .disabled) {
-    box-shadow: 0px 0px 15px rgba(0, 255, 98, 0.5);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   }
 
   &.primary:not(.dark, .outlined) {
@@ -201,8 +201,8 @@ button {
 
 .outlined.primary {
   background: transparent;
-  border: $global-border-size solid $primary;
-  color: $primary;
+  border: $global-border-size solid $primary-2;
+  color: $primary-2;
 }
 
 .outlined.danger {
@@ -225,7 +225,7 @@ button {
 
 .outlined:not(.disabled, .dark) {
   &:hover {
-    background: $btn-hover-light-1;
+    background: $btn-hover-light-2;
     filter: none;
   }
 }
@@ -242,12 +242,19 @@ button {
 .dark {
   button {
     &.primary {
+      background-color: $primary;
+
+      &.outlined {
+        border: 1px solid $primary;
+        background-color: $color-background-dark;
+        color: $primary;
+      }
       &:not(.disabled) {
-        box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.2);
+        box-shadow: 0px 0px 14px rgba(255, 255, 255, 0.2);
       }
 
       &:not(.outlined) {
-        color: $color-background-dark;
+        color: $black;
       }
     }
 
@@ -266,7 +273,7 @@ button {
 
     &.outlined {
       &:hover {
-        background: $btn-hover-light-2;
+        background: $btn-hover-light-1;
         filter: none;
       }
     }

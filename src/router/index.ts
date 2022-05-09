@@ -3,7 +3,7 @@ import HomeView from "../views/Home/HomeView.vue";
 import HomeViewContact from "../views/Home/HomeViewContact.vue";
 import HomeViewAbout from "../views/Home/HomeViewAbout.vue";
 import NotFound from "../views/NotFound.vue";
-// import Survey from "../views/Survey.vue";
+import Survey from "../views/Survey.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,7 +32,8 @@ const router = createRouter({
     {
       path: "/surveys",
       name: "surveys",
-      component: () => import("@/views/Survey.vue"),
+      component: Survey,
+      // component: () => import("@/views/Survey.vue"), // ! No need to lazy load the whole view, as the component's data is lazy loaded already
     },
     // {
     //   path: "/about",

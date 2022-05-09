@@ -8,6 +8,7 @@
         v-for="(question, idx) in data?.survey.questions"
         :key="question.id"
         :heading="`${idx + 1}. ${question.title}`"
+        width="100"
       >
         <span v-if="question.type == 'radio'">
           <FRadio
@@ -36,11 +37,15 @@
         </span>
       </FContainer>
 
-      <FButton
-        label="Submit Response"
-        size="md"
-        @click.prevent="submit"
-      ></FButton>
+      <div class="buttons">
+        <FButton label="Maybe Later" size="sm" outlined type="danger"></FButton>
+        <FButton
+          label="Submit Response"
+          size="sm"
+          type="primary"
+          @click.prevent="submit"
+        ></FButton>
+      </div>
     </section>
     <FLoading v-else></FLoading>
   </div>
@@ -83,6 +88,17 @@ function submit() {
 
   .question {
     margin-bottom: 15px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    button {
+      margin-right: 15px;
+    }
   }
 }
 </style>

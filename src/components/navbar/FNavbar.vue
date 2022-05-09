@@ -16,7 +16,7 @@
         class="nav-item no-select pointer"
         size="md"
         type="secondary"
-        to="/survey"
+        to="/surveys"
       >
         Surveys
       </FLink>
