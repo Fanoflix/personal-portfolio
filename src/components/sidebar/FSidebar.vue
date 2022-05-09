@@ -1,8 +1,12 @@
 <template>
   <section ref="sidebar" class="side-bar" :class="sidebarClasses">
-    <FLink size="md" type="secondary" to="/about"> About </FLink>
+    <FLink class="sidebar-item" size="md" type="secondary" to="/about">
+      About
+    </FLink>
 
-    <FLink size="md" type="secondary" to="/contact"> Contact </FLink>
+    <FLink class="sidebar-item" size="md" type="secondary" to="/contact">
+      Contact
+    </FLink>
   </section>
 </template>
 
@@ -68,11 +72,6 @@ const sidebarClasses = computed(() => {
   a {
     margin-bottom: 20px;
     transition: text-shadow $text-and-bg-trans-time ease-in;
-
-    &.router-link-active {
-      color: black;
-      text-decoration: underline 1px solid black;
-    }
   }
   &.visible {
     -webkit-transform: none;
@@ -94,14 +93,6 @@ const sidebarClasses = computed(() => {
 }
 
 .dark.side-bar {
-  a {
-    &.router-link-active {
-      color: white;
-      text-shadow: 10px 0px 20px rgb(219, 219, 219),
-        -10px 0px 20px rgba(255, 255, 255, 0.6);
-      text-decoration: none;
-    }
-  }
   &.filled {
     background-color: $panel-bg-color-dark;
     border: none;
@@ -112,12 +103,16 @@ const sidebarClasses = computed(() => {
   }
 }
 
-@media screen and (max-width: $bp_phone) {
+@media screen and (max-width: $bp_tablet) {
   .side-bar {
     padding: 0;
     flex-flow: wrap row;
     align-items: center;
     justify-content: center;
+
+    .sidebar-item {
+      margin: 20px 10px;
+    }
   }
 }
 </style>

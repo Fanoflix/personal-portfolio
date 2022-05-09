@@ -202,7 +202,7 @@ const themeIconSource = computed(() => {
   }
 }
 
-@media screen and (max-width: $bp_laptop) {
+@media screen and (max-width: $bp_tablet) {
   .navbar {
     height: $nav-phone-height;
     backdrop-filter: blur(85px);

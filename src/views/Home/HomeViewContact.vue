@@ -63,8 +63,10 @@ export default {
   }
 }
 
-@media screen and (max-width: $bp-phone) {
+@media screen and (max-width: $bp_tablet) {
   .contact {
+    margin-top: 50px;
+
     .field,
     .submit-btn {
       width: 100%;

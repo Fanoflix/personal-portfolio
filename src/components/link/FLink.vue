@@ -69,6 +69,10 @@ const linkClasses = computed(() => {
   color: $black-mute;
   text-decoration: none;
 
+  &.router-link-active {
+    color: black;
+    text-decoration: underline 1px solid black;
+  }
   // ____> SIZES <sm, md, lg>
   &.sm {
     // min-width: 68px;
@@ -114,6 +118,13 @@ const linkClasses = computed(() => {
 
 .flink.dark {
   color: $white-mute;
+
+  &.router-link-active {
+    color: white;
+    text-shadow: 10px 0px 20px rgb(219, 219, 219),
+      -10px 0px 20px rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
   &.primary {
     &:hover {
       color: $primary;

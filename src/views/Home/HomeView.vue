@@ -1,9 +1,9 @@
 <template>
-  <div class="homeview">
+  <section class="home-view">
     <FSidebar />
 
     <RouterView v-slot="{ Component }">
-      <div class="current-view">
+      <div class="home-content">
         <Transition name="fade" mode="out-in">
           <KeepAlive include="HomeViewContact">
             <component :is="Component"> </component>
@@ -11,7 +11,7 @@
         </Transition>
       </div>
     </RouterView>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -20,26 +20,23 @@ import FSidebar from "@/components/sidebar/FSidebar.vue";
 
 <style lang="scss">
 @import "@/assets/variables.scss";
-@import "@/assets/base-styling.scss";
 @import "@/assets/screens.scss";
-@include base-styling;
 
-.homeview {
+.home-view {
   display: flex;
-  flex-flow: wrap row;
-  justify-content: center;
-  margin: $global-aesthetic-margin + 20px auto;
 
-  .current-view {
+  .home-content {
     display: flex;
     flex-direction: column;
     width: $center-content-width;
   }
 }
 
-@media screen and (max-width: $bp_phone) {
-  .homeview {
-    .current-view {
+@media screen and (max-width: $bp_tablet) {
+  .home-view {
+    flex-direction: column;
+    align-items: center;
+    .home-content {
       width: $phone-center-content-width;
     }
   }

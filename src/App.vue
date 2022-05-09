@@ -1,6 +1,12 @@
 <template>
   <FNavbar />
-  <RouterView> </RouterView>
+  <div class="current-view">
+    <RouterView v-slot="{ Component }">
+      <Transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,6 +41,19 @@ themeStore.$subscribe((_, state) => {
 @import "@/assets/base-styling.scss";
 @import "@/assets/screens.scss";
 @include base-styling;
+
+.current-view {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  margin: $global-aesthetic-margin + 20px auto;
+}
+
+@media screen and (max-width: $bp_tablet) {
+  .current-view {
+    flex-flow: wrap column;
+  }
+}
 
 .fade-enter-from {
   opacity: 0;

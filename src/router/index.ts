@@ -3,7 +3,7 @@ import HomeView from "../views/Home/HomeView.vue";
 import HomeViewContact from "../views/Home/HomeViewContact.vue";
 import HomeViewAbout from "../views/Home/HomeViewAbout.vue";
 import NotFound from "../views/NotFound.vue";
-import Survey from "../views/Survey.vue";
+// import Survey from "../views/Survey.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,9 +30,9 @@ const router = createRouter({
       ],
     },
     {
-      path: "/survey",
-      name: "survey",
-      component: Survey,
+      path: "/surveys",
+      name: "surveys",
+      component: () => import("@/views/Survey.vue"),
     },
     // {
     //   path: "/about",
