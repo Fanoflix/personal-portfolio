@@ -15,13 +15,16 @@
         size="sm"
       />
 
-      <FButton
-        size="sm"
-        customClasses="submit-btn"
-        label="Send"
-        type="primary"
-        @click.prevent="submit"
-      />
+      <div class="buttons">
+        <FButton
+          size="sm"
+          customClasses="submit-btn"
+          label="Send"
+          type="primary"
+          outlined
+          @click.prevent="submit"
+        />
+      </div>
     </form>
   </div>
 </template>
@@ -32,13 +35,6 @@ import FButton from "@/components/button/FButton.vue";
 import { onActivated, onMounted, ref } from "vue";
 
 const firstInput = ref(null);
-onMounted(() => {
-  firstInput.value?.input.focus();
-});
-
-onActivated(() => {
-  firstInput.value?.input.focus();
-});
 </script>
 
 <script lang="ts">
@@ -61,6 +57,12 @@ export default {
     width: 80%;
   }
 
+  .buttons {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .field:first-child {
     margin: 0;
   }
@@ -71,7 +73,8 @@ export default {
     margin-top: 50px;
 
     .field,
-    .submit-btn {
+    .submit-btn,
+    .buttons {
       width: 100%;
     }
   }

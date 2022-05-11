@@ -30,8 +30,6 @@ const props = defineProps<{
   placement?: string;
 }>();
 
-console.log(attrs.class);
-
 function showTooltip() {
   isActive.value = true;
 }

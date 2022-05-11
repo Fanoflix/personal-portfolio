@@ -64,6 +64,7 @@ import FInput from "@/components/input/FInput.vue";
 import FButton from "@/components/button/FButton.vue";
 import FLoading from "@/components/loading/FLoading.vue";
 import SurveyIntro from "@/components/surveyintro/SurveyIntro.vue";
+import SurveyHeader from "@/components/surveyintro/SurveyHeader.vue";
 import processRequest from "../utils/processRequest";
 
 import { useAxios } from "@/composables/useAxios";
@@ -91,6 +92,10 @@ function submit() {
 
   .survey-item {
     margin: 15px 0;
+
+    p:nth-child(2) {
+      margin-bottom: 15px;
+    }
   }
 
   .buttons {

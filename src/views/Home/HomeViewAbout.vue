@@ -36,7 +36,7 @@
 
     <p>
       If you have some time to spare, please consider checking out this
-      <FInlineLink to="/survey">survey on code review practices.</FInlineLink>
+      <FInlineLink to="/surveys">survey on code review practices.</FInlineLink>
     </p>
   </div>
 </template>
@@ -44,8 +44,6 @@
 <script setup lang="ts">
 import MyLogo from "@/components/mylogo/MyLogo.vue";
 import FInlineLink from "@/components/inlinelink/FInlineLink.vue";
-// import FContainer from "@/components/container/FContainer.vue";
-// import FButton from "@/components/button/FButton.vue";
 </script>
 
 <script lang="ts">

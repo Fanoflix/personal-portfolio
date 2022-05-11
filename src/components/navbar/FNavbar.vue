@@ -109,7 +109,6 @@ const navbarClasses = computed(() => {
 });
 
 const themeIconSource = computed(() => {
-  console.log(import.meta.url);
   if (isDark.value)
     return new URL("../../assets/icons/sun.svg", import.meta.url).href;
   else return new URL("../../assets/icons/moon.svg", import.meta.url).href;
@@ -206,7 +205,7 @@ const themeIconSource = computed(() => {
 @media screen and (max-width: $bp_tablet) {
   .navbar {
     height: $nav-phone-height;
-    backdrop-filter: blur(55px);
+    backdrop-filter: blur(12px);
     background: transparent;
   }
 }

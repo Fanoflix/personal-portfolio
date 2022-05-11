@@ -53,7 +53,6 @@ themeStore.$subscribe((_, state) => {
 
 @media screen and (max-width: $bp_tablet) {
   .current-view {
-    // justify-self: center;
     width: $phone-center-content-width;
   }
 }
