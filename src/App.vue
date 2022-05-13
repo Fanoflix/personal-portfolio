@@ -59,17 +59,17 @@ themeStore.$subscribe((_, state) => {
 
 .fade-enter-from {
   opacity: 0;
-  transform: translateX(-2px) skewY(4deg) rotateZ(-2deg);
+  transform: translateX(-1px) skewY(2deg) rotateZ(-1deg);
   transform-origin: bottom right;
 }
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(3px) skewY(-2deg) rotateZ(2deg);
+  transform: translateX(1px) skewY(-4deg) rotateZ(3deg);
   transform-origin: bottom left;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: transform 125ms linear, opacity 100ms linear;
+  transition: transform 125ms linear, opacity 120ms linear;
 }
 </style>

@@ -53,7 +53,11 @@
         ></FButton>
       </div>
     </section>
-    <FLoading v-else></FLoading>
+    <FNewsCard
+      message="Coming Soon"
+      hiddenMessage="Survey on Code Review practices in the Pakistan tech space."
+      v-else
+    />
   </div>
 </template>
 
@@ -62,7 +66,7 @@ import FContainer from "@/components/container/FContainer.vue";
 import FRadio from "@/components/radio/FRadio.vue";
 import FInput from "@/components/input/FInput.vue";
 import FButton from "@/components/button/FButton.vue";
-import FLoading from "@/components/loading/FLoading.vue";
+import FNewsCard from "@/components/loading/FNewsCard.vue";
 import SurveyIntro from "@/components/surveyintro/SurveyIntro.vue";
 import SurveyHeader from "@/components/surveyintro/SurveyHeader.vue";
 import processRequest from "../utils/processRequest";

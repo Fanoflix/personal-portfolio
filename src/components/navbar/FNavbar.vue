@@ -1,73 +1,64 @@
 <template>
   <section :class="navbarClasses">
-    <div class="left"></div>
+    <FLink class="nav-item no-select pointer" size="md" type="secondary" to="/">
+      Home
+    </FLink>
 
-    <div class="right">
-      <FLink
-        class="nav-item no-select pointer"
-        size="md"
-        type="secondary"
-        to="/"
+    <FLink
+      class="nav-item no-select pointer"
+      size="md"
+      type="secondary"
+      to="/surveys"
+    >
+      Surveys
+    </FLink>
+
+    <FToolTip class="nav-item no-select" title="Github" placement="bottom">
+      <a
+        href="https://github.com/Fanoflix"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="icon pointer"
       >
-        Home
-      </FLink>
+        <img src="@/assets/icons/github.svg" alt="Github.com" />
+      </a>
+    </FToolTip>
 
-      <FLink
-        class="nav-item no-select pointer"
-        size="md"
-        type="secondary"
-        to="/surveys"
+    <FToolTip class="nav-item no-select" title="LinkedIn" placement="bottom">
+      <a
+        href="https://www.linkedin.com/in/muhammad-ammar-nasir-9b2193207/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="icon pointer"
       >
-        Surveys
-      </FLink>
+        <img src="@/assets/icons/linkedin.svg" alt="linkedin.com" />
+      </a>
+    </FToolTip>
 
-      <FToolTip class="nav-item no-select" title="Github" placement="bottom">
-        <a
-          href="https://github.com/Fanoflix"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="icon pointer"
-        >
-          <img src="@/assets/icons/github.svg" alt="Github.com" />
-        </a>
-      </FToolTip>
-
-      <FToolTip class="nav-item no-select" title="LinkedIn" placement="bottom">
-        <a
-          href="https://www.linkedin.com/in/muhammad-ammar-nasir-9b2193207/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="icon pointer"
-        >
-          <img src="@/assets/icons/linkedin.svg" alt="linkedin.com" />
-        </a>
-      </FToolTip>
-
-      <FToolTip
-        class="nav-item no-select"
-        title="Stackoverflow"
-        placement="bottom"
+    <FToolTip
+      class="nav-item no-select"
+      title="Stackoverflow"
+      placement="bottom"
+    >
+      <a
+        href="https://stackoverflow.com/users/16470281/muhammad-ammar"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="icon pointer"
       >
-        <a
-          href="https://stackoverflow.com/users/16470281/muhammad-ammar"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="icon pointer"
-        >
-          <img src="@/assets/icons/stackoverflow.svg" alt="stackoverflow.com" />
-        </a>
-      </FToolTip>
+        <img src="@/assets/icons/stackoverflow.svg" alt="stackoverflow.com" />
+      </a>
+    </FToolTip>
 
-      <FToolTip
-        class="nav-item no-select theme-icon"
-        title="Theme"
-        placement="bottom"
-      >
-        <a @click.prevent="toggleTheme" tabIndex="0" class="icon pointer">
-          <img :src="themeIconSource" alt="Toggle theme" />
-        </a>
-      </FToolTip>
-    </div>
+    <FToolTip
+      class="nav-item no-select theme-icon"
+      title="Theme"
+      placement="bottom"
+    >
+      <a @click.prevent="toggleTheme" tabIndex="0" class="icon pointer">
+        <img :src="themeIconSource" alt="Toggle theme" />
+      </a>
+    </FToolTip>
   </section>
 </template>
 
@@ -125,47 +116,35 @@ const themeIconSource = computed(() => {
   top: 0;
   margin: 0;
   padding: 0 $nav-x-padding;
-  // min-width: 280px;
+  min-width: 280px;
   width: 100%;
 
   z-index: $z-top + 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: $nav-height;
 
-  .right,
-  .left {
+  .nav-item {
     display: flex;
-  }
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: auto;
 
-  .right {
-    .nav-item {
-      display: flex;
-      align-items: center;
+    margin: $global-aesthetic-margin + 2px;
 
-      margin: $global-aesthetic-margin + 2px;
-      justify-content: center;
+    .icon {
+      height: 17px;
+      width: 17px;
 
-      .icon {
-        height: 17px;
-        width: 17px;
-
-        :hover {
-          filter: brightness(0.2);
-        }
-
-        &.theme-icon {
-          transform: rotate(-360deg);
-        }
+      :hover {
+        filter: brightness(0.2);
       }
-    }
-  }
 
-  .left {
-    #logo {
-      height: 50px;
-      width: 120px;
+      &.theme-icon {
+        transform: rotate(-360deg);
+      }
     }
   }
 
@@ -184,16 +163,12 @@ const themeIconSource = computed(() => {
 }
 
 .dark.navbar {
-  .right {
-    .nav-item {
-      .icon {
-        :hover {
-          filter: brightness(2);
-        }
+  .nav-item {
+    .icon {
+      :hover {
+        filter: brightness(2);
       }
     }
-  }
-  .left {
   }
 
   &.filled {
@@ -207,6 +182,30 @@ const themeIconSource = computed(() => {
     height: $nav-phone-height;
     backdrop-filter: blur(12px);
     background: transparent;
+    padding: 0 $nav-x-padding - 20px;
+
+    .nav-item {
+      margin: $global-aesthetic-margin - 2px;
+
+      .icon {
+        height: 19px;
+        width: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp_woodenphone) {
+  .navbar {
+    padding: 0 $nav-x-padding - 30px;
+    .nav-item {
+      margin: $global-aesthetic-margin - 4px;
+
+      .icon {
+        height: 19px;
+        width: 15px;
+      }
+    }
   }
 }
 </style>

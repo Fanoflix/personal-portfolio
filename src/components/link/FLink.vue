@@ -79,7 +79,7 @@ const linkClasses = computed(() => {
     // height: 38px;
 
     padding: 0px 2px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
   }
   &.md {

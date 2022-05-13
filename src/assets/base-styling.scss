@@ -85,7 +85,7 @@
     #app {
       margin: 0 auto;
       // padding: $global-padding;
-
+      overflow-x: hidden;
       font-weight: normal;
     }
 
@@ -106,6 +106,10 @@
       font-family: "Poppins", sans-serif;
       color: $heading;
       font-weight: 600;
+    }
+
+    h1 {
+      font-size: 30px;
     }
 
     @media screen and (max-width: $bp_phone) {

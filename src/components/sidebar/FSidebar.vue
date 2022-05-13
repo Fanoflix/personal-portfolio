@@ -113,7 +113,7 @@ const sidebarClasses = computed(() => {
     justify-content: center;
 
     .sidebar-item {
-      margin: 20px 10px;
+      margin: 20px 7px;
     }
   }
 }
