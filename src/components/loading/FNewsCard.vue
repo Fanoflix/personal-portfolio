@@ -27,11 +27,13 @@ defineProps<{ message: string; hiddenMessage?: string }>();
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  text-transform: uppercase;
+
+  transition: none;
 
   max-width: $center-content-width;
 
   #message {
-    color: $black;
     font-size: 46px;
   }
 
@@ -41,9 +43,6 @@ defineProps<{ message: string; hiddenMessage?: string }>();
 }
 
 #news-wrapper.dark {
-  #message {
-    color: $white;
-  }
 
   #secret-message {
     color: $black-soft;

@@ -54,7 +54,7 @@
       </div>
     </section>
     <FNewsCard
-      message="Coming Soon"
+      message="Surveys Coming Soon."
       hiddenMessage="Survey on Code Review practices in the Pakistan tech space."
       v-else
     />
