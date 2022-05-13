@@ -41,7 +41,7 @@ const props = defineProps<{
   cursor: pointer;
 
   text-decoration: none;
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 1px solid rgb(150, 150, 150);
   color: $black;
 
   &:hover {
@@ -54,7 +54,7 @@ const props = defineProps<{
   border-bottom: 1px solid rgb(70, 70, 70);
 
   &:hover {
-    border-bottom: 1px solid rgb(172, 172, 172);
+    border-bottom: 1px solid rgb(210, 210, 210);
   }
 }
 </style>

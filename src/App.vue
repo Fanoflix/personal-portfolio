@@ -59,12 +59,12 @@ themeStore.$subscribe((_, state) => {
 
 .fade-enter-from {
   opacity: 0;
-  transform: translateX(-1px) skewY(1deg) rotateZ(-1deg);
+  transform: translateX(-2px) skewY(4deg) rotateZ(-2deg);
   transform-origin: bottom right;
 }
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(1px) skewY(-1deg) rotateZ(1deg);
+  transform: translateX(3px) skewY(-2deg) rotateZ(2deg);
   transform-origin: bottom left;
 }
 
