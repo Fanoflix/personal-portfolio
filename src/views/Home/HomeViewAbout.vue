@@ -6,8 +6,9 @@
     </div>
 
     <p>
-      Hello, I am Ammar, a Software Engineer. Currently working at
-      <FInlineLink href="https://10pearls.com/">10Pearls</FInlineLink>.
+      Hello, I am Ammar, a Software Engineer. 
+      <!-- Currently working at
+      <FInlineLink href="https://10pearls.com/">10Pearls</FInlineLink>. -->
     </p>
 
     <p>
