@@ -1,13 +1,13 @@
 <template>
-  <div id="news-wrapper" class="no-select" :class="{ dark: isDark }">
-    <h1 id="message">
+  <section class="news-wrapper no-select" :class="{ dark: isDark }">
+    <h1 class="message">
       {{ message }}
     </h1>
 
-    <h3 id="secret-message">
+    <h3 class="secret-message">
       {{ hiddenMessage }}
     </h3>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -20,32 +20,43 @@ defineProps<{ message: string; hiddenMessage?: string }>();
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
 
-#news-wrapper {
-  position: fixed;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.news-wrapper {
+  margin-top: $nav-height - 20px;
   text-transform: uppercase;
 
-  transition: none;
+  padding: 30px;
 
-  max-width: $center-content-width;
+  .message {
+    letter-spacing: -2px;
+    word-spacing: 7px;
+    font-size: 50px;
+    line-height: 0.95;
 
-  #message {
-    font-size: 46px;
+    // filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.3));
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
   }
 
-  #secret-message {
-    color: $white-soft;
+  .secret-message {
+    margin-top: 12px;
+    color: $white-soft2;
+    line-height: 1.05;
   }
 }
 
-#news-wrapper.dark {
+.news-wrapper.dark {
+  .secret-message {
+    color: $black-soft2;
+  }
+}
 
-  #secret-message {
-    color: $black-soft;
+@media screen and (max-width: $bp_tablet) {
+  .news-wrapper {
+    .message {
+      word-spacing: 4px;
+      font-size: 32px;
+    }
   }
 }
 </style>

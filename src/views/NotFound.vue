@@ -13,12 +13,17 @@ const { isDark } = storeToRefs(useThemeStore());
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables.scss";
+@import "@/assets/screens.scss";
+
 .not-found {
-  position: fixed;
-  top: 42%;
-  left: 50%;
-  line-height: 0.715;
-  transform: translate(-50%, -50%);
+  // position: fixed;
+  // top: 40%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+
+  margin-top: $nav-height - 20px;
+  line-height: 0.8;
 
   h1 {
     font-size: 90px;
@@ -43,6 +48,14 @@ const { isDark } = storeToRefs(useThemeStore());
   &.dark {
     h1:nth-child(2) {
       color: rgb(90, 90, 90);
+    }
+  }
+}
+
+@media screen and (max-width: $bp_tablet) {
+  .not-found {
+    h1 {
+      font-size: 66px;
     }
   }
 }
