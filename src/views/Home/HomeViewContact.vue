@@ -54,33 +54,47 @@ const webhookBotName = "FanoMessenger";
 const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786];
 let currentColor = 0;
 
+/*
+      User Reactive Info
+*/
 const username: Ref<string | null> = ref(null);
 const email: Ref<string | null> = ref(null);
 const message: Ref<string | null> = ref(null);
 
+/*
+      Methods
+*/
 function submit() {
   sendDiscordNotification();
 }
 
 function sendDiscordNotification() {
-  axios.post(`${baseWebhookUrl}${webhookQueryParams}`, {
-    username: webhookBotName,
-    content: targetDiscordUser,
-    embeds: [
-      {
-        title: `From: ${username.value}`,
-        description: `Email: ${email.value}`,
-        color: embedColors[currentColor],
-        fields: [
-          {
-            name: "Message",
-            value: message.value,
-            inline: false,
-          },
-        ],
-      },
-    ],
-  });
+  axios
+    .post(`${baseWebhookUrl}${webhookQueryParams}`, {
+      username: webhookBotName,
+      content: targetDiscordUser,
+      embeds: [
+        {
+          title: `From: ${username.value}`,
+          description: `Email: ${email.value}`,
+          color: embedColors[currentColor],
+          fields: [
+            {
+              name: "Message",
+              value: message.value,
+              inline: false,
+            },
+          ],
+        },
+      ],
+    })
+    .then((res) => {
+      // notify user (show snackbar)
+      currentColor = (currentColor + 1) % embedColors.length;
+    })
+    .catch((err) => {
+      // show error (show snackbar)
+    });
 }
 </script>
 
