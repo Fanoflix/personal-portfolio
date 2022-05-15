@@ -3,11 +3,18 @@
     <h1>Leave a message</h1>
     <br />
     <form>
-      <FInput customClasses="field" label="Name" size="sm" ref="firstInput" />
+      <FInput
+        v-model="username"
+        customClasses="field"
+        label="Name"
+        size="sm"
+        ref="firstInput"
+      />
 
-      <FInput customClasses="field" label="Email" size="sm" />
+      <FInput v-model="email" customClasses="field" label="Email" size="sm" />
 
       <FInput
+        v-model="message"
         customClasses="field"
         type="textarea"
         scale="y"
@@ -32,9 +39,49 @@
 <script setup lang="ts">
 import FInput from "@/components/input/FInput.vue";
 import FButton from "@/components/button/FButton.vue";
+import axios from "axios";
 import { onActivated, onMounted, ref } from "vue";
+import type { Ref } from "vue";
 
-const firstInput = ref(null);
+/*
+     Discord Webhook bot + embed settings
+*/
+const targetDiscordUser = `<@375823597668925441>`;
+const baseWebhookUrl =
+  "https://discord.com/api/webhooks/946061140037869648/8fQSMRGr25fI_Oa3aTpYPU0PflYspHqalm3lSmtaWppaMuSr1eG1DfeINyEcNDH5JQoK";
+const webhookQueryParams = "?wait=true";
+const webhookBotName = "FanoMessenger";
+const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786];
+let currentColor = 0;
+
+const username: Ref<string | null> = ref(null);
+const email: Ref<string | null> = ref(null);
+const message: Ref<string | null> = ref(null);
+
+function submit() {
+  sendDiscordNotification();
+}
+
+function sendDiscordNotification() {
+  axios.post(`${baseWebhookUrl}${webhookQueryParams}`, {
+    username: webhookBotName,
+    content: targetDiscordUser,
+    embeds: [
+      {
+        title: `From: ${username.value}`,
+        description: `Email: ${email.value}`,
+        color: embedColors[currentColor],
+        fields: [
+          {
+            name: "Message",
+            value: message.value,
+            inline: false,
+          },
+        ],
+      },
+    ],
+  });
+}
 </script>
 
 <script lang="ts">
