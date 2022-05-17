@@ -68,8 +68,8 @@
   body {
     min-height: 100vh;
     background-color: $color-background;
-    color: $text;
     overflow-x: hidden;
+    color: $text;
     // * turn this back on in case of destruction \/
     // transition: filter $text-and-bg-trans-time, color $text-and-bg-trans-time,
     //   background-color $text-and-bg-trans-time;
@@ -85,7 +85,6 @@
     #app {
       margin: 0 auto;
       // padding: $global-padding;
-      overflow-x: hidden;
       font-weight: normal;
     }
 

@@ -111,13 +111,11 @@ const themeIconSource = computed(() => {
 @import "@/assets/screens.scss";
 
 .navbar {
-  z-index: $z-top;
   position: sticky;
   top: 0;
-  margin: 0;
+  left: 0;
   padding: 0 $nav-x-padding;
-  min-width: 280px;
-  width: 100%;
+  backdrop-filter: blur(9px);
 
   z-index: $z-top + 100;
   display: flex;
@@ -180,7 +178,6 @@ const themeIconSource = computed(() => {
 @media screen and (max-width: $bp_tablet) {
   .navbar {
     height: $nav-phone-height;
-    backdrop-filter: blur(12px);
     background: transparent;
     padding: 0 $nav-x-padding - 20px;
 
