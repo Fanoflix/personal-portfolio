@@ -2,9 +2,9 @@
   <div
     class="tooltip-wrapper"
     :class="wrapperClasses"
-    v-bind="$attrs"
     @mouseover="showTooltip"
     @mouseleave="hideTooltip"
+    v-bind="$attrs"
   >
     <slot></slot>
 
@@ -52,6 +52,12 @@ const tooltipClasses = computed(() => {
 });
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
@@ -96,7 +102,7 @@ const tooltipClasses = computed(() => {
     }
 
     &.bottom {
-      transform: translate(-50%, 150%);
+      transform: translate(-50%, 190%);
 
       .arrow {
         top: 0%;
@@ -112,11 +118,16 @@ const tooltipClasses = computed(() => {
 
   .tooltipFade-enter-active,
   .tooltipFade-leave-active {
-    transition: all 0.1s ease-in;
+    transition: opacity 0.15s cubic-bezier(1, -1.05, 0, 0.8),
+      transform 0.15s cubic-bezier(1, -1.05, 0, 0.8);
   }
 
-  .tooltipFade-enter-from,
+  .tooltipFade-enter-from {
+    opacity: 0;
+    transform: translateY(21%);
+  }
   .tooltipFade-leave-to {
+    // transform: translateY(15px);
     opacity: 0;
   }
 }

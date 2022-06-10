@@ -109,13 +109,15 @@ onMounted(() => {
 function morphLogoForward() {
   base.add({
     targets: "#base",
-    translateY: [1, -7, 0],
     opacity: [0, 1],
-    scaleY: [0, 3, 1],
-
-    duration: 250,
-    easing: "easeInSine",
-    delay: 50,
+    scaleY: [0.3, 2, 1],
+    scale: [
+      { value: 1.25, duration: 600 },
+      { value: 1, duration: 55 },
+    ],
+    duration: 175,
+    easing: "easeOutExpo",
+    delay: 150,
   });
 
   // Top + Ripple
