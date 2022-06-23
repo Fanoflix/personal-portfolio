@@ -113,7 +113,7 @@ function morphLogoForward() {
     scaleY: [0.3, 2, 1],
     scale: [
       { value: 1.25, duration: 600 },
-      { value: 1, duration: 55 },
+      { value: 0.95, duration: 55 },
     ],
     duration: 175,
     easing: "easeOutExpo",

@@ -54,9 +54,9 @@
       </div>
     </section>
     <FNewsCard
+      v-else
       message="Surveys Coming Soon."
       hiddenMessage="Coming up: Survey on Code Review practices in the Pakistan tech space."
-      v-else
     />
   </div>
 </template>
