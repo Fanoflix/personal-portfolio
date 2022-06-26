@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     position: relative;
+    -webkit-tap-highlight-color: transparent;
 
     // ! TESTING, REMOVE IF SHI* GOES SOUTH
     transition: filter $text-and-bg-trans-time, color $text-and-bg-trans-time,

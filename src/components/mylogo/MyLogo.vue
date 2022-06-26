@@ -79,7 +79,8 @@ const rippleOpacity = [1, 0.25];
 
 const rippleBackDuration = rippleDuration / 2;
 const rippleBackEasing = "easeInOutBack";
-const rippleBackOffset = 450;
+// const rippleBackEasing = "easeInOutExpo";
+const rippleBackOffset = 510;
 const rippleBackOpacity = [0.25, 1];
 
 const spikeLTopTimeline = anime.timeline({
@@ -112,8 +113,8 @@ function morphLogoForward() {
     opacity: [0, 1],
     scaleY: [0.3, 2, 1],
     scale: [
-      { value: 1.25, duration: 600 },
-      { value: 0.95, duration: 55 },
+      { value: 1.5, duration: 600, easing: "easeOutInCubic" },
+      { value: 1, duration: 50, easing: "easeInExpo" },
     ],
     duration: 175,
     easing: "easeOutExpo",
