@@ -79,10 +79,9 @@ export default {
 
     z-index: 200;
 
-    background-color: $white-soft;
-    // background-color: transparent;
-    // border: 1px solid $white-mute;
-    // border-radius: 2px;
+    // background-color: $white-soft;
+    background-color: #dadada;
+    border-top: 1px solid transparent;
 
     .arrow {
       position: absolute;
@@ -90,11 +89,14 @@ export default {
       height: 10px;
       width: 10px;
       background-color: $white-soft;
+      background-color: #dadada;
+      border: 1px solid transparent;
+
       transform: translate(-50%, -50%) rotate(45deg);
     }
 
     &.top {
-      transform: translate(-50%, -110%);
+      // transform: translate(-50%, -110%);
 
       .arrow {
         top: 100%;
@@ -102,10 +104,11 @@ export default {
     }
 
     &.bottom {
-      transform: translate(-50%, 190%);
+      top: 140%;
+      transform: translate(-50%, 0%);
 
       .arrow {
-        top: 0%;
+        top: -2%;
       }
     }
 
@@ -118,16 +121,13 @@ export default {
 
   .tooltipFade-enter-active,
   .tooltipFade-leave-active {
-    transition: opacity 0.15s cubic-bezier(1, -1.05, 0, 0.8),
-      transform 0.15s cubic-bezier(1, -1.05, 0, 0.8);
+    transition: opacity 0.135s ease-out, transform 0.2s ease-in;
   }
 
   .tooltipFade-enter-from {
     opacity: 0;
-    transform: translateY(21%);
   }
   .tooltipFade-leave-to {
-    // transform: translateY(15px);
     opacity: 0;
   }
 }
@@ -135,15 +135,20 @@ export default {
 .tooltip-wrapper.dark {
   .tooltip {
     background-color: $black-soft2;
-    // background-color: transparent;
-    // border: 1px solid $white-soft2;
-    p {
-      color: $white-soft2;
-      font-weight: 500;
-    }
+    background-color: black;
+    border-top: 1px solid $white;
+
+    box-shadow: 0px -14px 18px -12px $white;
 
     .arrow {
       background-color: $black-soft2;
+      background-color: black;
+      border-top: 1px solid $white;
+      border-left: 1px solid $white;
+    }
+    p {
+      color: $white-soft2;
+      font-weight: 500;
     }
   }
 }

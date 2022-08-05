@@ -2,25 +2,35 @@
   <div class="contact">
     <h1>Leave a message</h1>
     <br />
-    <form>
+    <form @submit.prevent="submit">
       <FInput
         v-model="username"
         customClasses="field"
         label="Name"
+        required
         size="sm"
         ref="firstInput"
       />
 
-      <FInput v-model="email" customClasses="field" label="Email" size="sm" />
+      <FInput
+        v-model="email"
+        required
+        customClasses="field"
+        label="Email"
+        size="sm"
+      />
 
       <FInput
         v-model="message"
         customClasses="field"
+        required
         type="textarea"
         scale="y"
         label="Message"
         size="sm"
       />
+
+      <i>* Required</i>
 
       <div class="buttons">
         <FButton
@@ -29,7 +39,6 @@
           label="Send"
           type="primary"
           outlined
-          @click.prevent="submit"
         />
       </div>
     </form>
@@ -116,6 +125,10 @@ export default {
   .submit-btn {
     margin: 15px 0;
     width: 80%;
+  }
+
+  i {
+    font-size: small;
   }
 
   .buttons {
