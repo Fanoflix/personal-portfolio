@@ -138,7 +138,7 @@ export default {
     background-color: black;
     border-top: 1px solid $white;
 
-    box-shadow: 0px -14px 18px -12px $white;
+    box-shadow: 0px -12px 18px -13px $white;
 
     .arrow {
       background-color: $black-soft2;
