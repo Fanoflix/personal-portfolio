@@ -141,7 +141,7 @@ export default {
   }
 
   h1 {
-    margin-bottom: 50px;
+    margin-bottom: 39px;
   }
 }
 
