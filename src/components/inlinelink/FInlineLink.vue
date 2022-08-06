@@ -46,7 +46,7 @@ const props = defineProps<{
   font-weight: 600;
 
   &:hover {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
   }
 }
 
@@ -56,7 +56,7 @@ const props = defineProps<{
   font-weight: 500;
 
   &:hover {
-    border-bottom: 1px solid rgb(210, 210, 210);
+    border-bottom: 1px solid $white;
   }
 }
 </style>
