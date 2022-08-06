@@ -224,19 +224,15 @@ svg {
 }
 
 .ripple {
-  fill: rgb(107, 107, 107);
+  fill: rgb(130, 130, 130);
 }
 .dark {
   .cls-1 {
     fill: #fff;
   }
 
-  #center_piece {
-    filter: drop-shadow(0px 0px 35px rgba(255, 255, 255, 0.5));
-  }
-
   .ripple {
-    fill: rgb(135, 135, 135);
+    fill: rgb(255, 255, 255);
   }
 }
 

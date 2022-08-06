@@ -104,11 +104,11 @@
     h5 {
       font-family: "Poppins", sans-serif;
       color: $heading;
-      font-weight: 600;
     }
 
     h1 {
-      font-size: 30px;
+      font-weight: 400;
+      font-size: 36px;
     }
 
     @media screen and (max-width: $bp_phone) {
@@ -124,7 +124,7 @@
       font-weight: 400;
     }
 
-    p { // p specific
+    p {
       font-size: 15px;
     }
 
