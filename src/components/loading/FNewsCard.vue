@@ -4,7 +4,7 @@
       {{ message }}
     </h1>
 
-    <h3 class="secret-message">
+    <h3 v-if="hiddenMessage" class="secret-message">
       {{ hiddenMessage }}
     </h3>
   </section>

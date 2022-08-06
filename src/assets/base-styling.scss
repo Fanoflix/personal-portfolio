@@ -70,7 +70,6 @@
     min-height: 100vh;
     background-color: $color-background;
     overflow-x: hidden;
-    color: $text;
     // * turn this back on in case of destruction \/
     // transition: filter $text-and-bg-trans-time, color $text-and-bg-trans-time,
     //   background-color $text-and-bg-trans-time;
@@ -120,9 +119,13 @@
 
     div,
     p {
-      // font-family: "Inter", sans-serif;
       color: $text;
-      font-weight: 500;
+      color: black;
+      font-weight: 400;
+    }
+
+    p { // p specific
+      font-size: 15px;
     }
 
     &.dark {

@@ -4,6 +4,15 @@
       Home
     </FLink>
 
+    <!-- <FLink
+      class="nav-item no-select pointer"
+      size="md"
+      type="secondary"
+      to="/projects"
+    >
+      Projects
+    </FLink> -->
+
     <FLink
       class="nav-item no-select pointer"
       size="md"

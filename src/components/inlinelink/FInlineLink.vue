@@ -43,6 +43,7 @@ const props = defineProps<{
   text-decoration: none;
   border-bottom: 1px solid rgb(150, 150, 150);
   color: $black;
+  font-weight: 600;
 
   &:hover {
     border-bottom: 1px solid black;
@@ -52,6 +53,7 @@ const props = defineProps<{
 .inline-link.dark {
   color: $white;
   border-bottom: 1px solid rgb(70, 70, 70);
+  font-weight: 500;
 
   &:hover {
     border-bottom: 1px solid rgb(210, 210, 210);

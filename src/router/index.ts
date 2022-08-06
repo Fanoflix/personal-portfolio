@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/Home/HomeView.vue";
-import HomeViewContact from "../views/Home/HomeViewContact.vue";
-import HomeViewAbout from "../views/Home/HomeViewAbout.vue";
-import NotFound from "../views/NotFound.vue";
-import Survey from "../views/Survey.vue";
+import HomeView from "@/views/Home/HomeView.vue";
+import HomeViewContact from "@/views/Home/HomeViewContact.vue";
+import HomeViewAbout from "@/views/Home/HomeViewAbout.vue";
+import NotFound from "@/views/NotFound.vue";
+import SurveyView from "@/views/SurveyView.vue";
+import ProjectsView from "@/views/ProjectsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,8 +33,13 @@ const router = createRouter({
     {
       path: "/surveys",
       name: "surveys",
-      component: Survey,
+      component: SurveyView,
       // component: () => import("@/views/Survey.vue"), // ! No need to lazy load the whole view, as the component's data is lazy loaded already
+    },
+    {
+      path: "/projects",
+      name: "projects",
+      component: ProjectsView,
     },
     // {
     //   path: "/about",

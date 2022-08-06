@@ -60,7 +60,7 @@ const linkClasses = computed(() => {
   text-align: right;
 
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   padding: 0px 10px;
   cursor: pointer;
   user-select: none;
@@ -72,6 +72,7 @@ const linkClasses = computed(() => {
   &.router-link-active {
     color: black;
     text-decoration: underline 1px solid black;
+    font-weight: 500;
   }
   // ____> SIZES <sm, md, lg>
   &.sm {
@@ -88,7 +89,6 @@ const linkClasses = computed(() => {
 
     padding: 0px 3px;
     font-size: 15px;
-    font-weight: 500;
   }
 
   &.lg {
@@ -121,8 +121,7 @@ const linkClasses = computed(() => {
 
   &.router-link-active {
     color: white;
-    text-shadow: 0px 0px 15px $link-active-shadow,
-      0px 0px 25px $link-active-shadow;
+    text-shadow: 0px 0px 20px $link-active-shadow, 0px 0px 5px rgb(0, 0, 0);
     text-decoration: none;
   }
   &.primary {

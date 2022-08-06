@@ -6,7 +6,7 @@
       <div class="home-content">
         <Transition name="fade" mode="out-in">
           <KeepAlive include="HomeViewContact">
-            <component :is="Component"> </component>
+            <component :is="Component"/>
           </KeepAlive>
         </Transition>
       </div>

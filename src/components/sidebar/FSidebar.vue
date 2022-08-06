@@ -67,7 +67,7 @@ const sidebarClasses = computed(() => {
   text-align: left;
 
   padding-right: 80px;
-  padding-top: 76px;
+  padding-top: 96px;
 
   // width: 25%;
 

@@ -1,7 +1,6 @@
 <template>
   <div class="contact">
     <h1>Leave a message</h1>
-    <br />
     <form @submit.prevent="submit">
       <FInput
         v-model="username"
@@ -139,6 +138,10 @@ export default {
 
   .field:first-child {
     margin: 0;
+  }
+
+  h1 {
+    margin-bottom: 50px;
   }
 }
 

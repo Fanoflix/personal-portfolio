@@ -126,7 +126,7 @@ button {
   background-color: $primary-2;
   font-weight: 500;
   &:not(.dark, .disabled) {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 2px 2px 6px -2px rgba(0, 0, 0, 0.35);
   }
 
   &.primary:not(.dark, .outlined) {
@@ -250,7 +250,7 @@ button {
         color: $primary;
       }
       &:not(.disabled) {
-        box-shadow: 0px 0px 14px rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 10px -4px rgba(255, 255, 255, 0.4);
       }
 
       &:not(.outlined) {
