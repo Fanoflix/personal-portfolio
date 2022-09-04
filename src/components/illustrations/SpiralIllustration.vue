@@ -125,6 +125,7 @@ const { isDark } = storeToRefs(useThemeStore());
 </template>
 
 <style scoped lang="scss">
+@import "@assets/screens.scss";
 .spiral-container {
   position: fixed;
   bottom: -5%;
@@ -135,8 +136,8 @@ const { isDark } = storeToRefs(useThemeStore());
 svg {
   height: 59vh;
   width: 60vw;
-  min-height: 400px;
-  min-width: 500px;
+  min-height: 550px;
+  min-width: 570px;
   transform: skew(30deg, 15deg);
   animation: skewAnim 20s ease-in-out infinite alternate;
   transition: filter 0.5s ease-in-out;
@@ -230,6 +231,12 @@ svg * {
   }
   100% {
     transform: skew(35deg, 15deg);
+  }
+}
+
+@media screen and (max-width: $bp_phone) {
+  .spiral-container {
+    display: none;
   }
 }
 </style>

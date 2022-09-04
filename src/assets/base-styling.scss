@@ -160,4 +160,12 @@
       cursor: pointer;
     }
   }
+
+  @media screen and (max-width: $bp_laptop) {
+    body {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
 }
