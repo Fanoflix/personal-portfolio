@@ -133,13 +133,13 @@ const { isDark } = storeToRefs(useThemeStore());
 }
 
 svg {
-  height: 75vh;
-  width: 70vw;
+  height: 59vh;
+  width: 60vw;
   min-height: 400px;
   min-width: 500px;
   transform: skew(30deg, 15deg);
-  animation: skewAnim 25s ease-in-out infinite alternate;
-  transition: filter 1.5s ease;
+  animation: skewAnim 20s ease-in-out infinite alternate;
+  transition: filter 0.5s ease-in-out;
   filter: invert(1) brightness(0.8);
 
   #centerStar,
@@ -158,8 +158,7 @@ svg {
 
   #centerStar {
     animation: rotate 10s infinite linear;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 1))
-      // drop-shadow(0px 0px 17px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(0px 0px 14px rgba(255, 255, 255, 0.5));
   }
 
   #circle1 {
