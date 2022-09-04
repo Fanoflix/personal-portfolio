@@ -13,8 +13,8 @@ const { isDark } = storeToRefs(useThemeStore());
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/variables.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/screens.scss";
 
 .not-found {
   // position: fixed;

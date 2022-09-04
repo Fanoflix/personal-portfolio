@@ -63,9 +63,11 @@
       class="nav-item no-select theme-icon"
       title="Theme"
       placement="bottom"
+      @click.exact.prevent="toggleTheme()"
+      @keyup.enter.prevent="toggleTheme()"
     >
-      <a @click.prevent="toggleTheme" tabIndex="0" class="icon pointer">
-        <img :src="themeIconSource" alt="Toggle theme" />
+      <a tabIndex="0" class="icon pointer">
+        <img ref="themeIcon" :src="themeIconSource" alt="Toggle theme" />
       </a>
     </FToolTip>
   </section>
@@ -75,12 +77,14 @@
 import FLink from "../link/FLink.vue";
 import FToolTip from "@/components/tooltip/FToolTip.vue";
 import { useThemeStore } from "@/stores/theme";
-import { computed, onMounted, onUnmounted } from "vue";
+import { computed, ref } from "vue";
+import type { Ref } from "vue";
 import { storeToRefs } from "pinia";
 
 const themeStore = useThemeStore();
 const { changeTheme } = themeStore;
 const { isDark } = storeToRefs(themeStore); // same thing as the above line
+const themeIcon: Ref<HTMLImageElement | null> = ref(null);
 
 // Props
 const props = defineProps({
@@ -94,13 +98,12 @@ const props = defineProps({
   },
 });
 
-const toggleTheme = (e) => {
-  let targetEle = e.target;
-  targetEle.style.transition = "transform 0.4s ease-in-out";
-  if (isDark.value) targetEle.style.transform = "rotateZ(360deg)";
-  else targetEle.style.transform = "rotateZ(0deg)";
+function toggleTheme(): void {
+  themeIcon.value!.style.transition = "transform 0.4s ease-in-out";
+  if (isDark.value) themeIcon.value!.style.transform = "rotateZ(360deg)";
+  else themeIcon.value!.style.transform = "rotateZ(0deg)";
   changeTheme();
-};
+}
 const navbarClasses = computed(() => {
   return [
     "navbar",
@@ -116,8 +119,8 @@ const themeIconSource = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/screens.scss";
 
 .navbar {
   position: sticky;

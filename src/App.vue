@@ -7,12 +7,14 @@
       </Transition>
     </RouterView>
   </div>
+  <SpiralIllustration />
 </template>
 
 <script setup lang="ts">
 import { useThemeStore } from "@/stores/theme";
 import { onBeforeMount } from "vue";
 import FNavbar from "./components/navbar/FNavbar.vue";
+import SpiralIllustration from "./components/illustrations/SpiralIllustration.vue";
 
 const body: HTMLElement | null = document.querySelector("body");
 const themeStore = useThemeStore();
@@ -37,9 +39,9 @@ themeStore.$subscribe((_, state) => {
 </script>
 
 <style lang="scss">
-@import "@/assets/variables.scss";
-@import "@/assets/base-styling.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/base-styling.scss";
+@import "@assets/screens.scss";
 @include base-styling;
 
 .current-view {

@@ -1,5 +1,5 @@
 <template>
-  <section ref="sidebar" class="side-bar" :class="sidebarClasses">
+  <section class="side-bar" :class="sidebarClasses">
     <FLink class="sidebar-item" size="md" type="secondary" to="/about">
       About
     </FLink>
@@ -14,14 +14,16 @@
 // Imports
 import FLink from "../link/FLink.vue";
 import { storeToRefs } from "pinia";
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useThemeStore } from "@/stores/theme.ts";
+import { useRoute, useRouter } from "vue-router";
 
 // State
 
 // Reactive State
 const { isDark } = storeToRefs(useThemeStore());
-const sidebar = ref(null);
+// const sidebarRef = ref(null);
+const aboutLinkRef = ref(null);
 
 // Props
 const props = defineProps({
@@ -41,7 +43,7 @@ const props = defineProps({
 
 // Exposed
 defineExpose({
-  sidebar,
+  aboutLinkRef,
 });
 
 const sidebarClasses = computed(() => {
@@ -57,8 +59,8 @@ const sidebarClasses = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/screens.scss";
 
 .side-bar {
   z-index: $z-top;

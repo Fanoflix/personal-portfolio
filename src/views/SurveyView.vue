@@ -87,7 +87,7 @@ function submit() {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@import "@assets/variables.scss";
 .questionnaire {
   display: flex;
   flex-direction: column;

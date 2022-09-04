@@ -29,10 +29,11 @@ import { useThemeStore } from "@/stores/theme.ts";
 
 // State
 
-// Reactive State
+// #region Reactive State
 const themeStore = useThemeStore();
 const { isDark } = storeToRefs(themeStore);
 const attrs = useAttrs();
+// #endregion
 
 // Props
 const props = defineProps({
@@ -69,9 +70,7 @@ const props = defineProps({
   },
 });
 
-/* 
-  Computed
-*/
+// #region Computed
 const isDisabled = computed(() => {
   return (
     attrs.disabled !== undefined &&
@@ -79,6 +78,7 @@ const isDisabled = computed(() => {
     attrs.disabled !== "false"
   );
 });
+// #endregion
 </script>
 
 <!-- inheritAttrs: false -->
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@import "@assets/variables.scss";
 
 // base button styling: width, height (for sm, md, lg)
 button {

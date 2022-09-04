@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/variables.scss";
+@import "@assets/variables.scss";
 
 .tooltip-wrapper {
   position: relative;

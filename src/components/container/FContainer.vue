@@ -132,8 +132,8 @@ const cssProps = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/screens.scss";
 
 .f-container {
   // base styling for container

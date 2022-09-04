@@ -6,7 +6,7 @@
       <div class="home-content">
         <Transition name="fade" mode="out-in">
           <KeepAlive include="HomeViewContact">
-            <component :is="Component"/>
+            <component :is="Component" />
           </KeepAlive>
         </Transition>
       </div>
@@ -15,12 +15,13 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
 import FSidebar from "@/components/sidebar/FSidebar.vue";
 </script>
 
 <style lang="scss">
-@import "@/assets/variables.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/screens.scss";
 
 .home-view {
   display: flex;

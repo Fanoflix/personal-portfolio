@@ -19,8 +19,8 @@ defineProps<{ message: string; hiddenMessage?: string }>();
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/variables.scss";
-@import "@/assets/screens.scss";
+@import "@assets/variables.scss";
+@import "@assets/screens.scss";
 
 .news-wrapper {
   margin-top: $nav-height - 20px;

@@ -124,7 +124,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@import "@assets/variables.scss";
 .radio-control {
   &:hover:not(.checked) {
     background-color: $white-soft;

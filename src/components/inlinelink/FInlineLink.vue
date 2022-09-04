@@ -33,7 +33,7 @@ const props = defineProps<{
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@import "@assets/variables.scss";
 
 .inline-link {
   transition: border $element-trans-time ease;
@@ -41,7 +41,7 @@ const props = defineProps<{
   cursor: pointer;
 
   text-decoration: none;
-  border-bottom: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(200, 200, 200);
   color: $black;
   font-weight: 600;
 

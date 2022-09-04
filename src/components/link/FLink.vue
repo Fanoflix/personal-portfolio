@@ -52,7 +52,7 @@ const linkClasses = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/variables.scss";
+@import "@assets/variables.scss";
 .flink {
   display: flex;
   align-items: center;

@@ -201,7 +201,7 @@ function morphLogoForward() {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/screens.scss";
+@import "@assets/screens.scss";
 
 .logo-svg {
   z-index: 100;

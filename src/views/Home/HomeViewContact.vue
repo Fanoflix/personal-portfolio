@@ -73,7 +73,7 @@ const message: Ref<string | null> = ref(null);
       Methods
 */
 function submit() {
-  sendDiscordNotification();
+  // sendDiscordNotification();
 }
 
 function sendDiscordNotification() {
@@ -113,8 +113,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/screens.scss";
-@import "@/assets/variables.scss";
+@import "@assets/screens.scss";
+@import "@assets/variables.scss";
 
 .contact {
   display: flex;
