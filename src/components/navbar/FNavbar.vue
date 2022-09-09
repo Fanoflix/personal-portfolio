@@ -127,7 +127,7 @@ const themeIconSource = computed(() => {
   top: 0;
   left: 0;
   padding: 0 $nav-x-padding;
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(22px);
 
   z-index: $z-top + 100;
   display: flex;

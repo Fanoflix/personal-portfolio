@@ -11,7 +11,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.799"
         cy="786.678"
         r="805.389"
-        stroke="#1a1a1a"
+        stroke="#141414"
         stroke-width="4"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -22,7 +22,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.798"
         cy="786.678"
         r="613.117"
-        stroke="#1a1a1a"
+        stroke="#212121"
         stroke-width="4"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -33,7 +33,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.798"
         cy="786.677"
         r="466.82"
-        stroke="#404040"
+        stroke="#2b2b2b"
         stroke-width="4"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -44,7 +44,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.798"
         cy="786.677"
         r="362.208"
-        stroke="#5e5e5e"
+        stroke="#454545"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -55,7 +55,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.798"
         cy="786.676"
         r="279.406"
-        stroke="#787777"
+        stroke="#5c5c5c"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -66,7 +66,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.798"
         cy="786.601"
         r="207.738"
-        stroke="#787777"
+        stroke="#808080"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -77,7 +77,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.798"
         cy="786.601"
         r="145.278"
-        stroke="#b5b5b5"
+        stroke="#adadad"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -88,32 +88,32 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221.799"
         cy="786.602"
         r="96.7936"
-        stroke="#d9d9d9"
+        stroke="#d1d1d1"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="2 26 2 26"
+        stroke-dasharray="2 20 2 20"
       />
       <circle
         id="circle2"
         cx="219.257"
         cy="786.676"
         r="50.9485"
-        stroke="#f0f0f0"
+        stroke="white"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="2 20 2 22"
+        stroke-dasharray="5 16 5 16"
       />
-      <circle
+      <!-- <circle
         id="circle1"
         cx="219.299"
         cy="786.719"
         r="11.5319"
-        stroke="#f0f0f0"
+        stroke="#ffffff"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="1 10 1 10"
-      />
+        stroke-dasharray="3 5 3 5"
+      /> -->
 
       <path
         id="centerStar"
@@ -128,23 +128,24 @@ const { isDark } = storeToRefs(useThemeStore());
 @import "@assets/screens.scss";
 .spiral-container {
   position: fixed;
-  bottom: -5%;
+  bottom: -6%;
   left: -5%;
   z-index: -10;
 }
 
 svg {
-  height: 59vh;
-  width: 60vw;
+  height: 70vh;
+  width: 69vw;
   min-height: 550px;
   min-width: 570px;
-  transform: skew(25deg, 10deg);
-  animation: skewAnim 20s ease-in-out infinite alternate;
+  transform: skew(20deg, 12deg);
+  will-change: transform filter;
+  // animation: skewAnim 20s ease-in-out infinite alternate;
   transition: filter 0.5s ease-in-out;
-  filter: invert(1) brightness(0.8);
+  filter: invert(1) brightness(0.6);
 
   #centerStar,
-  #circle1,
+  // #circle1,
   #circle2,
   #circle3,
   #circle4,
@@ -158,47 +159,47 @@ svg {
   }
 
   #centerStar {
-    animation: rotate 7s infinite linear, flicker 3.5s infinite ease;
+    animation: rotate 4s infinite linear;
   }
 
-  #circle1 {
-    animation: rotate 21s infinite linear;
-  }
+  // #circle1 {
+  //   animation: rotate 15s infinite linear;
+  // }
 
   #circle2 {
-    animation: rotate 32s infinite linear;
+    animation: rotate 25s infinite linear;
   }
 
   #circle3 {
-    animation: rotate 43s infinite linear;
+    animation: rotate 40s infinite linear;
   }
 
   #circle4 {
-    animation: rotate 54s infinite linear;
+    animation: rotate 60s infinite linear;
   }
 
   #circle5 {
-    animation: rotate 65s infinite linear;
+    animation: rotate 85s infinite linear;
   }
 
   #circle6 {
-    animation: rotate 74s infinite linear;
+    animation: rotate 115s infinite linear;
   }
 
   #circle7 {
-    animation: rotate 90s infinite linear;
-  }
-
-  #circle8 {
-    animation: rotate 120s infinite linear;
-  }
-
-  #circle9 {
     animation: rotate 140s infinite linear;
   }
 
+  #circle8 {
+    animation: rotate 190s infinite linear;
+  }
+
+  #circle9 {
+    animation: rotate 240s infinite linear;
+  }
+
   #circle10 {
-    animation: rotate 170s infinite linear;
+    animation: rotate 320s infinite linear;
   }
 }
 
@@ -209,6 +210,18 @@ svg * {
 .dark {
   svg {
     filter: none;
+
+    #centerStar {
+      filter: drop-shadow(4px 4px 2px rgba(0, 234, 255, 0.7))
+        drop-shadow(-4px -4px 2px rgba(255, 255, 125, 0.7))
+        drop-shadow(4px -4px 2px rgba(205, 143, 255, 0.7))
+        drop-shadow(-4px 4px 2px rgba(255, 255, 255, 0.7))
+        drop-shadow(7px 12px 5px rgba(0, 234, 255, 0.2))
+        drop-shadow(-7px -12px 5px rgba(255, 255, 125, 0.2))
+        drop-shadow(7px -12px 5px rgba(205, 143, 255, 0.2))
+        drop-shadow(-7px 12px 5px rgba(255, 255, 255, 0.2))
+        drop-shadow(0px 0px 30px rgb(138, 255, 245));
+    }
   }
 }
 
@@ -223,114 +236,13 @@ svg * {
 
 @keyframes skewAnim {
   0% {
-    transform: skew(16deg, 8deg);
+    transform: skew(25deg, 25eg);
   }
   50% {
     transform: skew(18deg, 10deg);
   }
   100% {
     transform: skew(22deg, 12deg);
-  }
-}
-
-@keyframes flicker {
-  1% {
-    filter: none;
-  }
-  2% {
-    filter: drop-shadow(0px 0px 50px rgb(253, 161, 255))
-      drop-shadow(0px 0px 50px rgb(255, 255, 255));
-  }
-  3% {
-    filter: none;
-  }
-  18% {
-    filter: none;
-  }
-  20% {
-    filter: drop-shadow(0px 60px 65px rgb(0, 255, 208))
-      drop-shadow(0px -60px 65px rgb(229, 145, 255));
-  }
-  21% {
-    filter: none;
-  }
-  29% {
-    filter: none;
-  }
-  31% {
-    filter: drop-shadow(0px -40px 75px rgb(0, 221, 255))
-      drop-shadow(70px 50px 85px rgb(175, 255, 238))
-      drop-shadow(-80px 90px 45px rgb(0, 255, 251))
-      drop-shadow(0px 0px 50px rgb(253, 161, 255))
-      drop-shadow(0px 0px 50px rgb(255, 255, 255))
-      drop-shadow(-70px 40px 85px rgb(255, 255, 255))
-      drop-shadow(-90px 20px 55px rgb(255, 251, 0));
-  }
-  35% {
-    filter: none;
-  }
-  40% {
-    filter: none;
-  }
-  42% {
-    filter: drop-shadow(50px 0px 75px rgb(71, 182, 255))
-      drop-shadow(0px -40px 85px rgb(0, 187, 181))
-      drop-shadow(0px -40px 85px rgb(0, 187, 181))
-      drop-shadow(0px -40px 85px rgb(0, 187, 181));
-  }
-  44% {
-    filter: none;
-  }
-  55% {
-    filter: none;
-  }
-  56% {
-    filter: drop-shadow(-40px 20px 75px rgb(0, 187, 255))
-      drop-shadow(10px 30px 85px rgb(0, 200, 255));
-  }
-  64% {
-    filter: none;
-  }
-  71% {
-    filter: none;
-  }
-  72% {
-    filter: drop-shadow(0px -30px 75px rgb(0, 221, 255))
-      drop-shadow(30px 35px 85px rgb(74, 255, 165))
-      drop-shadow(-20px 40px 45px rgb(0, 255, 251))
-      drop-shadow(-10px 40px 85px rgb(88, 255, 208))
-      drop-shadow(0px 0px 50px rgb(253, 161, 255))
-      drop-shadow(0px 0px 50px rgb(255, 255, 255))
-      drop-shadow(-30px 20px 55px rgb(219, 153, 255));
-  }
-  75% {
-    filter: none;
-  }
-  78% {
-    filter: drop-shadow(0px -20px 75px rgb(0, 221, 255))
-      drop-shadow(20px -20px 85px rgb(0, 170, 255))
-      drop-shadow(20px 30px 45px rgb(0, 255, 251))
-      drop-shadow(10px -10px 85px rgb(0, 255, 221))
-      drop-shadow(20px 20px 55px rgb(255, 255, 255));
-  }
-  82% {
-    filter: drop-shadow(50px 0px 75px rgb(0, 97, 161))
-      drop-shadow(0px -40px 85px rgb(0, 187, 181))
-      drop-shadow(0px -40px 25px rgb(0, 187, 181))
-      drop-shadow(0px 30px 125px rgb(0, 187, 181));
-  }
-  85% {
-    filter: none;
-  }
-
-  92% {
-    filter: drop-shadow(-40px 20px 75px rgb(255, 0, 0))
-      drop-shadow(0px 0px 50px rgb(253, 161, 255))
-      drop-shadow(0px 0px 50px rgb(255, 255, 255))
-      drop-shadow(10px 30px 85px rgb(0, 200, 255));
-  }
-  100% {
-    filter: none;
   }
 }
 

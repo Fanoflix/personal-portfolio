@@ -1,4 +1,6 @@
-// !____> Global attributes
+/*
+* @Global attributes color variables for use in components
+*/
 $global-padding: 8px;
 $global-border-size: 1px;
 $global-border-radius: 4px;
@@ -7,11 +9,13 @@ $global-aesthetic-margin: 10px;
 $center-content-width: 700px;
 $phone-center-content-width: 91%;
 
-// *Global transition variables
+// Global transition variables
 $text-and-bg-trans-time: 0.15s;
 $element-trans-time: 0.125s;
 
-//! ____> Color Palette
+/*
+* @Color Palette color variables for use in components
+*/
 $gray: #fafafa;
 $primary: #e8e8e8;
 $primary-2: rgb(24, 24, 24);
@@ -48,8 +52,9 @@ $color-border-light-2: #545454;
 $color-border-dark-1: #505050;
 $color-border-dark-2: #858585;
 
-// !____> Semantic color variables for use in components
-
+/*
+* @Semantic color variables for use in components
+*/
 // light theme
 $color-background: $background-white;
 $color-background-soft: $white-soft;
@@ -82,9 +87,12 @@ $label-dark: #6f6f6f;
 $link-active-shadow: rgb(200, 200, 200);
 
 // !_____> Components Specific
+/*
+* @Components Specific variables for use in components
+*/
 
 /*
-  *Navigation Panel + Side panel/bar combined styling
+* @Navigation Panel + Side panel/bar combined styling
 */
 $nav-height: 85px;
 $nav-width: 220px;
@@ -97,7 +105,7 @@ $panel-bg-color-light: rgb(227, 227, 227);
 $panel-bg-color-dark: rgb(40, 40, 40);
 
 /* 
-  *Scrollbar
+* @Scrollbar
 */
 $scroll-width: 10px;
 $scroll-border-radius: 6px;
@@ -113,7 +121,7 @@ $scroll-handle-hover-color-dark: $white;
 $scroll-track-color-dark: $color-background-dark;
 
 /*
-  *Inputs
+*  @Inputs
 */
 $input-error-shadow: inset 0px 0px 25px -15px $error;
 
@@ -125,7 +133,7 @@ $input-success-border-dark: #6abe97;
 $input-success-shadow-dark: inset 0px 0px 35px -25px $success-dark;
 
 /*
-  *Container
+*  @Container
 */
 $container-default-padding: 12px;
 // light
@@ -135,7 +143,7 @@ $container-bg-color-light: $card-bg-color-light;
 $container-bg-color-dark: $card-bg-color-dark;
 
 /*
-! z-indexes
+* @z-indexes
 */
 
 $z-top: 100;
