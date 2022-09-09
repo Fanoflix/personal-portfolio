@@ -111,13 +111,15 @@ function morphLogoForward() {
   base.add({
     targets: "#base",
     opacity: [0, 1],
-    scaleY: [0.3, 2, 1],
+    scaleY: [
+      { value: 3, duration: 120, easing: "easeInQuad" },
+      { value: 1, duration: 100, easing: "easeOutQuad" },
+    ],
     scale: [
-      { value: 1.5, duration: 600, easing: "easeOutInCubic" },
-      { value: 1, duration: 50, easing: "easeInExpo" },
+      { value: 1.4, duration: 500, easing: "easeOutElastic(6, .5)" },
+      { value: 1, duration: 700, easing: "easeOutElastic(3, .4)" },
     ],
     duration: 175,
-    easing: "easeOutExpo",
     delay: 150,
   });
 
