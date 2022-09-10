@@ -77,7 +77,7 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221"
         cy="786"
         r="145"
-        stroke="#adadad"
+        stroke="#bababa"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -88,11 +88,11 @@ const { isDark } = storeToRefs(useThemeStore());
         cx="221"
         cy="786"
         r="96"
-        stroke="#d1d1d1"
+        stroke="#e8e8e8"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="2 20 2 20"
+        stroke-dasharray="2 22 2 21"
       />
       <circle
         id="circle2"
@@ -135,8 +135,8 @@ const { isDark } = storeToRefs(useThemeStore());
 }
 
 svg {
-  height: 70vh;
-  width: 69vw;
+  height: 65vh;
+  width: 66vw;
   min-height: 550px;
   min-width: 570px;
   transform: skew(20deg, 12deg);
