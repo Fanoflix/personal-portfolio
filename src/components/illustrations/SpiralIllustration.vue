@@ -118,9 +118,7 @@ const { isDark } = storeToRefs(useThemeStore());
 
       <path
         id="centerStar"
-        stroke="white"
-        stroke-width="1"
-        d="M212.619 775.988L221.772 780.181L223.388 783.655L227.009 776.707L225.737 785.123L221.772 788.695L231.336 789.544L221.772 791.582L218.152 788.695L219.708 797.221L214.434 788.695L216.831 784.242L207.462 789.544L215.315 781.894H219.708L212.619 775.988Z"
+        d="M234.859 775.501L224.259 774.449L218.207 780.064L219.165 783.3L214.574 779.615L219.903 770.571L212.116 778.934L213.222 784.546L219.165 787.555L212.116 790.091L207.37 785.372L212.116 792.094L218.817 792.387L222.909 789.514L222.432 795.417L214.574 799.731L224.948 795.417L226.523 790.515L224.948 785.372L231.612 787.002L233.355 795.417L232.638 785.372L227.524 781.503H223.364L226.176 775.967L234.859 775.501Z"
         fill="white"
       />
     </svg>
@@ -217,13 +215,14 @@ svg * {
       filter: drop-shadow(0px 0px 8px rgba(0, 234, 255, 0.5))
         drop-shadow(3px 3px 5px rgb(208, 0, 255))
         drop-shadow(-3px -3px 5px rgb(153, 0, 255))
-        drop-shadow(0px 0px 13px rgba(0, 234, 255, 0.5));
+        drop-shadow(0px 0px 13px rgba(0, 234, 255, 0.6));
     }
 
     #circle2 {
-      filter: drop-shadow(0px 0px 10px rgba(102, 0, 255, 0.5))
-        drop-shadow(-0px -0px 10px rgba(41, 80, 255, 0.5))
-        drop-shadow(0px 0px 6px rgba(0, 234, 255, 0.5));
+      filter: drop-shadow(2px 2px 10px rgba(102, 0, 255, 0.5))
+        drop-shadow(-2px -2px 9px rgba(41, 80, 255, 0.5))
+        drop-shadow(0px 0px 3px rgba(0, 234, 255, 0.6))
+        drop-shadow(0px 0px 25px rgb(0, 157, 255));
     }
   }
 }

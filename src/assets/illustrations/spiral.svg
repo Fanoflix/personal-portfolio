@@ -7,7 +7,7 @@
 <circle cx="221.798" cy="786.601" r="207.738" stroke="#242424" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 30 2 30"/>
 <circle cx="221.798" cy="786.601" r="145.278" transform="rotate(11.1239 221.798 786.601)" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 20 2 20"/>
 <circle cx="221.799" cy="786.602" r="96.7936" transform="rotate(-0.0238096 221.799 786.602)" stroke="#6B6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 24 2 24"/>
-<circle cx="219.257" cy="786.676" r="50.9485" transform="rotate(-0.0238096 219.257 786.676)" stroke="#CFCFCF" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 30 3 30"/>
+<circle cx="219.257" cy="786.676" r="50.9485" transform="rotate(-0.0238096 219.257 786.676)" stroke="#D7D7D7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 50 2 50"/>
 <circle cx="219.299" cy="786.719" r="11.5319" transform="rotate(-0.0238096 219.299 786.719)" stroke="#CFCFCF" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 10 1 10"/>
-<path d="M212.619 775.988L221.772 780.181L223.388 783.655L227.009 776.707L225.737 785.123L221.772 788.695L231.336 789.544L221.772 791.582L218.152 788.695L219.708 797.221L214.434 788.695L216.831 784.242L207.462 789.544L215.315 781.894H219.708L212.619 775.988Z" fill="white"/>
+<path d="M234.859 775.501L224.259 774.449L218.207 780.064L219.165 783.3L214.574 779.615L219.903 770.571L212.116 778.934L213.222 784.546L219.165 787.555L212.116 790.091L207.37 785.372L212.116 792.094L218.817 792.387L222.909 789.514L222.432 795.417L214.574 799.731L224.948 795.417L226.523 790.515L224.948 785.372L231.612 787.002L233.355 795.417L232.638 785.372L227.524 781.503H223.364L226.176 775.967L234.859 775.501Z" fill="white"/>
 </svg>
