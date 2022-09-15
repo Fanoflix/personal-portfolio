@@ -99,7 +99,7 @@ const props = defineProps({
 });
 
 function toggleTheme(): void {
-  themeIcon.value!.style.transition = "transform 0.4s ease-in-out";
+  themeIcon.value!.style.transition = "transform 0.6s ease-in-out";
   if (isDark.value) themeIcon.value!.style.transform = "rotateZ(360deg)";
   else themeIcon.value!.style.transform = "rotateZ(0deg)";
   changeTheme();
