@@ -141,7 +141,7 @@ svg {
   min-width: 570px;
   transform: skew(20deg, 12deg);
   will-change: transform filter;
-  transition: filter 3s ease-out;
+  transition: filter 2.5s ease-in;
   filter: invert(0.5) brightness(0.3) contrast(2);
 
   #centerStar,
@@ -159,7 +159,7 @@ svg {
   }
 
   #centerStar {
-    animation: rotate 8s infinite linear;
+    animation: rotate 4s infinite linear;
   }
 
   // #circle1 {
@@ -167,7 +167,7 @@ svg {
   // }
 
   #circle2 {
-    animation: rotate 25s infinite linear;
+    animation: rotate 18s infinite linear;
   }
 
   #circle3 {
