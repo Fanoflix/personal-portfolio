@@ -156,17 +156,18 @@ export default {
   input[type="radio"]::after {
     content: "";
     width: 15px;
-
+    height: 13px;
+    margin-top: 1px;
     border-radius: 0px;
-    transform: rotateZ(45deg) scale(0.8);
+    transform: rotateZ(45deg) scale(0.9);
 
     background-color: transparent;
     outline: 1px solid $black-mute;
-    border: 4px solid $color-background;
+    border: 3px solid $color-background;
   }
 
   input[type="radio"]:checked::after {
-    outline: 2px solid $black-soft2;
+    outline: 1px solid $black-soft2;
     border: 3px solid $white;
     background-color: $black-soft2;
   }
@@ -179,13 +180,13 @@ export default {
   }
 
   input[type="radio"]::after {
-    outline: 2px solid $white-mute;
-    border: 2px solid $container-bg-color-dark;
+    outline: 1px solid $white-mute;
+    border: 3px solid $container-bg-color-dark;
     background-color: $secondary-dark;
   }
 
   input[type="radio"]:checked::after {
-    outline: 2px solid $white;
+    outline: 1px solid $white;
     border: 3px solid $black;
     background-color: $white-soft2;
     box-shadow: 0px 0px 12px $white;

@@ -43,69 +43,69 @@
 </template>
 
 <script setup lang="ts">
-import anime from "animejs";
-import { useThemeStore } from "@/stores/theme";
-import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
-const themeStore = useThemeStore();
-const { isDark } = storeToRefs(themeStore);
+import anime from "animejs"
+import { useThemeStore } from "@/stores/theme"
+import { storeToRefs } from "pinia"
+import { onMounted } from "vue"
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
 
 const leftTopSpikeInitial =
-  "13.2 110.8 5.3 112.2 0 113.5 27.9 140 28.1 128.1 13.2 110.8";
+  "13.2 110.8 5.3 112.2 0 113.5 27.9 140 28.1 128.1 13.2 110.8"
 const leftTopSpikeFinal =
-  "13.2 110.8 41.1 51.1 0 113.5 27.9 140 28.1 128.1 13.2 110.8";
+  "13.2 110.8 41.1 51.1 0 113.5 27.9 140 28.1 128.1 13.2 110.8"
 
-const leftBotSpikeInitial = "53.8 160.8 55.6 159.4 51.7 162.5 53.8 160.8";
-const leftBotSpikeFinal = "75.7 185.3 55.6 159.4 51.7 162.5 75.7 185.3";
+const leftBotSpikeInitial = "53.8 160.8 55.6 159.4 51.7 162.5 53.8 160.8"
+const leftBotSpikeFinal = "75.7 185.3 55.6 159.4 51.7 162.5 75.7 185.3"
 
 const rightTopSpikeInitial =
-  "147 121.2 140.8 118.8 129.8 130.8 135.5 139.3 153.6 123.7 147 121.2";
+  "147 121.2 140.8 118.8 129.8 130.8 135.5 139.3 153.6 123.7 147 121.2"
 const rightTopSpikeFinal =
-  "93.9 15.4 140.8 118.8 129.8 130.8 135.5 139.3 153.6 123.7 93.9 15.4";
+  "93.9 15.4 140.8 118.8 129.8 130.8 135.5 139.3 153.6 123.7 93.9 15.4"
 
-const rightBotSpikeInitial = "106.3 161.1 108 162.9 104 158.7 106.3 161.1";
-const rightBotSpikeFinal = "82 185.3 108 162.9 104 158.7 82 185.3";
+const rightBotSpikeInitial = "106.3 161.1 108 162.9 104 158.7 106.3 161.1"
+const rightBotSpikeFinal = "82 185.3 108 162.9 104 158.7 82 185.3"
 
-const easing = "easeOutInBack";
-const logoAnimDuration = 650;
-const logoLoop = false;
-const delay = 150;
+const easing = "easeOutInBack"
+const logoAnimDuration = 650
+const logoLoop = false
+const delay = 150
 
-const rippleDuration = 550;
-const rippleEasing = "easeOutExpo";
-const rippleDistance = 60;
-const rippleOffsetDelay = 0;
-const rippleOpacity = [1, 0.25];
+const rippleDuration = 550
+const rippleEasing = "easeOutExpo"
+const rippleDistance = 60
+const rippleOffsetDelay = 0
+const rippleOpacity = [1, 0.25]
 
-const rippleBackDuration = rippleDuration / 2;
-const rippleBackEasing = "easeInOutBack";
+const rippleBackDuration = rippleDuration / 2
+const rippleBackEasing = "easeInOutBack"
 // const rippleBackEasing = "easeInOutExpo";
-const rippleBackOffset = 510;
-const rippleBackOpacity = [0.25, 1];
+const rippleBackOffset = 510
+const rippleBackOpacity = [0.25, 1]
 
 const spikeLTopTimeline = anime.timeline({
   easing: easing,
   delay: delay,
-});
+})
 const spikeLBotTimeline = anime.timeline({
   easing: easing,
   delay: delay,
-});
+})
 const spikeRTopTimeLine = anime.timeline({
   easing: easing,
   delay: delay,
-});
+})
 const spikeRBotTimeLine = anime.timeline({
   easing: easing,
   delay: delay,
-});
+})
 const base = anime.timeline({
   easing: easing,
-});
+})
 
 onMounted(() => {
-  morphLogoForward();
-});
+  morphLogoForward()
+})
 
 function morphLogoForward() {
   base.add({
@@ -121,7 +121,7 @@ function morphLogoForward() {
     ],
     duration: 175,
     delay: 150,
-  });
+  })
 
   // Top + Ripple
 
@@ -153,7 +153,7 @@ function morphLogoForward() {
         easing: rippleBackEasing,
       },
       rippleBackOffset
-    );
+    )
 
   spikeLTopTimeline
     .add({
@@ -183,7 +183,7 @@ function morphLogoForward() {
         easing: rippleBackEasing,
       },
       rippleBackOffset
-    );
+    )
 
   // Bot
   spikeRBotTimeLine.add({
@@ -191,14 +191,14 @@ function morphLogoForward() {
     points: [rightBotSpikeInitial, rightBotSpikeFinal],
     duration: logoAnimDuration,
     loop: logoLoop,
-  });
+  })
 
   spikeLBotTimeline.add({
     targets: "#left_bot_spike",
     points: [leftBotSpikeInitial, leftBotSpikeFinal],
     duration: logoAnimDuration,
     loop: logoLoop,
-  });
+  })
 }
 </script>
 

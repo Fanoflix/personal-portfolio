@@ -62,24 +62,26 @@
 </template>
 
 <script setup lang="ts">
-import FContainer from "@/components/container/FContainer.vue";
-import FRadio from "@/components/radio/FRadio.vue";
-import FInput from "@/components/input/FInput.vue";
-import FButton from "@/components/button/FButton.vue";
-import FNewsCard from "@/components/loading/FNewsCard.vue";
-import SurveyIntro from "@/components/surveyintro/SurveyIntro.vue";
-import SurveyHeader from "@/components/surveyintro/SurveyHeader.vue";
-import processRequest from "../utils/processRequest";
+import FContainer from "@/components/container/FContainer.vue"
+import FRadio from "@/components/radio/FRadio.vue"
+import FInput from "@/components/input/FInput.vue"
+import FButton from "@/components/button/FButton.vue"
+import FNewsCard from "@/components/loading/FNewsCard.vue"
+import SurveyIntro from "@/components/surveyintro/SurveyIntro.vue"
+import SurveyHeader from "@/components/surveyintro/SurveyHeader.vue"
+import processRequest from "../utils/processRequest"
 
-import { useAxios } from "@/composables/useAxios";
-import { onMounted, ref, reactive, nextTick } from "vue";
+import { useAxios } from "@/composables/useAxios"
+import { onMounted, ref, reactive, nextTick } from "vue"
 
-const url = "http://localhost:5000";
+const url = "http://localhost:5000"
 
-const { data, isLoading, error, isFinished } = useAxios(`${url}/survey/1`);
-
+const { data, isLoading, error, isFinished } = useAxios(`${url}/survey/1`)
+nextTick(() => {
+  console.log(data)
+})
 function submit() {
-  console.log(data.value);
+  // console.log(data.value);
   // processRequest("response", "post", data.value)?.then((res) => {
   //   console.log(res.data);
   // });
