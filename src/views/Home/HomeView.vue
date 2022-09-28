@@ -9,14 +9,18 @@
             <component :is="Component" />
           </KeepAlive>
         </Transition>
+
+        <!-- <div>
+          <img src="@/assets/icons/slider_handle.png" alt="" />
+        </div> -->
       </div>
     </RouterView>
   </section>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import FSidebar from "@/components/sidebar/FSidebar.vue";
+import { onMounted, ref } from "vue"
+import FSidebar from "@/components/sidebar/FSidebar.vue"
 </script>
 
 <style lang="scss">

@@ -35,7 +35,7 @@
 
     <FToolTip class="nav-item no-select" title="LinkedIn" placement="bottom">
       <a
-        href="https://www.linkedin.com/in/muhammad-ammar-nasir-9b2193207/"
+        href="https://www.linkedin.com/in/ammar-nasir/"
         target="_blank"
         rel="noopener noreferrer"
         class="icon pointer"

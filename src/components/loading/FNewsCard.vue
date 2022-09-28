@@ -43,7 +43,7 @@ defineProps<{ message: string; hiddenMessage?: string }>()
   .news-content {
     text-transform: uppercase;
     padding: 0 20px;
-    width: 50vw;
+    width: 35vw;
 
     .message {
       letter-spacing: -2px;
@@ -72,6 +72,8 @@ defineProps<{ message: string; hiddenMessage?: string }>()
 @media screen and (max-width: $bp_tablet) {
   .news-wrapper {
     .news-content {
+    width: 80vw;
+
       .message {
         word-spacing: 4px;
         font-size: 32px;
