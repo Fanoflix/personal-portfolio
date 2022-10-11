@@ -51,11 +51,14 @@ import { onMounted, ref, reactive, nextTick } from "vue"
 
 const url = "http://localhost:5000"
 const { data, isLoading, error, isFinished } = useAxios(`${url}/survey/1`)
-console.log(isFinished.value)
-console.log(error.value)
-nextTick(() => {
-  console.log(data)
-})
+
+// TODO - remove this comment below
+// console.log(isFinished.value)
+// console.log(error.value)
+// nextTick(() => {
+//   console.log(data)
+// })
+
 function submit() {
   // console.log(data.value);
   // processRequest("response", "post", data.value)?.then((res) => {
