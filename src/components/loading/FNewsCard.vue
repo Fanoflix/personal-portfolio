@@ -1,19 +1,13 @@
 <template>
   <section class="news-wrapper no-select" :class="{ dark: isDark }">
     <FToolTip title="Home" placement="bottom">
-      <FIconButton
-        @click="$router.push('/')"
-        icon="backicon"
-        containerWidth="65px"
-        containerHeight="100%"
-        iconSize="28px"
-      />
+      <FIconButton @click="$router.push('/')" icon="backicon" containerWidth="65px" containerHeight="100%"
+        iconSize="28px" />
     </FToolTip>
     <div class="news-content">
       <h1 class="message">
         {{ message }}
       </h1>
-
       <h3 v-if="hiddenMessage" class="secret-message">
         {{ hiddenMessage }}
       </h3>
@@ -28,7 +22,7 @@ import { storeToRefs } from "pinia"
 import { useThemeStore } from "@/stores/theme"
 const { isDark } = storeToRefs(useThemeStore())
 
-defineProps<{ message: string; hiddenMessage?: string }>()
+const props = defineProps<{ message: string; hiddenMessage?: string }>()
 </script>
 
 <style lang="scss" scoped>
@@ -37,19 +31,21 @@ defineProps<{ message: string; hiddenMessage?: string }>()
 
 .news-wrapper {
   margin-top: $nav-height - 20px;
+
   display: flex;
   justify-content: center;
   flex-flow: row nowrap;
+  width: 70%;
+
   .news-content {
-    text-transform: uppercase;
-    padding: 0 20px;
-    width: 35vw;
+    padding: 0 0 0 20px;
 
     .message {
       letter-spacing: -2px;
       word-spacing: 7px;
       font-size: 55px;
       line-height: 0.95;
+      text-transform: uppercase;
 
       // filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.3));
       text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
@@ -72,7 +68,20 @@ defineProps<{ message: string; hiddenMessage?: string }>()
 @media screen and (max-width: $bp_tablet) {
   .news-wrapper {
     .news-content {
-    width: 80vw;
+
+      .message {
+        word-spacing: 4px;
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $bp_phone) {
+  .news-wrapper {
+    width: 100vw;
+
+    .news-content {
 
       .message {
         word-spacing: 4px;
