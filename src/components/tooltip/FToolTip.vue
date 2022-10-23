@@ -38,7 +38,6 @@ function hideTooltip() {
   isActive.value = false
 }
 
-
 const wrapperClasses = computed(() => {
   return { dark: isDark.value }
 })
@@ -96,7 +95,7 @@ export default {
 
     &.top {
       /* TODO: top is broken */
-      
+
       // top: 0%;
       // transform: translate(-50%, -150%);
 
@@ -124,13 +123,14 @@ export default {
 
   .tooltipFade-enter-active,
   .tooltipFade-leave-active {
-    transition: opacity 0.135s ease-out, transform 0.2s ease-in;
+    transition: opacity 0.25s ease-in-out, transform 0.2s ease-in;
   }
 
   .tooltipFade-enter-from {
     opacity: 0;
   }
   .tooltipFade-leave-to {
+    transition: none;
     opacity: 0;
   }
 }
