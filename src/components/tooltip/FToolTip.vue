@@ -65,7 +65,7 @@ export default {
   position: relative;
   display: block;
   height: inherit;
-  width: inherit;
+  // width: inherit;
   .tooltip {
     position: absolute;
     display: block;
