@@ -1,4 +1,4 @@
-import { ref, shallowRef } from "vue";
+import { ref } from "vue";
 import type { Ref } from "vue";
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
