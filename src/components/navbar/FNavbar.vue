@@ -1,8 +1,8 @@
 <template>
   <section :class="navbarClasses">
-    <FLink class="nav-item no-select pointer" size="md" type="secondary" to="/">
+    <!-- <FLink class="nav-item no-select pointer" size="md" type="secondary" to="/">
       Home
-    </FLink>
+    </FLink> -->
 
     <!-- <FLink
       class="nav-item no-select pointer"
@@ -13,14 +13,14 @@
       Projects
     </FLink> -->
 
-    <FLink
+    <!-- <FLink
       class="nav-item no-select pointer"
       size="md"
       type="secondary"
       to="/surveys"
     >
       Surveys
-    </FLink>
+    </FLink> -->
 
     <FToolTip class="nav-item no-select" title="Github" placement="bottom">
       <a
@@ -99,7 +99,7 @@ const props = defineProps({
 });
 
 function toggleTheme(): void {
-  themeIcon.value!.style.transition = "transform 0.6s ease-in-out";
+  themeIcon.value!.style.transition = "transform 0.125s ease";
   if (isDark.value) themeIcon.value!.style.transform = "rotateZ(360deg)";
   else themeIcon.value!.style.transform = "rotateZ(0deg)";
   changeTheme();

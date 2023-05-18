@@ -11,31 +11,31 @@
 </template>
 
 <script setup lang="ts">
-import { useThemeStore } from "@/stores/theme";
-import { onBeforeMount } from "vue";
-import FNavbar from "./components/navbar/FNavbar.vue";
-import SpiralIllustration from "./components/illustrations/SpiralIllustration.vue";
+import { useThemeStore } from "@/stores/theme"
+import { onBeforeMount } from "vue"
+import FNavbar from "./components/navbar/FNavbar.vue"
+import SpiralIllustration from "./components/illustrations/SpiralIllustration.vue"
 
-const body: HTMLElement | null = document.querySelector("body");
-const themeStore = useThemeStore();
-const { setIsDark } = themeStore;
+const body: HTMLElement | null = document.querySelector("body")
+const themeStore = useThemeStore()
+const { setIsDark } = themeStore
 
 onBeforeMount(() => {
-  let storedIsDark = JSON.parse(localStorage.getItem("isDark") || "true");
+  let storedIsDark = JSON.parse(localStorage.getItem("isDark") || "true")
   if (storedIsDark) {
-    body?.classList.add("dark");
+    body?.classList.add("dark")
   }
-  setIsDark(storedIsDark);
-});
+  setIsDark(storedIsDark)
+})
 
 // changing Body's background color according to isDark in store theme.js
 themeStore.$subscribe((_, state) => {
   if (state.isDark) {
-    body?.classList.add("dark");
+    body?.classList.add("dark")
   } else {
-    body?.classList.remove("dark");
+    body?.classList.remove("dark")
   }
-});
+})
 </script>
 
 <style lang="scss">

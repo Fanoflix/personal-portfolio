@@ -110,7 +110,7 @@ export default {
       transform: translate(-50%, 50%);
 
       .arrow {
-        top: -2%;
+        top: 0%;
       }
     }
 

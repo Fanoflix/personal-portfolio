@@ -27,11 +27,22 @@
         scale="y"
         label="Message"
         size="sm"
+        @keyup.ctrl.enter="submit()"
       />
 
       <i>* Required</i>
 
       <div class="buttons">
+        <Transition name="fade" mode="out-in">
+          <div v-if="responseMessage">
+            <p class="success response-message" v-if="isMessageSendSuccessful">
+              {{ responseMessage }} &#10003;
+            </p>
+            <p class="error response-message" v-else>
+              {{ responseMessage }} &#9587;
+            </p>
+          </div>
+        </Transition>
         <FButton
           size="sm"
           customClasses="submit-btn"
@@ -45,74 +56,72 @@
 </template>
 
 <script setup lang="ts">
-import FInput from "@/components/input/FInput.vue";
-import FButton from "@/components/button/FButton.vue";
-import axios from "axios";
-import { onActivated, onMounted, ref } from "vue";
-import type { Ref } from "vue";
+import FInput from "@/components/input/FInput.vue"
+import FButton from "@/components/button/FButton.vue"
+import axios, { type AxiosResponse } from "axios"
+import { ref } from "vue"
+import type { Ref } from "vue"
 
 /*
      Discord Webhook bot + embed settings
 */
-const targetDiscordUser = `<@375823597668925441>`;
-const baseWebhookUrl =
-  "https://discord.com/api/webhooks/946061140037869648/8fQSMRGr25fI_Oa3aTpYPU0PflYspHqalm3lSmtaWppaMuSr1eG1DfeINyEcNDH5JQoK";
-const webhookQueryParams = "?wait=true";
-const webhookBotName = "FanoMessenger";
-const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786];
-let currentColor = 0;
+const targetDiscordUser = `<@375823597668925441>`
+const baseWebhookUrl = import.meta.env.VITE_BASE_WEBHOOK_URL
+const webhookQueryParams = "?wait=true"
+const webhookBotName = "WebsiteMessenger"
+const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786]
+let currentColor = 0
 
 /*
       User Reactive Info
 */
-const username: Ref<string | null> = ref(null);
-const email: Ref<string | null> = ref(null);
-const message: Ref<string | null> = ref(null);
+const username: Ref<string | null> = ref(null)
+const email: Ref<string | null> = ref(null)
+const message: Ref<string | null> = ref(null)
+const isMessageSendSuccessful: Ref<boolean> = ref(false)
+const responseMessage: Ref<string | undefined> = ref(undefined)
 
 /*
       Methods
 */
 function submit() {
-  // sendDiscordNotification();
+  sendDiscordNotification()
 }
 
 function sendDiscordNotification() {
+  responseMessage.value = undefined
+
   axios
     .post(`${baseWebhookUrl}${webhookQueryParams}`, {
       username: webhookBotName,
-      content: targetDiscordUser,
+      content: `.\n.\n.\n.${targetDiscordUser}, you have a new message from **"${username.value}"** (_${email.value}_) \n.`,
       embeds: [
         {
-          title: `From: ${username.value}`,
-          description: `Email: ${email.value}`,
+          title: `**${username.value}**`,
+          description: `${message.value}`,
           color: embedColors[currentColor],
-          fields: [
-            {
-              name: "Message",
-              value: message.value,
-              inline: false,
-            },
-          ],
         },
       ],
     })
-    .then((res) => {
-      // notify user (show snackbar)
-      currentColor = (currentColor + 1) % embedColors.length;
+    .then((res: AxiosResponse<any, any>) => {
+      responseMessage.value = "Sent"
+      currentColor = (currentColor + 1) % embedColors.length
+      isMessageSendSuccessful.value = true
     })
-    .catch((err) => {
-      // show error (show snackbar)
-    });
+    .catch((err: any) => {
+      responseMessage.value = "Failed"
+      isMessageSendSuccessful.value = false
+    })
 }
 </script>
 
 <script lang="ts">
 export default {
   name: "HomeViewContact",
-};
+}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@assets/screens.scss";
 @import "@assets/variables.scss";
 
@@ -134,6 +143,19 @@ export default {
     width: 80%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+
+    .response-message {
+      margin-right: 10px;
+    }
+
+    .success {
+      color: $success-light;
+    }
+
+    .error {
+      color: $error;
+    }
   }
 
   .field:first-child {

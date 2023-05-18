@@ -19,7 +19,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue"
 import FSidebar from "@/components/sidebar/FSidebar.vue"
 </script>
 
