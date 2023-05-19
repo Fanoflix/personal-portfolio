@@ -66,7 +66,8 @@ import type { Ref } from "vue"
      Discord Webhook bot + embed settings
 */
 const targetDiscordUser = `<@375823597668925441>`
-const baseWebhookUrl = import.meta.env.VITE_BASE_WEBHOOK_URL
+const baseWebhookUrl =
+  VITE_BASE_WEBHOOK_URL || import.meta.env.VITE_BASE_WEBHOOK_URL
 const webhookQueryParams = "?wait=true"
 const webhookBotName = "WebsiteMessenger"
 const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786]
