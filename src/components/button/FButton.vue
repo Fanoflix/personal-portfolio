@@ -23,16 +23,16 @@
 
 <script setup>
 // Imports
-import { storeToRefs } from "pinia";
-import { computed, useAttrs } from "vue";
-import { useThemeStore } from "@/stores/theme.ts";
+import { storeToRefs } from "pinia"
+import { computed, useAttrs } from "vue"
+import { useThemeStore } from "@/stores/theme"
 
 // State
 
 // #region Reactive State
-const themeStore = useThemeStore();
-const { isDark } = storeToRefs(themeStore);
-const attrs = useAttrs();
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
+const attrs = useAttrs()
 // #endregion
 
 // Props
@@ -45,8 +45,8 @@ const props = defineProps({
     default: "md",
   },
   type: {
-    type: String,
-    default: "primary",
+    type: String, // 'primary' | 'secondary' | 'danger' | 'important'
+    default: "primary", 
   },
   rounded: {
     type: Boolean,
@@ -68,7 +68,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 
 // #region Computed
 const isDisabled = computed(() => {
@@ -76,8 +76,8 @@ const isDisabled = computed(() => {
     attrs.disabled !== undefined &&
     attrs.disabled !== false &&
     attrs.disabled !== "false"
-  );
-});
+  )
+})
 // #endregion
 </script>
 
@@ -85,7 +85,7 @@ const isDisabled = computed(() => {
 <script>
 export default {
   inheritAttrs: false,
-};
+}
 </script>
 
 <style scoped lang="scss">

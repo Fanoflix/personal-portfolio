@@ -1,8 +1,9 @@
 <template>
   <div class="contact">
     <h1>Leave a message</h1>
-    <form @submit.prevent="submit">
+    <form name="contact-form" @submit.prevent="submit">
       <FInput
+        name="username"
         v-model="username"
         customClasses="field"
         label="Name"
@@ -12,6 +13,7 @@
       />
 
       <FInput
+        name="email"
         v-model="email"
         required
         customClasses="field"
@@ -20,6 +22,7 @@
       />
 
       <FInput
+        name="message"
         v-model="message"
         customClasses="field"
         required
@@ -69,6 +72,8 @@ const targetDiscordUser = `<@375823597668925441>`
 const baseWebhookUrl =
   "https://discord.com/api/webhooks/1108824423315816539/WFTPvaKIoIY9Hp00DHJMNpQ5uZH3gdnw8vVpDKhhAUnLG2J5INUUwRuZss_-LMBvjw3m"
 const webhookQueryParams = "?wait=true"
+const googleAppsScriptUrl =
+  "https://script.google.com/macros/s/AKfycbxOieKo5Qp_AM33dk6PWDJZUy_KU2UicUbdSszByMlz4VFVTPceFTBuLRstA1Dssqxx/exec"
 const webhookBotName = "WebsiteMessenger"
 const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786]
 let currentColor = 0
@@ -86,12 +91,27 @@ const responseMessage: Ref<string | undefined> = ref(undefined)
       Methods
 */
 function submit() {
-  sendDiscordNotification()
+  responseMessage.value = undefined
+  sendToGoogleSheets()
+}
+
+function sendToGoogleSheets() {
+  const form = document.forms["contact-form"]
+  const formData = new FormData(form)
+
+  axios
+    .post(googleAppsScriptUrl, formData)
+    .then((res) => {
+      responseMessage.value = "Sent"
+      isMessageSendSuccessful.value = true
+    })
+    .catch((err: any) => {
+      responseMessage.value = "Failed"
+      isMessageSendSuccessful.value = false
+    })
 }
 
 function sendDiscordNotification() {
-  responseMessage.value = undefined
-
   axios
     .post(`${baseWebhookUrl}${webhookQueryParams}`, {
       username: webhookBotName,
