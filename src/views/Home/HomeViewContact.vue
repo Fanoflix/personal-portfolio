@@ -73,7 +73,7 @@ const baseWebhookUrl =
   "https://discord.com/api/webhooks/1108824423315816539/WFTPvaKIoIY9Hp00DHJMNpQ5uZH3gdnw8vVpDKhhAUnLG2J5INUUwRuZss_-LMBvjw3m"
 const webhookQueryParams = "?wait=true"
 const googleAppsScriptUrl =
-  "https://script.google.com/macros/s/AKfycbxOieKo5Qp_AM33dk6PWDJZUy_KU2UicUbdSszByMlz4VFVTPceFTBuLRstA1Dssqxx/exec"
+  "https://script.google.com/macros/s/AKfycbyWZ9TWzSUTAScQceeSjJ_V9RMsvnvAKtdCPzmyZZZahjvp_KYiXKCpqqG5YznWaZy4/exec"
 const webhookBotName = "WebsiteMessenger"
 const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786]
 let currentColor = 0
@@ -99,8 +99,11 @@ function sendToGoogleSheets() {
   const form = document.forms["contact-form"]
   const formData = new FormData(form)
 
-  axios
-    .post(googleAppsScriptUrl, formData)
+  fetch(googleAppsScriptUrl, {
+    redirect: "follow",
+    method: "POST",
+    body: formData,
+  })
     .then((res) => {
       responseMessage.value = "Sent"
       isMessageSendSuccessful.value = true
