@@ -106,6 +106,7 @@ function sendToGoogleSheets() {
   })
     .then((res) => {
       responseMessage.value = "Sent"
+      sendDiscordNotification()
       isMessageSendSuccessful.value = true
     })
     .catch((err: any) => {
@@ -118,24 +119,18 @@ function sendDiscordNotification() {
   axios
     .post(`${baseWebhookUrl}${webhookQueryParams}`, {
       username: webhookBotName,
-      content: `.\n.\n.\n.${targetDiscordUser}, you have a new message from **"${username.value}"** (_${email.value}_) \n.`,
+      content: `.\n.\n.${targetDiscordUser}\n.\n.`,
       embeds: [
         {
-          title: `**${username.value}**`,
-          description: `${message.value}`,
+          title: `You have a new message!`,
           color: embedColors[currentColor],
         },
       ],
     })
     .then((res: AxiosResponse<any, any>) => {
-      responseMessage.value = "Sent"
       currentColor = (currentColor + 1) % embedColors.length
-      isMessageSendSuccessful.value = true
     })
-    .catch((err: any) => {
-      responseMessage.value = "Failed"
-      isMessageSendSuccessful.value = false
-    })
+    .catch((err: any) => {})
 }
 </script>
 

@@ -33,23 +33,18 @@
       we could just code together. Leave a
       <FInlineLink to="/contact">message</FInlineLink>, let's talk.
     </p>
-
-    <p>
-      If you have some time to spare, please consider checking out this
-      <FInlineLink to="/surveys">survey on code review practices.</FInlineLink>
-    </p>
   </div>
 </template>
 
 <script setup lang="ts">
-import MyLogo from "@/components/mylogo/MyLogo.vue";
-import FInlineLink from "@/components/inlinelink/FInlineLink.vue";
+import MyLogo from "@/components/mylogo/MyLogo.vue"
+import FInlineLink from "@/components/inlinelink/FInlineLink.vue"
 </script>
 
 <script lang="ts">
 export default {
   name: "HomeView",
-};
+}
 </script>
 
 <style lang="scss" scoped>
