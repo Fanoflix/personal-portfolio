@@ -78,7 +78,7 @@
     background-color: $color-background;
     overflow-x: hidden;
     // * turn this back on in case of destruction \/
-    transition: background-color $body-bg-trans;
+    transition: background-color $body-theme-bg-trans;
 
     line-height: 1.6;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Roboto",

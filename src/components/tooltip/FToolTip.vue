@@ -140,7 +140,8 @@ export default {
     background-color: $background-black;
     border-top: 1px solid $white;
 
-    box-shadow: 0px -12px 18px -13px $white;
+    box-shadow: -8px -12px 10px -13px $white, 8px -12px 10px -13px $white,
+      0px -30px 40px -10px $white;
 
     .arrow {
       background-color: $background-black;
