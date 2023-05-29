@@ -42,7 +42,7 @@ interface KeybindGraphicProps {
   split?: boolean // each key is split in its own container, splits at character "+". The final result will not contain "+"
   backgroundColor?: string
   elevationColor?: string
-  opacity: string
+  opacity?: string
 }
 
 /**
@@ -79,7 +79,6 @@ const containerClasses = computed(() => {
       "keybind-uppercase": props.uppercase,
       "keybind-capitalize": !props.uppercase && props.capitalize,
       "keybind-italize": props.italize,
-      dark: isDark.value,
     },
   ]
 })
