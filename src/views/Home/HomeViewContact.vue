@@ -30,10 +30,42 @@
         scale="y"
         label="Message"
         size="sm"
-        @keyup.ctrl.enter="submit()"
       />
 
-      <i>* Required</i>
+      <i>* Required. </i>
+
+      <i>
+        Use
+
+        <KeybindGraphic
+          v-if="!isDark"
+          keybindText="Ctrl + enter"
+          :bordered="true"
+          uppercase
+          backgroundColor="rgb(220,220,220)"
+          borderColor="rgb(150,150,150)"
+          elevationColor="rgb(135,135,135)"
+          fontColor="rgb(40,40,40)"
+          elevation="4px"
+          fontSize="10px"
+          padding="3px"
+          :fontWeight="700"
+        />
+        <KeybindGraphic
+          v-else
+          keybindText="Ctrl + enter"
+          :bordered="true"
+          uppercase
+          borderColor="rgb(65,65,65)"
+          elevationColor="rgb(40,40,40)"
+          backgroundColor="rgb(25,25,25)"
+          elevation="4px"
+          fontSize="10px"
+          padding="3px"
+          :fontWeight="700"
+        />
+        to send.
+      </i>
 
       <div class="buttons">
         <Transition name="fade" mode="out-in">
@@ -46,6 +78,7 @@
             </p>
           </div>
         </Transition>
+
         <FButton
           size="sm"
           customClasses="submit-btn"
@@ -60,10 +93,40 @@
 
 <script setup lang="ts">
 import FInput from "@/components/input/FInput.vue"
+import KeybindGraphic from "@/components/keybindgraphic/KeybindGraphic.vue"
+
 import FButton from "@/components/button/FButton.vue"
 import axios, { type AxiosResponse } from "axios"
-import { ref } from "vue"
+import { onActivated, onDeactivated, onMounted, ref } from "vue"
 import type { Ref } from "vue"
+import { useThemeStore } from "@/stores/theme"
+import { storeToRefs } from "pinia"
+
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
+/*
+      User Reactive Info
+*/
+const username: Ref<string | null> = ref(null)
+const email: Ref<string | null> = ref(null)
+const message: Ref<string | null> = ref(null)
+const isMessageSendSuccessful: Ref<boolean> = ref(false)
+const responseMessage: Ref<string | undefined> = ref(undefined)
+const firstInput = ref<InstanceType<typeof FInput> | null>(null)
+
+/**
+ * @Lifecycle
+ */
+
+onActivated(() => {
+  document.body.addEventListener("keydown", submitFormOnCtrlEnter)
+  // @ts-ignore
+  firstInput.value?.input?.focus()
+})
+
+onDeactivated(() => {
+  document.body.removeEventListener("keydown", submitFormOnCtrlEnter)
+})
 
 /*
      Discord Webhook bot + embed settings
@@ -79,17 +142,16 @@ const embedColors = [15548997, 3066993, 3447003, 16776960, 2303786]
 let currentColor = 0
 
 /*
-      User Reactive Info
-*/
-const username: Ref<string | null> = ref(null)
-const email: Ref<string | null> = ref(null)
-const message: Ref<string | null> = ref(null)
-const isMessageSendSuccessful: Ref<boolean> = ref(false)
-const responseMessage: Ref<string | undefined> = ref(undefined)
-
-/*
       Methods
 */
+
+function submitFormOnCtrlEnter(e: KeyboardEvent) {
+  if (!(e.key === "Enter" && (e.metaKey || e.ctrlKey))) return
+
+  const form = (e.target as HTMLFormElement).form
+  if (form) form.requestSubmit()
+}
+
 function submit() {
   responseMessage.value = undefined
   sendToGoogleSheets()
@@ -159,6 +221,7 @@ export default {
   }
 
   .buttons {
+    margin-top: 20px;
     width: 80%;
     display: flex;
     justify-content: flex-end;

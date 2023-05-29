@@ -56,25 +56,25 @@
 
 <script setup>
 // Imports
-import { useThemeStore } from "@/stores/theme.ts";
-import { storeToRefs } from "pinia";
-import { useAttrs, computed, ref, watch, nextTick } from "vue";
-import config from "@/utils/config.ts";
+import { useThemeStore } from "@/stores/theme.ts"
+import { storeToRefs } from "pinia"
+import { useAttrs, computed, ref, watch, nextTick } from "vue"
+import config from "@/utils/config.ts"
 
 // State
 
 // Reactive State
-const newValue = ref(props.modelValue);
-const newType = ref(props.type);
-const isPasswordVisible = ref(false);
-const input = ref(null);
-const textarea = ref(null);
-const themeStore = useThemeStore();
-const { isDark } = storeToRefs(themeStore);
-const attrs = useAttrs();
+const newValue = ref(props.modelValue)
+const newType = ref(props.type)
+const isPasswordVisible = ref(false)
+const input = ref(null)
+const textarea = ref(null)
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
+const attrs = useAttrs()
 
 // Emits
-const emits = defineEmits(["update:modelValue"]);
+const emits = defineEmits(["update:modelValue"])
 
 // Props
 const props = defineProps({
@@ -123,46 +123,46 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 
 // ! <script setup> components are private by default. Which means, if we assign a ref to this component in the parent component, we will not be able to access anything from this component in the parent component. UNLESS we specify "defineExpose" macro.
 
 // Exposed
 defineExpose({
   input,
-});
+})
 
 /*
  Methods
 */
 const onInput = (event) => {
   if (!props.lazy) {
-    updateValue(event.target.value);
+    updateValue(event.target.value)
   }
-};
+}
 
 const onChange = (event) => {
   if (props.lazy) {
-    updateValue(event.target.value);
+    updateValue(event.target.value)
   }
-};
+}
 
 const onIconClick = () => {
   if (props.type === "password" && props.revealable) {
-    togglePasswordVisibility();
+    togglePasswordVisibility()
   } // TODO: else call a passed method
-};
+}
 
 const togglePasswordVisibility = async () => {
-  isPasswordVisible.value = !isPasswordVisible.value;
-  validatedType.value = isPasswordVisible.value ? "text" : "password";
-  await nextTick();
-  input.value.focus(); // refocus the input element after changing the type
-};
+  isPasswordVisible.value = !isPasswordVisible.value
+  validatedType.value = isPasswordVisible.value ? "text" : "password"
+  await nextTick()
+  input.value.focus() // refocus the input element after changing the type
+}
 
 const updateValue = (value) => {
-  computedValue.value = value;
-};
+  computedValue.value = value
+}
 
 /*
  Watchers
@@ -170,33 +170,33 @@ const updateValue = (value) => {
 watch(
   () => props.modelValue,
   (val) => {
-    newValue.value = val;
+    newValue.value = val
   }
-);
+)
 
 /*
  Computed
 */
 const computedValue = computed({
   get() {
-    return newValue.value;
+    return newValue.value
   },
   set(value) {
-    newValue.value = value;
-    emits("update:modelValue", value);
+    newValue.value = value
+    emits("update:modelValue", value)
   },
-});
+})
 
 const validatedType = computed({
   get() {
     if (config.allowedInputTypes.includes(newType.value)) {
-      return newType.value;
-    } else return "text";
+      return newType.value
+    } else return "text"
   },
   set(val) {
-    newType.value = val;
+    newType.value = val
   },
-});
+})
 
 const rootClasses = computed(() => {
   return [
@@ -204,8 +204,8 @@ const rootClasses = computed(() => {
     {
       disabled: isDisabled.value,
     },
-  ];
-});
+  ]
+})
 
 const inputClasses = computed(() => {
   return [
@@ -218,32 +218,32 @@ const inputClasses = computed(() => {
       bordered: props.bordered,
       dark: isDark.value,
     },
-  ];
-});
+  ]
+})
 
 const passwordRevealIconClass = computed(() => {
   return isPasswordVisible.value &&
     props.revealable &&
     props.type === "password"
     ? "secret-open"
-    : "secret-close";
-});
+    : "secret-close"
+})
 
 const isDisabled = computed(() => {
   return (
     attrs.disabled !== undefined &&
     attrs.disabled !== false &&
     attrs.disabled !== "false"
-  );
-});
+  )
+})
 
 const isRequired = computed(() => {
   return (
     attrs.required !== undefined &&
     attrs.required !== false &&
     attrs.disabled !== "false"
-  );
-});
+  )
+})
 
 const hasMaxLength = computed(() => {
   return (
@@ -251,31 +251,31 @@ const hasMaxLength = computed(() => {
     attrs.maxlength > -1 &&
     props.hasCounter &&
     props.type !== "number"
-  );
-});
+  )
+})
 
 const revealIconSource = computed(() => {
   return isPasswordVisible.value
     ? new URL("../../assets/icons/secret-open.svg", import.meta.url)
-    : new URL("../../assets/icons/secret-close.svg", import.meta.url);
-});
+    : new URL("../../assets/icons/secret-close.svg", import.meta.url)
+})
 
 const valueLength = computed(() => {
   if (typeof computedValue.value == "number") {
-    return computedValue.value.toString().length;
+    return computedValue.value.toString().length
   } else if (typeof computedValue.value == "string") {
-    return computedValue.value.length;
+    return computedValue.value.length
   } else {
-    return 0;
+    return 0
   }
-});
+})
 </script>
 
 <!-- inheritAttrs = false -->
 <script>
 export default {
   inheritAttrs: false,
-};
+}
 </script>
 
 <style scoped lang="scss">
