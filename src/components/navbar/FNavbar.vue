@@ -46,7 +46,7 @@
 
     <FToolTip
       class="nav-item no-select"
-      title="Stackoverflow"
+      title="StackOverflow"
       placement="bottom"
     >
       <a
@@ -74,17 +74,17 @@
 </template>
 
 <script setup lang="ts">
-import FLink from "../link/FLink.vue";
-import FToolTip from "@/components/tooltip/FToolTip.vue";
-import { useThemeStore } from "@/stores/theme";
-import { computed, ref } from "vue";
-import type { Ref } from "vue";
-import { storeToRefs } from "pinia";
+import FLink from "../link/FLink.vue"
+import FToolTip from "@/components/tooltip/FToolTip.vue"
+import { useThemeStore } from "@/stores/theme"
+import { computed, ref } from "vue"
+import type { Ref } from "vue"
+import { storeToRefs } from "pinia"
 
-const themeStore = useThemeStore();
-const { changeTheme } = themeStore;
-const { isDark } = storeToRefs(themeStore); // same thing as the above line
-const themeIcon: Ref<HTMLImageElement | null> = ref(null);
+const themeStore = useThemeStore()
+const { changeTheme } = themeStore
+const { isDark } = storeToRefs(themeStore) // same thing as the above line
+const themeIcon: Ref<HTMLImageElement | null> = ref(null)
 
 // Props
 const props = defineProps({
@@ -96,26 +96,26 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 
 function toggleTheme(): void {
-  themeIcon.value!.style.transition = "transform 0.16s ease";
-  if (isDark.value) themeIcon.value!.style.transform = "rotateZ(360deg)";
-  else themeIcon.value!.style.transform = "rotateZ(0deg)";
-  changeTheme();
+  themeIcon.value!.style.transition = "transform 0.16s ease"
+  if (isDark.value) themeIcon.value!.style.transform = "rotateZ(360deg)"
+  else themeIcon.value!.style.transform = "rotateZ(0deg)"
+  changeTheme()
 }
 const navbarClasses = computed(() => {
   return [
     "navbar",
     { filled: props.filled, rounded: props.rounded, dark: isDark.value },
-  ];
-});
+  ]
+})
 
 const themeIconSource = computed(() => {
   if (isDark.value)
-    return new URL("../../assets/icons/sun.svg", import.meta.url).href;
-  else return new URL("../../assets/icons/moon.svg", import.meta.url).href;
-});
+    return new URL("../../assets/icons/sun.svg", import.meta.url).href
+  else return new URL("../../assets/icons/moon.svg", import.meta.url).href
+})
 </script>
 
 <style scoped lang="scss">

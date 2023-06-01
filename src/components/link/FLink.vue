@@ -7,11 +7,11 @@
 </template>
 
 <script setup>
-import { computed } from "@vue/reactivity";
-import { storeToRefs } from "pinia";
-import { useThemeStore } from "@/stores/theme.ts";
+import { computed } from "@vue/reactivity"
+import { storeToRefs } from "pinia"
+import { useThemeStore } from "@/stores/theme.ts"
 
-const { isDark } = storeToRefs(useThemeStore());
+const { isDark } = storeToRefs(useThemeStore())
 
 const props = defineProps({
   type: {
@@ -35,7 +35,7 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-});
+})
 
 const linkClasses = computed(() => {
   return [
@@ -47,8 +47,8 @@ const linkClasses = computed(() => {
       borderless: props.borderless,
       dark: isDark.value,
     },
-  ];
-});
+  ]
+})
 </script>
 
 <style scoped lang="scss">
@@ -71,7 +71,8 @@ const linkClasses = computed(() => {
 
   &.router-link-active {
     color: black;
-    text-decoration: underline 1px solid black;
+    text-decoration: underline 1px solid #000000;
+    text-underline-offset: 4px;
     font-weight: 500;
   }
   // ____> SIZES <sm, md, lg>
@@ -121,7 +122,14 @@ const linkClasses = computed(() => {
 
   &.router-link-active {
     color: white;
-    text-shadow: 0px 0px 20px $link-active-shadow, 0px 0px 5px rgb(0, 0, 0);
+
+    background: transparent;
+    text-shadow: 
+    0px 0px 5px black,
+    -2px -2px 20px $link-active-shadow,
+    10px 5px 30px $link-active-shadow, 
+    -5px -10px 40px $link-active-shadow;
+
     text-decoration: none;
   }
   &.primary {

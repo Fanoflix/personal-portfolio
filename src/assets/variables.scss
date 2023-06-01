@@ -68,7 +68,7 @@ $color-border: $color-border-light-1;
 $color-border-hover: $color-border-light-2;
 
 $heading: $black;
-$text: #535353;
+$text: $black;
 $text-mute: $black-mute;
 $label-light: #9f9f9f;
 
@@ -82,10 +82,10 @@ $color-border-dark: $color-border-dark-1;
 $color-border-hover-dark: $color-border-dark-2;
 
 $heading-dark: $white;
-$text-dark: rgb(129, 129, 129);
+$text-dark: #a0a0a0;
 $text-mute-dark: $white-mute;
-$label-dark: #6f6f6f;
-$link-active-shadow: rgb(200, 200, 200);
+$label-dark: $text-dark;
+$link-active-shadow: rgb(156, 156, 156);
 
 // !_____> Components Specific
 /*
