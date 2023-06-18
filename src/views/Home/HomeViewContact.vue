@@ -109,7 +109,7 @@ const { isDark } = storeToRefs(themeStore)
 */
 const username: Ref<string | null> = ref(null)
 const email: Ref<string | null> = ref(null)
-const message: Ref<string | null> = ref(null)
+const message: Ref<string | number | undefined> = ref(undefined)
 const isMessageSendSuccessful: Ref<boolean> = ref(false)
 const responseMessage: Ref<string | undefined> = ref(undefined)
 const firstInput = ref<InstanceType<typeof FInput> | null>(null)

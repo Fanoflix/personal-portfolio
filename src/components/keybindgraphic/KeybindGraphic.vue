@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from "vue"
 
 const ELEVATION_MULTIPLE = 2.5
@@ -28,7 +28,7 @@ interface KeybindGraphicProps {
   padding?: string // px
   borderRadius?: string // px
   elevated?: boolean
-  elevation?: string // px (elevaton cannot be greater than 2.5 of fontSize)
+  elevation: string // px (elevaton cannot be greater than 2.5 of fontSize)
   bordered?: boolean
   borderSize?: string
   borderColor?: string
@@ -42,7 +42,7 @@ interface KeybindGraphicProps {
   split?: boolean // each key is split in its own container, splits at character "+". The final result will not contain "+"
   backgroundColor?: string
   elevationColor?: string
-  opacity?: string
+  opacity?: number | string
 }
 
 /**
@@ -132,6 +132,7 @@ const cssProps = computed(() => {
 .keybind-graphic-container {
   display: inline-block;
   opacity: var(--opacity);
+  transition: all 0.5s ease;
 
   &.keybind-uppercase {
     text-transform: uppercase;

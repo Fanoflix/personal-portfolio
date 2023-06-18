@@ -1,98 +1,113 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
-import { useThemeStore } from "@/stores/theme";
-const { isDark } = storeToRefs(useThemeStore());
+import { storeToRefs } from "pinia"
+import { useThemeStore } from "@/stores/theme"
+const { isDark } = storeToRefs(useThemeStore())
 </script>
 <template>
   <section :class="{ dark: isDark }" class="no-select spiral-container">
     <svg viewBox="0 0 1154 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- stroke="#141414" -->
       <circle
         id="circle10"
         cx="221"
         cy="786"
         r="805"
-        stroke="#141414"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="6 56 6 56"
+        stroke-dasharray="6 175 6 175"
       />
+
+      <!-- stroke="#212121" -->
       <circle
         id="circle9"
         cx="221"
         cy="786"
         r="613"
-        stroke="#212121"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="4 52 4 52"
+        stroke-dasharray="5 170 5 170"
       />
+
+      <!-- stroke="#2b2b2b" -->
       <circle
         id="circle8"
         cx="221"
         cy="786"
         r="466"
-        stroke="#2b2b2b"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="4 45 4 45"
+        stroke-dasharray="4 130 4 130"
       />
+
+      <!-- stroke="#454545" -->
       <circle
         id="circle7"
         cx="221"
         cy="786"
         r="362"
-        stroke="#454545"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="3 40 3 40"
+        stroke-dasharray="3 120 3 120"
       />
+
+      <!-- stroke="#5c5c5c" -->
       <circle
         id="circle6"
         cx="221"
         cy="786"
         r="279"
-        stroke="#5c5c5c"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="3 36 3 36"
+        stroke-dasharray="3 110 3 110"
       />
+
+      <!-- stroke="#808080" -->
       <circle
         id="circle5"
         cx="221"
         cy="786"
         r="207"
-        stroke="#808080"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="3 30 3 33"
+        stroke-dasharray="3 100 3 100"
       />
+
+      <!-- stroke="#bababa" -->
       <circle
         id="circle4"
         cx="221"
         cy="786"
         r="145"
-        stroke="#bababa"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="2 28 2 29"
+        stroke-dasharray="2 82 2 80"
       />
+
+      <!-- stroke="#e8e8e8" -->
       <circle
         id="circle3"
         cx="221"
         cy="786"
         r="96"
-        stroke="#e8e8e8"
+        stroke="white"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="2 22 2 21"
+        stroke-dasharray="2 75 2 75"
       />
       <circle
         id="circle2"
@@ -103,7 +118,7 @@ const { isDark } = storeToRefs(useThemeStore());
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-dasharray="2 16 2 16"
+        stroke-dasharray="2 63 2 70"
       />
       <!-- <circle
         id="circle1"
@@ -142,7 +157,15 @@ svg {
   transform: skew(20deg, 12deg);
   will-change: transform filter;
   transition: filter 2.5s ease-in;
-  filter: invert(0.5) brightness(0.3) contrast(2);
+  filter: invert(1) brightness(0.3) contrast(2);
+
+  #centerStar {
+      filter: 
+      drop-shadow(0px 0px 10px white)
+      drop-shadow(0px 0px 30px white)
+      drop-shadow(0px 0px 40px white)
+      drop-shadow(0px 0px 50px white)
+    }
 
   #centerStar,
   // #circle1,
@@ -159,47 +182,57 @@ svg {
   }
 
   #centerStar {
-    animation: rotate 4s infinite linear;
+    animation: rotate 10s infinite linear;
   }
 
-  // #circle1 {
-  //   animation: rotate 15s infinite linear;
-  // }
+  #circle1 {
+    animation: rotate 17s infinite linear;
+    opacity: 1;
+  }
 
   #circle2 {
-    animation: rotate 18s infinite linear;
+    animation: rotate 24s infinite linear;
+    opacity: 0.9;
   }
 
   #circle3 {
-    animation: rotate 40s infinite linear;
+    animation: rotate 35s infinite linear;
+    opacity: 0.8;
   }
 
   #circle4 {
-    animation: rotate 60s infinite linear;
+    animation: rotate 50s infinite linear;
+    opacity: 0.7;
   }
 
   #circle5 {
-    animation: rotate 85s infinite linear;
+    animation: rotate 75s infinite linear;
+    opacity: 0.6;
   }
 
   #circle6 {
     animation: rotate 115s infinite linear;
+    opacity: 0.5;
   }
 
   #circle7 {
     animation: rotate 140s infinite linear;
+    opacity: 0.4;
   }
 
   #circle8 {
     animation: rotate 190s infinite linear;
+    opacity: 0.3;
   }
 
   #circle9 {
     animation: rotate 240s infinite linear;
+    opacity: 0.2;
   }
 
   #circle10 {
     animation: rotate 320s infinite linear;
+    opacity: 0.1;
   }
 }
 
@@ -212,18 +245,23 @@ svg * {
     filter: none;
 
     #centerStar {
-      filter: drop-shadow(0px 0px 8px rgba(0, 234, 255, 0.5))
-        drop-shadow(3px 3px 5px rgb(208, 0, 255))
-        drop-shadow(-3px -3px 5px rgb(153, 0, 255))
-        drop-shadow(0px 0px 13px rgba(0, 234, 255, 0.6));
+      filter: drop-shadow(0px 0px 17px rgba(0, 234, 255, 0.4))
+        drop-shadow(-1px -1px 2px rgb(208, 0, 255))
+        drop-shadow(1px 1px 2px rgb(208, 0, 255))
+        drop-shadow(1px 1px 2px rgb(0, 242, 255))
+        drop-shadow(0px 0px 25px rgba(0, 234, 255, 0.2))
+        drop-shadow(0px 7px 20px rgb(247, 0, 255, 0.3))
+        drop-shadow(0px 20px 40px rgba(0, 234, 255, 0.3))
+        drop-shadow(5px 15px 35px rgba(242, 255, 0, 0.2))
+        drop-shadow(0px -40px 80px rgba(0, 234, 255, 0.7));
     }
 
-    #circle2 {
-      filter: drop-shadow(2px 2px 10px rgba(102, 0, 255, 0.5))
-        drop-shadow(-2px -2px 9px rgba(41, 80, 255, 0.5))
-        drop-shadow(0px 0px 3px rgba(0, 234, 255, 0.6))
-        drop-shadow(0px 0px 25px rgb(0, 157, 255));
-    }
+    // #circle2 {
+    //   filter: drop-shadow(2px 2px 10px rgba(102, 0, 255, 0.5))
+    //     drop-shadow(-2px -2px 9px rgba(41, 80, 255, 0.5))
+    //     drop-shadow(0px 0px 3px rgba(0, 234, 255, 0.6))
+    //     drop-shadow(0px 0px 25px rgb(0, 157, 255));
+    // }
   }
 }
 
