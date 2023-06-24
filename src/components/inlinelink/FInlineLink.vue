@@ -1,16 +1,11 @@
 <template>
-  <RouterLink
-    v-if="to"
-    :to="to"
-    class="inline-link"
-    :class="[{ dark: isDark }]"
-  >
+  <RouterLink v-if="to" :to="to" class="inline-link" :class="linkClasses">
     <slot> </slot>
   </RouterLink>
 
   <a
     class="inline-link"
-    :class="[{ dark: isDark }]"
+    :class="linkClasses"
     v-else-if="href"
     :href="href"
     target="_blank"
@@ -21,15 +16,31 @@
 </template>
 
 <script setup lang="ts">
-import { useThemeStore } from "@/stores/theme";
-import { storeToRefs } from "pinia";
-const themeStore = useThemeStore();
-const { isDark } = storeToRefs(themeStore);
+import { useThemeStore } from "@/stores/theme"
+import { storeToRefs } from "pinia"
+import { computed } from "vue"
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
 
-const props = defineProps<{
-  to?: string;
-  href?: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    to?: string
+    href?: string
+    underlined?: boolean
+  }>(),
+  {
+    underlined: true,
+  }
+)
+
+const linkClasses = computed(() => {
+  return [
+    {
+      dark: isDark.value,
+      underlined: props.underlined,
+    },
+  ]
+})
 </script>
 
 <style scoped lang="scss">
@@ -41,22 +52,26 @@ const props = defineProps<{
   cursor: pointer;
 
   text-decoration: none;
-  border-bottom: 1px solid rgb(200, 200, 200);
   color: $black;
   font-weight: 600;
 
-  &:hover {
-    border-bottom: 1px solid $black;
+  &.underlined {
+    border-bottom: 1px solid rgb(200, 200, 200);
+    &:hover {
+      border-bottom: 1px solid $black;
+    }
   }
 }
 
 .inline-link.dark {
   color: $white;
-  border-bottom: 1px solid rgb(70, 70, 70);
   font-weight: 500;
 
-  &:hover {
-    border-bottom: 1px solid $white;
+  &.underlined {
+    border-bottom: 1px solid rgb(70, 70, 70);
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
   }
 }
 </style>

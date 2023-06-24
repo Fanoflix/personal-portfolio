@@ -74,7 +74,6 @@
 </template>
 
 <script setup lang="ts">
-import FLink from "../link/FLink.vue"
 import FToolTip from "@/components/tooltip/FToolTip.vue"
 import { useThemeStore } from "@/stores/theme"
 import { computed, ref } from "vue"

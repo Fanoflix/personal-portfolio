@@ -6,7 +6,6 @@ const { isDark } = storeToRefs(useThemeStore())
 <template>
   <section :class="{ dark: isDark }" class="no-select spiral-container">
     <svg viewBox="0 0 1154 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- stroke="#141414" -->
       <circle
         id="circle10"
         cx="221"
@@ -19,7 +18,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="6 175 6 175"
       />
 
-      <!-- stroke="#212121" -->
       <circle
         id="circle9"
         cx="221"
@@ -32,7 +30,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="5 170 5 170"
       />
 
-      <!-- stroke="#2b2b2b" -->
       <circle
         id="circle8"
         cx="221"
@@ -45,7 +42,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="4 130 4 130"
       />
 
-      <!-- stroke="#454545" -->
       <circle
         id="circle7"
         cx="221"
@@ -58,7 +54,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="3 120 3 120"
       />
 
-      <!-- stroke="#5c5c5c" -->
       <circle
         id="circle6"
         cx="221"
@@ -71,7 +66,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="3 110 3 110"
       />
 
-      <!-- stroke="#808080" -->
       <circle
         id="circle5"
         cx="221"
@@ -84,7 +78,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="3 100 3 100"
       />
 
-      <!-- stroke="#bababa" -->
       <circle
         id="circle4"
         cx="221"
@@ -97,7 +90,6 @@ const { isDark } = storeToRefs(useThemeStore())
         stroke-dasharray="2 82 2 80"
       />
 
-      <!-- stroke="#e8e8e8" -->
       <circle
         id="circle3"
         cx="221"
@@ -154,18 +146,15 @@ svg {
   width: 66vw;
   min-height: 550px;
   min-width: 570px;
-  transform: skew(20deg, 12deg);
+  transform: skew(40deg, 5deg) translate3d(0, 0, 0);
   will-change: transform filter;
   transition: filter 2.5s ease-in;
   filter: invert(1) brightness(0.3) contrast(2);
 
   #centerStar {
-      filter: 
-      drop-shadow(0px 0px 10px white)
-      drop-shadow(0px 0px 30px white)
-      drop-shadow(0px 0px 40px white)
-      drop-shadow(0px 0px 50px white)
-    }
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 30px white)
+      drop-shadow(0px 0px 40px white) drop-shadow(0px 0px 50px white);
+  }
 
   #centerStar,
   // #circle1,
@@ -182,56 +171,56 @@ svg {
   }
 
   #centerStar {
-    animation: rotate 10s infinite linear;
+    animation: rotate 13s infinite ease-in-out;
   }
 
   #circle1 {
-    animation: rotate 17s infinite linear;
+    animation: rotate 14s infinite ease-in-out;
     opacity: 1;
   }
 
   #circle2 {
-    animation: rotate 24s infinite linear;
+    animation: rotate 15s infinite ease-in-out;
     opacity: 0.9;
   }
 
   #circle3 {
-    animation: rotate 35s infinite linear;
+    animation: rotate 16s infinite ease-in-out;
     opacity: 0.8;
   }
 
   #circle4 {
-    animation: rotate 50s infinite linear;
+    animation: rotate 17s infinite ease-in-out;
     opacity: 0.7;
   }
 
   #circle5 {
-    animation: rotate 75s infinite linear;
+    animation: rotate 18s infinite ease-in-out;
     opacity: 0.6;
   }
 
   #circle6 {
-    animation: rotate 115s infinite linear;
+    animation: rotate 19s infinite ease-in-out;
     opacity: 0.5;
   }
 
   #circle7 {
-    animation: rotate 140s infinite linear;
+    animation: rotate 20s infinite ease-in-out;
     opacity: 0.4;
   }
 
   #circle8 {
-    animation: rotate 190s infinite linear;
+    animation: rotate 21s infinite ease-in-out;
     opacity: 0.3;
   }
 
   #circle9 {
-    animation: rotate 240s infinite linear;
+    animation: rotate 22s infinite ease-in-out;
     opacity: 0.2;
   }
 
   #circle10 {
-    animation: rotate 320s infinite linear;
+    animation: rotate 23s infinite ease-in-out;
     opacity: 0.1;
   }
 }
@@ -266,10 +255,10 @@ svg * {
 }
 
 @keyframes rotate {
-  from {
+  30% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(-360deg);
   }
 }

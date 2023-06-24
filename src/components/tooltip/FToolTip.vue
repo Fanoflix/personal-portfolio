@@ -9,9 +9,9 @@
     <slot></slot>
 
     <transition name="tooltipFade">
-      <div class="tooltip" :class="tooltipClasses" v-show="isActive">
+      <div class="tooltip" :class="tooltipClasses" v-if="isActive">
         <div class="arrow"></div>
-        <p>{{ title }}</p>
+        <p class="tooltip-title">{{ title }}</p>
       </div>
     </transition>
   </span>
@@ -63,9 +63,8 @@ export default {
 
 .tooltip-wrapper {
   position: relative;
-  display: block;
+  display: inline;
   height: inherit;
-  // width: inherit;
   .tooltip {
     position: absolute;
     display: block;
@@ -82,6 +81,12 @@ export default {
     background-color: $white-soft;
     border-top: 1px solid transparent;
 
+    .tooltip-title {
+      width: max-content;
+      font-size: 12px;
+      color: $black-soft2;
+      font-weight: 600;
+    }
     .arrow {
       position: absolute;
       left: 50%;
@@ -89,35 +94,26 @@ export default {
       width: 10px;
       background-color: $white-soft;
       border: 1px solid transparent;
-
-      transform: translate(-50%, -50%) rotate(45deg);
     }
 
     &.top {
-      /* TODO: top is broken */
-
-      // top: 0%;
-      // transform: translate(-50%, -150%);
+      top: 0%;
+      transform: translate(-50%, -150%);
 
       .arrow {
         top: 100%;
+        transform: translate(-50%, -50%) rotate(-135deg);
       }
     }
 
     &.bottom {
       top: 100%;
-      // transform: translate(-50%, 0%);
       transform: translate(-50%, 50%);
 
       .arrow {
         top: 0%;
+        transform: translate(-50%, -50%) rotate(45deg);
       }
-    }
-
-    p {
-      font-size: 12px;
-      color: $black-soft2;
-      font-weight: 600;
     }
   }
 
@@ -137,16 +133,31 @@ export default {
 
 .tooltip-wrapper.dark {
   .tooltip {
-    background-color: $background-black;
-    border-top: 1px solid $white;
-
-    box-shadow: -8px -12px 10px -13px $white, 8px -12px 10px -13px $white,
-      0px -30px 40px -10px $white;
-
+    background-color: $black;
     .arrow {
-      background-color: $background-black;
+      background-color: $black;
+    }
+
+    &.bottom {
       border-top: 1px solid $white;
-      border-left: 1px solid $white;
+      box-shadow: -8px -12px 10px -13px $white, 8px -12px 10px -13px $white,
+        0px -30px 40px -10px $white;
+
+      .arrow {
+        border-top: 1px solid $white;
+        border-left: 1px solid $white;
+      }
+    }
+
+    &.top {
+      border-bottom: 1px solid $white;
+      box-shadow: 8px 12px 10px -13px $white, -8px 12px 10px -13px $white,
+        0px 30px 40px -10px $white;
+
+      .arrow {
+        border-top: 1px solid $white;
+        border-left: 1px solid $white;
+      }
     }
     p {
       color: $white-soft2;

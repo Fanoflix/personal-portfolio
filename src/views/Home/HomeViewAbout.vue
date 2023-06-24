@@ -17,15 +17,45 @@
     </p>
 
     <p>
-      I currently spend most of my free time researching
-      <FInlineLink href="https://web.dev/vitals/">Core Web Vitals</FInlineLink>
-      and occasionally digging for points of friction in random websites.
+      I currently spend most of my free time brainstorming software ideas which
+      can increase my productivity. I am also currently conceptualizing an
+      'ideas organizer'. Possibly with features that
+      <FInlineLink href="https://www.notion.so">Notion</FInlineLink> lacks in
+      terms of this specific niche.
     </p>
 
     <p>
-      Besides programming, I enjoy gaming and sketching. I love meeting new
-      people and discussing software engineering practices with just about
-      anyone.
+      Besides programming, I enjoy gaming (mostly
+      <FToolTip title="Diablo IV" placement="top">
+        <FInlineLink
+          :underlined="false"
+          href="https://diablo4.blizzard.com/en-us/"
+        >
+          <img
+            class="game-icon"
+            src="../../assets/icons/diablo4.png"
+            alt="Diablo 4"
+          />
+        </FInlineLink>
+      </FToolTip>
+      and &nbsp;
+      <FToolTip title="World of Warcraft" placement="top">
+        <FInlineLink
+          :underlined="false"
+          href="https://worldofwarcraft.blizzard.com/en-us/"
+        >
+          <img
+            class="game-icon"
+            src="../../assets/icons/wow100x100.png"
+            alt="World of Warcraft"
+          />
+        </FInlineLink>
+      </FToolTip>
+      ) and
+      <FInlineLink href="https://www.instagram.com/fanoflix.art/"
+        >sketching</FInlineLink
+      >. I love meeting new people and discussing software engineering practices
+      with just about anyone.
     </p>
 
     <p>
@@ -39,11 +69,13 @@
 <script setup lang="ts">
 import MyLogo from "@/components/mylogo/MyLogo.vue"
 import FInlineLink from "@/components/inlinelink/FInlineLink.vue"
+import FToolTip from "@/components/tooltip/FToolTip.vue"
 </script>
 
 <script lang="ts">
 export default {
   name: "HomeView",
+  components: { FToolTip, FInlineLink },
 }
 </script>
 
@@ -63,6 +95,16 @@ export default {
 p {
   line-height: 1.7;
   margin: 25px 0;
+}
+
+.game-icon {
+  height: auto;
+  width: 27px;
+  margin-bottom: -8px;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
 }
 
 @media screen and (max-width: $bp-phone) {
