@@ -17,11 +17,11 @@
     </p>
 
     <p>
-      I currently spend most of my free time brainstorming software ideas which
-      can increase my productivity. I am also currently conceptualizing an
-      'ideas organizer'. Possibly with features that
-      <FInlineLink href="https://www.notion.so">Notion</FInlineLink> lacks in
-      terms of this specific niche.
+      I currently spend most of my free time brainstorming productivity software
+      ideas. I am also currently conceptualizing an 'ideas organizer', possibly
+      with features that
+      <FInlineLink href="https://www.notion.so">Notion</FInlineLink> doesn't
+      provide yet.
     </p>
 
     <p>

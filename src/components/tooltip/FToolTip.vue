@@ -83,7 +83,7 @@ export default {
 
     .tooltip-title {
       width: max-content;
-      font-size: 14px;
+      font-size: 13px;
       color: $black-soft2;
       font-weight: 600;
     }

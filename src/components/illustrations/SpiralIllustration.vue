@@ -171,56 +171,67 @@ svg {
   }
 
   #centerStar {
-    animation: rotate 13s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 1s;
   }
 
   #circle1 {
-    animation: rotate 14s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 1.2s;
     opacity: 1;
   }
 
   #circle2 {
-    animation: rotate 15s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 1.4s;
     opacity: 0.9;
   }
 
   #circle3 {
-    animation: rotate 16s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 1.6s;
     opacity: 0.8;
   }
 
   #circle4 {
-    animation: rotate 17s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 1.8s;
     opacity: 0.7;
   }
 
   #circle5 {
-    animation: rotate 18s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 2s;
     opacity: 0.6;
   }
 
   #circle6 {
-    animation: rotate 19s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 2.2s;
     opacity: 0.5;
   }
 
   #circle7 {
-    animation: rotate 20s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 2.4s;
     opacity: 0.4;
   }
 
   #circle8 {
-    animation: rotate 21s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 2.6s;
     opacity: 0.3;
   }
 
   #circle9 {
-    animation: rotate 22s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 2.8s;
     opacity: 0.2;
   }
 
   #circle10 {
-    animation: rotate 23s infinite ease-in-out;
+    animation: rotate 19s infinite ease-out;
+    animation-delay: 2.9s;
     opacity: 0.1;
   }
 }
@@ -255,7 +266,7 @@ svg * {
 }
 
 @keyframes rotate {
-  30% {
+  0% {
     transform: rotate(0deg);
   }
   100% {
