@@ -144,13 +144,11 @@ const themeIconSource = computed(() => {
     margin: $global-aesthetic-margin + 2px;
 
     .icon {
-      height: 17px;
-      width: 17px;
-
-      :hover {
+      height: auto;
+      width: 18px;
+      &:hover {
         filter: brightness(0.2);
       }
-
       &.theme-icon {
         transform: rotate(-360deg);
       }
@@ -174,7 +172,8 @@ const themeIconSource = computed(() => {
 .dark.navbar {
   .nav-item {
     .icon {
-      :hover {
+      filter: brightness(1.3);
+      &:hover {
         filter: brightness(2);
       }
     }
@@ -196,8 +195,7 @@ const themeIconSource = computed(() => {
       margin: $global-aesthetic-margin - 2px;
 
       .icon {
-        height: 19px;
-        width: 16px;
+        width: 17px;
       }
     }
   }
@@ -210,8 +208,7 @@ const themeIconSource = computed(() => {
       margin: $global-aesthetic-margin - 4px;
 
       .icon {
-        height: 19px;
-        width: 15px;
+        width: 16px;
       }
     }
   }

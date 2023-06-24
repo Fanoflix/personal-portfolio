@@ -73,8 +73,8 @@ export default {
 
     display: flex;
 
-    line-height: 1;
-    padding: $global-padding;
+    line-height: 1.2;
+    padding: $global-padding $global-padding + 3px;
 
     z-index: 200;
 
@@ -83,7 +83,7 @@ export default {
 
     .tooltip-title {
       width: max-content;
-      font-size: 12px;
+      font-size: 14px;
       color: $black-soft2;
       font-weight: 600;
     }
@@ -140,8 +140,8 @@ export default {
 
     &.bottom {
       border-top: 1px solid $white;
-      box-shadow: -8px -12px 10px -13px $white, 8px -12px 10px -13px $white,
-        0px -30px 40px -10px $white;
+      box-shadow: -8px -10px 10px -13px $white, 8px -9px 10px -13px $white,
+        0px -23px 40px -10px $white;
 
       .arrow {
         border-top: 1px solid $white;
@@ -151,8 +151,8 @@ export default {
 
     &.top {
       border-bottom: 1px solid $white;
-      box-shadow: 8px 12px 10px -13px $white, -8px 12px 10px -13px $white,
-        0px 30px 40px -10px $white;
+      box-shadow: 8px 10px 10px -13px $white, -8px 9px 10px -13px $white,
+        0px 23px 40px -10px $white;
 
       .arrow {
         border-top: 1px solid $white;
