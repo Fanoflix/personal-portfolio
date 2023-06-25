@@ -6,4 +6,4 @@ Live at [ammarnasir.com](http://ammarnasir.com/). It's more than just a personal
 Every single component, graphic, and most icons are built from scratch. I built this website starting with my own [Fatefy UI template](https://github.com/Fanoflix/fatefy) to demonstrate Fatefy's complete customizability. 
 
 ## Feedback
-I would love any [feedback/suggestions](https://personal-portfolio-bvg.pages.dev/contact) you might have regarding the code, look, content or anything else regarding the website.
+I would love any [feedback/suggestions](https://ammarnasir.com/contact) you might have regarding the code, look, content or anything else regarding the website.
