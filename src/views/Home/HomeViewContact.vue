@@ -148,6 +148,11 @@ let currentColor = 0
 /*
       Methods
 */
+function resetInputs() {
+  username.value = ""
+  email.value = ""
+  message.value = ""
+}
 
 function submitFormOnCtrlEnter(e: KeyboardEvent) {
   if (isSubmitDisabled.value) return
@@ -199,6 +204,7 @@ function sendDiscordNotification() {
       responseMessage.value = "Sent"
       isSubmitDisabled.value = false
       isMessageSendSuccessful.value = true
+      resetInputs()
     })
     .catch((err: any) => {
       responseMessage.value = "Failed"
