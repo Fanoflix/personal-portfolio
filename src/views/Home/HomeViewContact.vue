@@ -80,10 +80,12 @@
         </Transition>
 
         <FButton
+          :disabled="isSubmitDisabled"
           size="sm"
           customClasses="submit-btn"
-          label="Send"
+          :label="sendBtnLabel"
           type="primary"
+          ref="submitBtn"
           outlined
         />
       </div>
@@ -94,10 +96,9 @@
 <script setup lang="ts">
 import FInput from "@/components/input/FInput.vue"
 import KeybindGraphic from "@/components/keybindgraphic/KeybindGraphic.vue"
-
 import FButton from "@/components/button/FButton.vue"
 import axios, { type AxiosResponse } from "axios"
-import { onActivated, onDeactivated, onMounted, ref } from "vue"
+import { computed, onActivated, onDeactivated, ref } from "vue"
 import type { Ref } from "vue"
 import { useThemeStore } from "@/stores/theme"
 import { storeToRefs } from "pinia"
@@ -113,6 +114,8 @@ const message: Ref<string | number | undefined> = ref(undefined)
 const isMessageSendSuccessful: Ref<boolean> = ref(false)
 const responseMessage: Ref<string | undefined> = ref(undefined)
 const firstInput = ref<InstanceType<typeof FInput> | null>(null)
+const submitBtn = ref(null)
+const isSubmitDisabled = ref(false)
 
 /**
  * @Lifecycle
@@ -120,8 +123,9 @@ const firstInput = ref<InstanceType<typeof FInput> | null>(null)
 
 onActivated(() => {
   document.body.addEventListener("keydown", submitFormOnCtrlEnter)
-  // @ts-ignore
-  firstInput.value?.input?.focus()
+  const firstInputElement = firstInput.value
+    ?.input as unknown as HTMLInputElement
+  firstInputElement.focus()
 })
 
 onDeactivated(() => {
@@ -146,18 +150,21 @@ let currentColor = 0
 */
 
 function submitFormOnCtrlEnter(e: KeyboardEvent) {
+  if (isSubmitDisabled.value) return
   if (!(e.key === "Enter" && (e.metaKey || e.ctrlKey))) return
 
   const form = (e.target as HTMLFormElement).form
   if (form) form.requestSubmit()
 }
 
-function submit() {
+async function submit(e) {
+  isSubmitDisabled.value = true
+
   responseMessage.value = undefined
   sendToGoogleSheets()
 }
 
-function sendToGoogleSheets() {
+async function sendToGoogleSheets() {
   const form = document.forms["contact-form"]
   const formData = new FormData(form)
 
@@ -167,9 +174,7 @@ function sendToGoogleSheets() {
     body: formData,
   })
     .then((res) => {
-      responseMessage.value = "Sent"
       sendDiscordNotification()
-      isMessageSendSuccessful.value = true
     })
     .catch((err: any) => {
       responseMessage.value = "Failed"
@@ -191,9 +196,24 @@ function sendDiscordNotification() {
     })
     .then((res: AxiosResponse<any, any>) => {
       currentColor = (currentColor + 1) % embedColors.length
+      responseMessage.value = "Sent"
+      isSubmitDisabled.value = false
+      isMessageSendSuccessful.value = true
     })
-    .catch((err: any) => {})
+    .catch((err: any) => {
+      responseMessage.value = "Failed"
+      isSubmitDisabled.value = false
+      isMessageSendSuccessful.value = false
+    })
 }
+
+/**
+ * @computed
+ */
+
+const sendBtnLabel = computed(() => {
+  return isSubmitDisabled.value ? "Sending..." : "Send"
+})
 </script>
 
 <script lang="ts">
