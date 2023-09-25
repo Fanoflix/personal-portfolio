@@ -1,3 +1,4 @@
+
 <template>
   <RouterLink v-if="to" :to="to" class="inline-link" :class="linkClasses">
     <slot> </slot>
@@ -53,7 +54,7 @@ const linkClasses = computed(() => {
 
   text-decoration: none;
   color: $black;
-  font-weight: 600;
+  font-weight: 400;
 
   &.underlined {
     border-bottom: 1px solid rgb(200, 200, 200);
@@ -65,7 +66,7 @@ const linkClasses = computed(() => {
 
 .inline-link.dark {
   color: $white;
-  font-weight: 500;
+  font-weight: 400;
 
   &.underlined {
     border-bottom: 1px solid rgb(70, 70, 70);

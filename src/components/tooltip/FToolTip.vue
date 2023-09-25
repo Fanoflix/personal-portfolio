@@ -68,8 +68,9 @@ export default {
   .tooltip {
     position: absolute;
     display: block;
-    top: 0%;
     left: 50%;
+
+    max-width: 200px;
 
     display: flex;
 
@@ -97,7 +98,7 @@ export default {
     }
 
     &.top {
-      top: 0%;
+      top: 0;
       transform: translate(-50%, -150%);
 
       .arrow {

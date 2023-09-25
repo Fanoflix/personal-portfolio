@@ -39,30 +39,32 @@
 
         <KeybindGraphic
           v-if="!isDark"
-          keybindText="Ctrl + enter"
+          keybindText="Ctrl / command + enter"
           :bordered="true"
+          border-radius="3px"
           uppercase
-          backgroundColor="rgb(220,220,220)"
-          borderColor="rgb(150,150,150)"
-          elevationColor="rgb(135,135,135)"
-          fontColor="rgb(40,40,40)"
-          elevation="4px"
-          fontSize="10px"
-          padding="3px"
-          :fontWeight="700"
+          backgroundColor="rgb(235,235,235)"
+          borderColor="rgb(130,130,130)"
+          elevationColor="rgb(130,130,130)"
+          fontColor="rgb(20,20,20)"
+          elevation="3px"
+          fontSize="11px"
+          padding="5px"
+          :fontWeight="500"
         />
         <KeybindGraphic
           v-else
-          keybindText="Ctrl + enter"
+          keybindText="Ctrl / command + enter"
           :bordered="true"
+          border-radius="3px"
           uppercase
-          borderColor="rgb(65,65,65)"
-          elevationColor="rgb(40,40,40)"
-          backgroundColor="rgb(25,25,25)"
-          elevation="4px"
-          fontSize="10px"
-          padding="3px"
-          :fontWeight="700"
+          borderColor="rgb(55,55,55)"
+          elevationColor="rgb(70,70,70)"
+          backgroundColor="rgb(15,15,15)"
+          elevation="3px"
+          fontSize="11px"
+          padding="5px"
+          :fontWeight="500"
         />
         to send.
       </i>

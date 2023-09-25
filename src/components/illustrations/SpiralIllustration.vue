@@ -146,8 +146,8 @@ svg {
   width: 66vw;
   min-height: 550px;
   min-width: 570px;
+  will-change: transform;
   transform: skew(40deg, 5deg) translate3d(0, 0, 0);
-  will-change: transform filter;
   transition: filter 2.5s ease-in;
   filter: invert(1) brightness(0.3) contrast(2);
 
