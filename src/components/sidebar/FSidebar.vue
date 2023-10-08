@@ -12,18 +12,16 @@
 
 <script setup>
 // Imports
-import FLink from "../link/FLink.vue";
-import { storeToRefs } from "pinia";
-import { computed, onMounted, ref } from "vue";
-import { useThemeStore } from "@/stores/theme.ts";
-import { useRoute, useRouter } from "vue-router";
+import { useThemeStore } from "@/stores/theme.ts"
+import { storeToRefs } from "pinia"
+import { computed, ref } from "vue"
+import FLink from "../link/FLink.vue"
 
 // State
 
 // Reactive State
-const { isDark } = storeToRefs(useThemeStore());
-// const sidebarRef = ref(null);
-const aboutLinkRef = ref(null);
+const { isDark } = storeToRefs(useThemeStore())
+const aboutLinkRef = ref(null)
 
 // Props
 const props = defineProps({
@@ -39,12 +37,12 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 
 // Exposed
 defineExpose({
   aboutLinkRef,
-});
+})
 
 const sidebarClasses = computed(() => {
   return [
@@ -54,8 +52,8 @@ const sidebarClasses = computed(() => {
       rounded: props.rounded,
       dark: isDark.value,
     },
-  ];
-});
+  ]
+})
 </script>
 
 <style scoped lang="scss">

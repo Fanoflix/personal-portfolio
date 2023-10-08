@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
+import { useThemeStore } from "@/stores/theme.ts"
 import { computed } from "@vue/reactivity"
 import { storeToRefs } from "pinia"
-import { useThemeStore } from "@/stores/theme.ts"
 
 const { isDark } = storeToRefs(useThemeStore())
 
@@ -60,7 +60,7 @@ const linkClasses = computed(() => {
   text-align: right;
 
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   padding: 0px 10px;
   cursor: pointer;
   user-select: none;
@@ -89,7 +89,7 @@ const linkClasses = computed(() => {
     // height: 48px;
 
     padding: 0px 3px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   &.lg {
@@ -97,7 +97,7 @@ const linkClasses = computed(() => {
     // height: 58px;
 
     padding: 0px 5px;
-    font-size: 17px;
+    font-size: 18px;
   }
 
   &.rounded {
@@ -124,11 +124,8 @@ const linkClasses = computed(() => {
     color: white;
 
     background: transparent;
-    text-shadow: 
-    0px 0px 5px black,
-    -2px -2px 20px $link-active-shadow,
-    10px 5px 30px $link-active-shadow, 
-    -5px -10px 40px $link-active-shadow;
+    text-shadow: 0px 0px 5px black, -2px -2px 20px $link-active-shadow,
+      10px 5px 30px $link-active-shadow, -5px -10px 40px $link-active-shadow;
 
     text-decoration: none;
   }

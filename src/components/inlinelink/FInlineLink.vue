@@ -1,4 +1,3 @@
-
 <template>
   <RouterLink v-if="to" :to="to" class="inline-link" :class="linkClasses">
     <slot> </slot>

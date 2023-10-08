@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { useThemeStore } from "@/stores/theme"
 import { storeToRefs } from "pinia"
-import { ref, useAttrs, computed } from "vue"
+import { computed, ref, useAttrs } from "vue"
 
 const { isDark } = storeToRefs(useThemeStore())
 const isActive = ref(false)
