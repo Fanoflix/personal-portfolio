@@ -1,5 +1,5 @@
 <template>
-  <div class="prefix-container">
+  <div class="no-select prefix-container">
     <span class="line-cli-icon-outer">~</span>
     <span class="line-cli-icon-inner">~</span>
   </div>

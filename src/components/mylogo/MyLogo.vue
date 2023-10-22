@@ -43,8 +43,8 @@
 </template>
 
 <script setup lang="ts">
-import anime from "animejs"
 import { useThemeStore } from "@/stores/theme"
+import anime from "animejs"
 import { storeToRefs } from "pinia"
 import { onMounted } from "vue"
 const themeStore = useThemeStore()
@@ -229,6 +229,8 @@ svg {
   fill: rgb(130, 130, 130);
 }
 .dark {
+  filter: drop-shadow(0px 0px 15px rgb(90, 90, 90));
+
   .cls-1 {
     fill: #fff;
   }

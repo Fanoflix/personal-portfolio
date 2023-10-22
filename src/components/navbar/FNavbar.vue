@@ -76,9 +76,9 @@
 <script setup lang="ts">
 import FToolTip from "@/components/tooltip/FToolTip.vue"
 import { useThemeStore } from "@/stores/theme"
-import { computed, ref } from "vue"
-import type { Ref } from "vue"
 import { storeToRefs } from "pinia"
+import type { Ref } from "vue"
+import { computed, ref } from "vue"
 
 const themeStore = useThemeStore()
 const { changeTheme } = themeStore

@@ -13,8 +13,8 @@
 <script setup lang="ts">
 import { useThemeStore } from "@/stores/theme"
 import { onBeforeMount } from "vue"
-import FNavbar from "./components/navbar/FNavbar.vue"
 import SpiralIllustration from "./components/illustrations/SpiralIllustration.vue"
+import FNavbar from "./components/navbar/FNavbar.vue"
 
 const body: HTMLElement | null = document.querySelector("body")
 const themeStore = useThemeStore()

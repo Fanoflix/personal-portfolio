@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia"
 import { useThemeStore } from "@/stores/theme"
+import { storeToRefs } from "pinia"
 const { isDark } = storeToRefs(useThemeStore())
 </script>
 <template>
@@ -136,16 +136,16 @@ const { isDark } = storeToRefs(useThemeStore())
 @import "@assets/screens.scss";
 .spiral-container {
   position: fixed;
-  bottom: -6%;
-  left: -4%;
-  z-index: -10;
+  bottom: -1%;
+  left: -3%;
+  z-index: -50;
 }
 
 svg {
-  height: 65vh;
-  width: 66vw;
-  min-height: 550px;
-  min-width: 570px;
+  height: 40vh;
+  width: 40vw;
+  // min-height: 550px;
+  // min-width: 570px;
   will-change: transform;
   transform: skew(40deg, 5deg) translate3d(0, 0, 0);
   transition: filter 2.5s ease-in;
