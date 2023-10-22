@@ -64,10 +64,10 @@ import FSidebar from "@/components/sidebar/FSidebar.vue"
     height: calc(100% - 6px);
     background-image: linear-gradient(
       20deg,
-      rgba(60, 60, 60, 0.1),
-      rgba(7, 7, 7, 0.2) 15%,
-      rgba(7, 7, 7, 0.2) 75%,
-      rgba(60, 60, 60, 0.2)
+      rgba(60, 60, 60, 0.25),
+      rgba(8, 8, 8, 0.2) 15%,
+      rgba(8, 8, 8, 0.2) 75%,
+      rgba(60, 60, 60, 0.25)
     );
     z-index: -5;
   }
