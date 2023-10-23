@@ -40,28 +40,28 @@ import FSidebar from "@/components/sidebar/FSidebar.vue"
 }
 
 .dark .home-view {
-  border: 1px solid rgb(15, 15, 15);
+  border: 1px solid rgb(40, 40, 40);
 
   &::before {
     content: "";
     position: absolute;
-    border-radius: 12px;
-    left: 3px;
-    top: 3px;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
+    border-radius: 11px;
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
     background-image: url("../../assets/patterns/dark-grain.png");
-    z-index: -11;
+    z-index: -10;
   }
 
   &::after {
     content: "";
     position: absolute;
     border-radius: 12px;
-    left: 3px;
-    top: 3px;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
     background-image: linear-gradient(
       20deg,
       rgba(60, 60, 60, 0.25),
