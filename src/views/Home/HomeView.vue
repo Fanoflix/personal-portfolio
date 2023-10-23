@@ -40,37 +40,38 @@ import FSidebar from "@/components/sidebar/FSidebar.vue"
 }
 
 .dark .home-view {
-  border: 1px solid rgb(40, 40, 40);
+  border: 1px solid rgb(34, 34, 34);
 
   &::before {
     content: "";
     position: absolute;
-    border-radius: 11px;
-    left: 4px;
-    top: 4px;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
+    border-radius: 10px;
+    left: 5px;
+    top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border: 1px solid rgb(23, 23, 23);
     background-image: url("../../assets/patterns/dark-grain.png");
     z-index: -10;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    border-radius: 12px;
-    left: 4px;
-    top: 4px;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    background-image: linear-gradient(
-      20deg,
-      rgba(60, 60, 60, 0.25),
-      rgba(8, 8, 8, 0.2) 15%,
-      rgba(8, 8, 8, 0.2) 75%,
-      rgba(60, 60, 60, 0.25)
-    );
-    z-index: -5;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   border-radius: 12px;
+  //   left: 5px;
+  //   top: 5px;
+  //   width: calc(100% - 10px);
+  //   height: calc(100% - 10px);
+  //   background-image: linear-gradient(
+  //     20deg,
+  //     rgba(60, 60, 60, 0.25),
+  //     rgba(8, 8, 8, 0.2) 15%,
+  //     rgba(8, 8, 8, 0.2) 75%,
+  //     rgba(60, 60, 60, 0.25)
+  //   );
+  //   z-index: -5;
+  // }
 }
 
 @media screen and (max-width: $bp_tablet) {
