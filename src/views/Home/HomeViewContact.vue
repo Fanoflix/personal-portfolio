@@ -96,14 +96,14 @@
 </template>
 
 <script setup lang="ts">
+import FButton from "@/components/button/FButton.vue"
 import FInput from "@/components/input/FInput.vue"
 import KeybindGraphic from "@/components/keybindgraphic/KeybindGraphic.vue"
-import FButton from "@/components/button/FButton.vue"
-import axios, { type AxiosResponse } from "axios"
-import { computed, onActivated, onDeactivated, ref } from "vue"
-import type { Ref } from "vue"
 import { useThemeStore } from "@/stores/theme"
+import axios, { type AxiosResponse } from "axios"
 import { storeToRefs } from "pinia"
+import type { Ref } from "vue"
+import { computed, onActivated, onDeactivated, ref } from "vue"
 
 const themeStore = useThemeStore()
 const { isDark } = storeToRefs(themeStore)

@@ -7,14 +7,7 @@
 
     <div class="description">
       <p>
-        <FancyLinePrefix />
-        Ammar. 24. Software Engineer.
-      </p>
-
-      <p>
-        <FancyLinePrefix />
-
-        Works at a
+        Ammar. 24. Software Engineer. Works at a
         <FInlineLink href="https://www.ycombinator.com/">YC</FInlineLink>
         Tech Startup. Currently in
         <FInlineLink href="https://www.linkedin.com/company/stealth-startup-51"
@@ -23,25 +16,15 @@
       </p>
 
       <p>
-        <FancyLinePrefix />
-
         Passionate about writing efficient, readable, and well-structured code.
-      </p>
-
-      <p>
-        <FancyLinePrefix />
         Likes to be creative with design and Software Engineering and their
         blend.
       </p>
 
-      <p>
-        <FancyLinePrefix />
-        Spends free time brainstorming productivity software ideas.
-      </p>
+      <p>Spends free time brainstorming productivity software ideas.</p>
 
       <p>
-        <FancyLinePrefix />
-        Besides that; Plays
+        Plays
 
         <FToolTip title="Diablo IV" placement="top">
           <FInlineLink
@@ -67,19 +50,16 @@
               alt="World of Warcraft"
             />
           </FInlineLink> </FToolTip
-        >.
-      </p>
-
-      <p>
-        <FancyLinePrefix />
-        Also does
+        >. Also does
         <FInlineLink href="https://www.instagram.com/fanoflix.art/"
           >sketching</FInlineLink
         >.
       </p>
 
+      <p></p>
+
       <p>
-        <FancyLinePrefix /> Leave a
+        Leave a
         <FInlineLink to="/contact">message</FInlineLink>, let's talk.
       </p>
     </div>
@@ -119,7 +99,7 @@ export default {
 
   p {
     line-height: 1.7;
-    margin-bottom: 21px;
+    margin-bottom: 28px;
   }
 
   .game-icon {
@@ -128,7 +108,7 @@ export default {
     margin-bottom: -8px;
 
     &:hover {
-      filter: brightness(1.2);
+      filter: brightness(1.4);
     }
   }
 }

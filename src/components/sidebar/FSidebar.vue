@@ -66,7 +66,7 @@ const sidebarClasses = computed(() => {
   flex-flow: wrap column;
   text-align: left;
 
-  padding-right: 80px;
+  padding-right: 50px;
   padding-top: 96px;
 
   // width: 25%;

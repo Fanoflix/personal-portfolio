@@ -1,5 +1,7 @@
 <template>
   <section class="home-view">
+    <div class="overlay"></div>
+    <div class="overlay-2"></div>
     <FSidebar />
 
     <RouterView v-slot="{ Component }">
@@ -28,9 +30,9 @@ import FSidebar from "@/components/sidebar/FSidebar.vue"
 
 .home-view {
   display: flex;
+  position: relative;
   width: 110%;
-  padding: 50px 30px;
-  border-radius: 15px;
+  padding: 48px;
 
   .home-content {
     display: flex;
@@ -40,38 +42,40 @@ import FSidebar from "@/components/sidebar/FSidebar.vue"
 }
 
 .dark .home-view {
-  border: 1px solid rgb(34, 34, 34);
+  border: 1px solid rgb(30, 30, 30);
+  border-radius: 5px;
 
-  &::before {
-    content: "";
+  .overlay {
     position: absolute;
-    border-radius: 10px;
-    left: 5px;
-    top: 5px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    border: 1px solid rgb(23, 23, 23);
     background-image: url("../../assets/patterns/dark-grain.png");
-    z-index: -10;
+    border-radius: 5px;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: repeat;
+    mix-blend-mode: difference;
+    pointer-events: none;
   }
 
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   border-radius: 12px;
-  //   left: 5px;
-  //   top: 5px;
-  //   width: calc(100% - 10px);
-  //   height: calc(100% - 10px);
-  //   background-image: linear-gradient(
-  //     20deg,
-  //     rgba(60, 60, 60, 0.25),
-  //     rgba(8, 8, 8, 0.2) 15%,
-  //     rgba(8, 8, 8, 0.2) 75%,
-  //     rgba(60, 60, 60, 0.25)
-  //   );
-  //   z-index: -5;
-  // }
+  .overlay-2 {
+    position: absolute;
+    border-radius: 5px;
+    background: radial-gradient(
+      ellipse at right,
+      rgb(30, 30, 30),
+      rgb(9, 9, 9)
+    );
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: repeat;
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
 }
 
 @media screen and (max-width: $bp_tablet) {

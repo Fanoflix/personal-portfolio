@@ -57,9 +57,9 @@
 <script setup>
 // Imports
 import { useThemeStore } from "@/stores/theme.ts"
-import { storeToRefs } from "pinia"
-import { useAttrs, computed, ref, watch, nextTick } from "vue"
 import config from "@/utils/config.ts"
+import { storeToRefs } from "pinia"
+import { computed, nextTick, ref, useAttrs, watch } from "vue"
 
 // State
 
@@ -455,7 +455,7 @@ export default {
     }
     .input,
     .textarea {
-      background-color: rgb(25, 25, 25);
+      background-color: rgb(23, 23, 23);
       color: $white;
 
       &:focus {
