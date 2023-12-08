@@ -31,7 +31,7 @@ import FSidebar from "@/components/sidebar/FSidebar.vue"
 .home-view {
   display: flex;
   position: relative;
-  width: 110%;
+  width: 115%;
   padding: 48px;
 
   .home-content {
