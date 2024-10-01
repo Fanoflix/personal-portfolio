@@ -6,10 +6,14 @@
     </div>
 
     <div class="description">
+      <p>I am Ammar. 25y. Software Engineer, focused on the Frontend.</p>
+
       <p>
-        Ammar. 24. Software Engineer. Works at a
-        <FInlineLink href="https://www.ycombinator.com/">YC</FInlineLink>
-        Tech Startup. Currently in
+        Working at a
+        <FInlineLink href="https://www.ycombinator.com/companies/metal-2"
+          >YC Tech Startup W23</FInlineLink
+        >
+        . Currently in
         <FInlineLink href="https://www.linkedin.com/company/stealth-startup-51"
           >stealth mode</FInlineLink
         >.
@@ -17,14 +21,12 @@
 
       <p>
         Passionate about writing efficient, readable, and well-structured code.
-        Likes to be creative with design and Software Engineering and their
-        blend.
+        Currently working with a high-performing team with a hyper-bias for
+        action. I aim to lead any organization I work for to greater heights.
       </p>
 
-      <p>Spends free time brainstorming productivity software ideas.</p>
-
       <p>
-        Plays
+        I play
 
         <FToolTip title="Diablo IV" placement="top">
           <FInlineLink
@@ -50,7 +52,7 @@
               alt="World of Warcraft"
             />
           </FInlineLink> </FToolTip
-        >. Also does
+        >. Also, I am into
         <FInlineLink href="https://www.instagram.com/fanoflix.art/"
           >sketching</FInlineLink
         >.
