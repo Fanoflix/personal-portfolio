@@ -2,7 +2,7 @@
 #### This is deprecated in favor of [Personal Portfolio V2](https://github.com/Fanoflix/personal-portfolio-v2) which is live at [ammarnasir.com](http://ammarnasir.com/).
 
 # OLD: My Personal Portfolio and UI experimentation ground 
-Live at [ammarnasir.com](http://ammarnasir.com/). It's more than just a personal site. I constantly use this website to create and experiment building insanely customizable UI components. My end-goal is a UI components library which offers more customizability and power than usual libraries out there. 
+Live at [personal-portfolio-bvg.pages.dev](https://personal-portfolio-bvg.pages.dev) (previously was live at ammarnasir.com). It's more than just a personal site. I constantly use this website to create and experiment building insanely customizable UI components. My end-goal is a UI components library which offers more customizability and power than usual libraries out there. 
 
 ## Why its special to me
 
